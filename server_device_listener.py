@@ -14,18 +14,21 @@ def get_ip_address(ifname):
         struct.pack('256s', ifname[:15])
     )[20:24])
 
-def connect_db(target_host, query):
+def db_insert(query):
 	#connection variables
 	con = None
-	host = target_host
+	host = 'localhost'
 	user = 'client'
 	passwd = ''
 	database = 'raichu'
 
+	#print query
+	#return False
 	try:
 		con = db.connect(host, user, passwd, database)
 
 		with con:
+			cur = con.cursor()
 			cur.execute(query)
 
 	except db.Error,e:
@@ -68,9 +71,14 @@ try:
 		if len(data) > 0:
 			#write data into database
 			print "Recieved %s" % data
-			#TODO construct query and send to database
-			conn.send("ok")
+			#TODO construct query to account for timestamp and connect status
+			#TODO use threads to check active connection status
+			query = 'insert into device (hostname, ip_address) values ("%s","%s")' % (data,addr[0])
 
+			if db_insert(query):
+				conn.send("Existence ACK'd")
+			else:
+				conn.send("Error: Could not write to database")
 		conn.close()
 
 except socket.error,e:
