@@ -25,8 +25,8 @@ def db_insert(query):
 	#connection variables
 	con = None
 	host = 'localhost'
-	user = 'client'
-	passwd = ''
+	user = 'root'
+	passwd = 'admin'
 	database = 'raichu'
 	#print query
 	#return False
@@ -74,7 +74,7 @@ def process_data_from(client_data, conn, addr):
 	global device_name
 	if client_data.find("DeviceId") >= 0:
 		print "processing name"
-		processed_data = [x for x in client_data.split(':') if x.strip()]
+		processed_data = [x for x in client_data.split('=') if x.strip()]
 		device_name = processed_data[1]
 		return log_device_name(device_name, addr)
 		
@@ -85,6 +85,7 @@ def process_data_from(client_data, conn, addr):
 		for i in range(len(processed_data)):
 			response = create_song_list(processed_data[i], device_name)
 		return response
+
 		#return mp3 function
 		#TODO write mp3 function (takes in data delimited by '#')
 	elif client_data.find("HELLO") >= 0:
@@ -111,7 +112,8 @@ def conn_handler(conn, addr):
 		print client_data
 		server_response = process_data_from(client_data, conn, addr)
 		conn.send(server_response)
-	conn.close()
+	if conn:
+		conn.close()
 
 def listen_for_connections():
 	listener = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -120,7 +122,7 @@ def listen_for_connections():
 	#host = socket.gethostbyname(socket.gethostname())
 	
 	#specified for linux vm
-	host = get_ip_address("eth3")
+	host = get_ip_address("eth0")
 	#school designated ports 33XXX
 	port = 33333
 	

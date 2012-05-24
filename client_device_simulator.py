@@ -22,7 +22,7 @@ port = 33333			#server port
 
 try:
 	s.connect((host, port))
-	this_host = socket.gethostname()
+	this_host = "name:" + socket.gethostname()
 
 	s.send(this_host)
 	print "Message sent to %s" % host
@@ -33,7 +33,7 @@ try:
 	print server_response
 
 except socket.error,e:
-	print "Error connecting: %d: %s" % (e.args[0],e.args[1])
+	print "Error %d: %s" % (e.args[0],e.args[1])
 	sys.exit(1)
 
 finally:
