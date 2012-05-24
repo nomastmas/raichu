@@ -8,6 +8,8 @@ import sys
 from threading import Thread
 from threading import Lock
 import thread
+import datetime as dt
+import time as t
 
 #ugly global variable
 device_name = ""
@@ -21,7 +23,7 @@ def get_ip_address(ifname):
         struct.pack('256s', ifname[:15])
     )[20:24])
 
-def db_insert(query):
+def db_connect_execute(query):
 	#connection variables
 	con = None
 	host = 'localhost'
@@ -43,12 +45,16 @@ def db_insert(query):
 			con.close()
 	return True
 
-
+def clean_db(device_name):
+	query = 'delete from raichu.song where device="%s"' % device_name
+	db_connect_execute(query)
+	
 def log_device_name(device_name, addr):
 	#write data into database
 	print "Recieved %s" % device_name
+	clean_db(device_name)
 	query = 'insert into device (hostname, ip_address, port) values ("%s","%s","%i")' % (device_name, addr[0], addr[1])
-	if db_insert(query):
+	if db_connect_execute(query):
 		response = "ok"
 		print "%s is connected and ACK'd" % device_name
 	else:
@@ -60,7 +66,7 @@ def create_song_list(data, device):
 	#write data into database
 	#print "Recieved %s" % client_data
 	query = 'insert into song (title, device) values ("%s", "%s")' % (data, device)
-	if db_insert(query):
+	if db_connect_execute(query):
 		response = "ok"
 		print "inserted song"
 	else:
@@ -92,6 +98,9 @@ def process_data_from(client_data, conn, addr):
 		return "ok"
 	else:
 		return client_data;
+		
+def get_timestamp():
+	return dt.datetime.fromtimestamp(int(t.time())).strftime('%Y-%m-%d %H:%M:%S')
 
 
 #def recv_all_from(socket_obj):
@@ -135,14 +144,18 @@ def listen_for_connections():
 	#TODO multithread this part
 	listener.listen(5)
 	
+	print "----------RAICHU SYSTEM ONLINE----------"
+	print "%s:%s" % (host, port)
 	print "listening for devices..."
 	
 	#TODO use catch exceptions
 	try:
 		while True:
 			conn, addr = listener.accept()
-			print "%s:%s is connected" %  (addr[0], addr[1])
-			
+			timestamp = get_timestamp()
+			print "==========<%s>==========" % timestamp
+			print "%s:%s connected" %  (addr[0], addr[1])
+			print "========================================="
 			thread.start_new_thread(conn_handler, (conn, addr))
 
 	except socket.error,e:

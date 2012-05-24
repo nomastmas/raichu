@@ -135,9 +135,10 @@ else if($_POST['pause']){
 	$buffer = 'PauseResume';
 }
 
-$port = 2000;
-//$port = 33333;
-$address = '130.65.178.95';
+
+//$address = '130.65.178.68'; $port = 33333;
+$address = '130.65.178.95'; $port = 2000;
+
 if((($sock = socket_create(AF_INET, SOCK_STREAM, SOL_TCP)) === false))
 {
 	echo "sock create error </br>";
