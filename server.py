@@ -75,6 +75,12 @@ class raichu_server:
 		self.listener.close()
 
 	def handle_connection(self):
+		#log connection
+			#keep conn alive
+		#need to specify if device or client
+		#device connected, keep alive
+			#client specifies what device to connect to
+			#all date client sends is passed to device
 		pass
 #end function def
 
