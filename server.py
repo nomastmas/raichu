@@ -7,13 +7,17 @@ import platform
 import socket
 import fcntl
 import struct
-#import MySQLdb as db
+
 import sys
 from threading import Thread
 from threading import Lock
 import thread
+import signal
 import datetime as dt
 import time as t
+
+import simplejson as json
+#import MySQLdb as db
 
 def get_ip_address(ifname):
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -42,45 +46,60 @@ class raichu_server:
 
 	def start(self):
 
-		self.listener = socket.socket (socket.AF_INET, socket.SOCK_STREAM)
+		self.server_sock = socket.socket (socket.AF_INET, socket.SOCK_STREAM)
+		self.buf_size 	 = 1024
 
 		try:
-			self.listener.bind ((self.host, self.port))
+			self.server_sock.bind ((self.host, self.port))
 		except socket.error, e:
 			print_error(e)
 			sys.exit(1)
 
-		self.listener.listen(5)
+		self.server_sock.listen(5)
 
 		print "----------RAICHU SYSTEM ONLINE----------"
-		print "%s:%s" % (self.host, self.port)
+		print "%s %s" % (self.host, self.port)
 		print "listening for devices..."
 
 		try:
 			while True:
-				conn, addr = self.listener.accept()
+				client_sock, addr = self.server_sock.accept()
 				timestamp = get_timestamp()
 				print "==========<%s>==========" % timestamp
-				print "%s:%s connected" %  (addr[0], addr[1])
+				print "%s %s connected" %  (addr[0], addr[1])
 				print "========================================="
-				#thread.start_new_thread(conn_handler, (conn, addr))
+				self.handle_connection(client_sock)
+				#thread.start_new_thread(handle_connection, client_sock)
 
 		except socket.error,e:
 			print_error(e)
 		finally:
-			if self.listener:
-				self.listener.close()
+			if self.server_sock:
+				self.server_sock.close()
 
 	def close(self):
-		self.listener.close()
+		self.server_sock.close()
 
-	def handle_connection(self):
+	def handle_connection(self, client_sock):
+		print client_sock.getpeername()
+		in_pkt = client_sock.recv (self.buf_size)
+		conn_info = json.loads (in_pkt)
+
+		if conn_info["type"] == "device":
+			print "got device"
+		elif conn_info["type"] == "client":
+			print "got client"
+		else:
+			print "not sure what I got" 
+		client_sock.send ("ok")
 		#log connection
-			#keep conn alive
+			#keep client_sock alive
 		#need to specify if device or client
 		#device connected, keep alive
 			#client specifies what device to connect to
 			#all date client sends is passed to device
+
+		client_sock.close()
 		pass
 #end function def
 
@@ -88,4 +107,12 @@ class raichu_server:
 if __name__ == "__main__":
 	#port = sys.argv[1]
 	s = raichu_server()
-	s.start()
+
+	try:
+		s.start()
+	except KeyboardInterrupt:
+		s.close()
+		print ""
+		print "== server shutdown =="
+		sys.exit(0)
+

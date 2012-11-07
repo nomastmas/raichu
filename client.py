@@ -15,8 +15,9 @@ if __name__ == "__main__":
 	try:
 		s.connect ((host, int(port)))
 		print s.getpeername()
-		server_response = s.recv(1024)
-		print server_response
+		s.send ("hello")
+		#server_response = s.recv(1024)
+		#print server_response
 
 		time.sleep(1)
 
