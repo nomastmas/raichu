@@ -1,0 +1,161 @@
+   1              		.file	"syscalls.c"
+   2              		.text
+   3              		.align	2
+   4              		.global	_close_r
+   6              	_close_r:
+   7              		@ args = 0, pretend = 0, frame = 0
+   8              		@ frame_needed = 0, uses_anonymous_args = 0
+   9              		@ link register save eliminated.
+  10 0000 0000A0E3 		mov	r0, #0
+  11 0004 1EFF2FE1 		bx	lr
+  13              		.align	2
+  14              		.global	_lseek_r
+  16              	_lseek_r:
+  17              		@ args = 0, pretend = 0, frame = 0
+  18              		@ frame_needed = 0, uses_anonymous_args = 0
+  19              		@ link register save eliminated.
+  20 0008 0000A0E3 		mov	r0, #0
+  21 000c 1EFF2FE1 		bx	lr
+  23              		.align	2
+  24              		.global	_fstat_r
+  26              	_fstat_r:
+  27              		@ args = 0, pretend = 0, frame = 0
+  28              		@ frame_needed = 0, uses_anonymous_args = 0
+  29              		@ link register save eliminated.
+  30 0010 023AA0E3 		mov	r3, #8192
+  31 0014 043082E5 		str	r3, [r2, #4]
+  32 0018 0000A0E3 		mov	r0, #0
+  33 001c 1EFF2FE1 		bx	lr
+  35              		.align	2
+  36              		.global	_sbrk_r
+  38              	_sbrk_r:
+  39              		@ args = 0, pretend = 0, frame = 0
+  40              		@ frame_needed = 0, uses_anonymous_args = 0
+  41              		@ link register save eliminated.
+  42 0020 20209FE5 		ldr	r2, .L10
+  43 0024 003092E5 		ldr	r3, [r2, #0]
+  44 0028 000053E3 		cmp	r3, #0
+  45 002c 18309F05 		ldreq	r3, .L10+4
+  46 0030 00308205 		streq	r3, [r2, #0]
+  47 0034 0C309FE5 		ldr	r3, .L10
+  48 0038 000093E5 		ldr	r0, [r3, #0]
+  49 003c 012080E0 		add	r2, r0, r1
+  50 0040 002083E5 		str	r2, [r3, #0]
+  51 0044 1EFF2FE1 		bx	lr
+  52              	.L11:
+  53              		.align	2
+  54              	.L10:
+  55 0048 00000000 		.word	heap_ptr
+  56 004c 00000000 		.word	__heap_start__
+  58              		.align	2
+  59              		.global	_write_r
+  61              	_write_r:
+  62              		@ args = 0, pretend = 0, frame = 0
+  63              		@ frame_needed = 0, uses_anonymous_args = 0
+  64 0050 F0402DE9 		stmfd	sp!, {r4, r5, r6, r7, lr}
+  65 0054 0360A0E1 		mov	r6, r3
+  66 0058 0270A0E1 		mov	r7, r2
+  67 005c 0350A0E1 		mov	r5, r3
+  68 0060 0040A0E3 		mov	r4, #0
+  69 0064 020000EA 		b	.L13
+  70              	.L14:
+  71 0068 0400D7E7 		ldrb	r0, [r7, r4]	@ zero_extendqisi2
+  72 006c FEFFFFEB 		bl	uart0PutChar
+  73 0070 014084E2 		add	r4, r4, #1
+  74              	.L13:
+  75 0074 0010E0E3 		mvn	r1, #0
+  76 0078 000055E3 		cmp	r5, #0
+  77 007c 015085E0 		add	r5, r5, r1
+  78 0080 F8FFFF1A 		bne	.L14
+  79 0084 0600A0E1 		mov	r0, r6
+  80 0088 F080BDE8 		ldmfd	sp!, {r4, r5, r6, r7, pc}
+  82              		.align	2
+  83              		.global	_read_r
+  85              	_read_r:
+  86              		@ args = 0, pretend = 0, frame = 4
+  87              		@ frame_needed = 0, uses_anonymous_args = 0
+  88 008c 30402DE9 		stmfd	sp!, {r4, r5, lr}
+  89 0090 04D04DE2 		sub	sp, sp, #4
+  90 0094 0240A0E1 		mov	r4, r2
+  91 0098 03508DE2 		add	r5, sp, #3
+  92              	.L21:
+  93 009c 0500A0E1 		mov	r0, r5
+  94 00a0 0010E0E3 		mvn	r1, #0
+  95 00a4 FEFFFFEB 		bl	uart0GetChar
+  96 00a8 000050E3 		cmp	r0, #0
+  97 00ac FAFFFF0A 		beq	.L21
+  98 00b0 0330DDE5 		ldrb	r3, [sp, #3]	@ zero_extendqisi2
+  99 00b4 000053E3 		cmp	r3, #0
+ 100 00b8 F7FFFF0A 		beq	.L21
+ 101 00bc 0030C4E5 		strb	r3, [r4, #0]
+ 102 00c0 0100A0E3 		mov	r0, #1
+ 103 00c4 04D08DE2 		add	sp, sp, #4
+ 104 00c8 3080BDE8 		ldmfd	sp!, {r4, r5, pc}
+ 106              		.section	.rodata.str1.1,"aMS",%progbits,1
+ 107              	.LC0:
+ 108 0000 4B696C6C 		.ascii	"Kill R?\012\000"
+ 108      20523F0A 
+ 108      00
+ 109              		.text
+ 110              		.align	2
+ 111              		.global	_kill_r
+ 113              	_kill_r:
+ 114              		@ args = 0, pretend = 0, frame = 0
+ 115              		@ frame_needed = 0, uses_anonymous_args = 0
+ 116 00cc 04E02DE5 		str	lr, [sp, #-4]!
+ 117 00d0 08009FE5 		ldr	r0, .L24
+ 118 00d4 FEFFFFEB 		bl	rprintf
+ 119 00d8 0000A0E3 		mov	r0, #0
+ 120 00dc 04F09DE4 		ldr	pc, [sp], #4
+ 121              	.L25:
+ 122              		.align	2
+ 123              	.L24:
+ 124 00e0 00000000 		.word	.LC0
+ 126              		.section	.rodata.str1.1
+ 127              	.LC1:
+ 128 0009 47657420 		.ascii	"Get PId R\012\000"
+ 128      50496420 
+ 128      520A00
+ 129              		.text
+ 130              		.align	2
+ 131              		.global	_getpid_r
+ 133              	_getpid_r:
+ 134              		@ args = 0, pretend = 0, frame = 0
+ 135              		@ frame_needed = 0, uses_anonymous_args = 0
+ 136 00e4 04E02DE5 		str	lr, [sp, #-4]!
+ 137 00e8 08009FE5 		ldr	r0, .L28
+ 138 00ec FEFFFFEB 		bl	rprintf
+ 139 00f0 0000A0E3 		mov	r0, #0
+ 140 00f4 04F09DE4 		ldr	pc, [sp], #4
+ 141              	.L29:
+ 142              		.align	2
+ 143              	.L28:
+ 144 00f8 09000000 		.word	.LC1
+ 146              		.bss
+ 147              		.align	2
+ 148              	heap_ptr:
+ 149 0000 00000000 		.space	4
+ 150              		.ident	"GCC: (GNU) 4.3.2"
+DEFINED SYMBOLS
+                            *ABS*:00000000 syscalls.c
+/cygdrive/c/Users/User/AppData/Local/Temp/ccOGDgn9.s:6      .text:00000000 _close_r
+/cygdrive/c/Users/User/AppData/Local/Temp/ccOGDgn9.s:10     .text:00000000 $a
+/cygdrive/c/Users/User/AppData/Local/Temp/ccOGDgn9.s:16     .text:00000008 _lseek_r
+/cygdrive/c/Users/User/AppData/Local/Temp/ccOGDgn9.s:26     .text:00000010 _fstat_r
+/cygdrive/c/Users/User/AppData/Local/Temp/ccOGDgn9.s:38     .text:00000020 _sbrk_r
+/cygdrive/c/Users/User/AppData/Local/Temp/ccOGDgn9.s:55     .text:00000048 $d
+/cygdrive/c/Users/User/AppData/Local/Temp/ccOGDgn9.s:148    .bss:00000000 heap_ptr
+/cygdrive/c/Users/User/AppData/Local/Temp/ccOGDgn9.s:61     .text:00000050 _write_r
+/cygdrive/c/Users/User/AppData/Local/Temp/ccOGDgn9.s:64     .text:00000050 $a
+/cygdrive/c/Users/User/AppData/Local/Temp/ccOGDgn9.s:85     .text:0000008c _read_r
+/cygdrive/c/Users/User/AppData/Local/Temp/ccOGDgn9.s:113    .text:000000cc _kill_r
+/cygdrive/c/Users/User/AppData/Local/Temp/ccOGDgn9.s:124    .text:000000e0 $d
+/cygdrive/c/Users/User/AppData/Local/Temp/ccOGDgn9.s:133    .text:000000e4 _getpid_r
+/cygdrive/c/Users/User/AppData/Local/Temp/ccOGDgn9.s:136    .text:000000e4 $a
+/cygdrive/c/Users/User/AppData/Local/Temp/ccOGDgn9.s:144    .text:000000f8 $d
+
+UNDEFINED SYMBOLS
+__heap_start__
+uart0PutChar
+uart0GetChar
+rprintf

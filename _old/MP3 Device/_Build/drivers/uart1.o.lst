@@ -1,0 +1,378 @@
+   1              		.file	"uart1.c"
+   2              		.text
+   3              		.align	2
+   4              		.global	uart1PutCharPolling
+   6              	uart1PutCharPolling:
+   7              		@ args = 0, pretend = 0, frame = 0
+   8              		@ frame_needed = 0, uses_anonymous_args = 0
+   9              		@ link register save eliminated.
+  10 0000 1C209FE5 		ldr	r2, .L5
+  11 0004 FF0000E2 		and	r0, r0, #255
+  12              	.L2:
+  13 0008 143092E5 		ldr	r3, [r2, #20]
+  14 000c 200013E3 		tst	r3, #32
+  15 0010 FCFFFF0A 		beq	.L2
+  16 0014 08309FE5 		ldr	r3, .L5
+  17 0018 000083E5 		str	r0, [r3, #0]
+  18 001c 0100A0E3 		mov	r0, #1
+  19 0020 1EFF2FE1 		bx	lr
+  20              	.L6:
+  21              		.align	2
+  22              	.L5:
+  23 0024 000001E0 		.word	-536805376
+  25              		.align	2
+  26              		.global	uart1GetChar
+  28              	uart1GetChar:
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32 0028 0120A0E1 		mov	r2, r1
+  33 002c 10109FE5 		ldr	r1, .L9
+  34 0030 0030A0E1 		mov	r3, r0
+  35 0034 000091E5 		ldr	r0, [r1, #0]
+  36 0038 0310A0E1 		mov	r1, r3
+  37 003c 0030A0E3 		mov	r3, #0
+  38 0040 FEFFFFEA 		b	xQueueGenericReceive
+  39              	.L10:
+  40              		.align	2
+  41              	.L9:
+  42 0044 00000000 		.word	xRX1Queue
+  44              		.align	2
+  45              		.global	uart1PutChar
+  47              	uart1PutChar:
+  48              		@ args = 0, pretend = 0, frame = 4
+  49              		@ frame_needed = 0, uses_anonymous_args = 0
+  50 0048 F0412DE9 		stmfd	sp!, {r4, r5, r6, r7, r8, lr}
+  51 004c 9C609FE5 		ldr	r6, .L15
+  52 0050 04D04DE2 		sub	sp, sp, #4
+  53 0054 0000CDE5 		strb	r0, [sp, #0]
+  54 0058 0150A0E1 		mov	r5, r1
+  55 005c FEFFFFEB 		bl	vPortEnterCritical
+  56 0060 004096E5 		ldr	r4, [r6, #0]
+  57 0064 000054E3 		cmp	r4, #0
+  58 0068 0600000A 		beq	.L12
+  59 006c 0020A0E3 		mov	r2, #0
+  60 0070 002086E5 		str	r2, [r6, #0]
+  61 0074 0030DDE5 		ldrb	r3, [sp, #0]	@ zero_extendqisi2
+  62 0078 74209FE5 		ldr	r2, .L15+4
+  63 007c 0150A0E3 		mov	r5, #1
+  64 0080 003082E5 		str	r3, [r2, #0]
+  65 0084 150000EA 		b	.L13
+  66              	.L12:
+  67 0088 68709FE5 		ldr	r7, .L15+8
+  68 008c 0520A0E1 		mov	r2, r5
+  69 0090 0430A0E1 		mov	r3, r4
+  70 0094 000097E5 		ldr	r0, [r7, #0]
+  71 0098 0D10A0E1 		mov	r1, sp
+  72 009c FEFFFFEB 		bl	xQueueGenericSend
+  73 00a0 003096E5 		ldr	r3, [r6, #0]
+  74 00a4 000053E3 		cmp	r3, #0
+  75 00a8 0D80A0E1 		mov	r8, sp
+  76 00ac 0050A0E1 		mov	r5, r0
+  77 00b0 0A00000A 		beq	.L13
+  78 00b4 010050E3 		cmp	r0, #1
+  79 00b8 0800001A 		bne	.L13
+  80 00bc 0420A0E1 		mov	r2, r4
+  81 00c0 0430A0E1 		mov	r3, r4
+  82 00c4 000097E5 		ldr	r0, [r7, #0]
+  83 00c8 0D10A0E1 		mov	r1, sp
+  84 00cc FEFFFFEB 		bl	xQueueGenericReceive
+  85 00d0 0020DDE5 		ldrb	r2, [sp, #0]	@ zero_extendqisi2
+  86 00d4 18309FE5 		ldr	r3, .L15+4
+  87 00d8 004086E5 		str	r4, [r6, #0]
+  88 00dc 002083E5 		str	r2, [r3, #0]
+  89              	.L13:
+  90 00e0 FEFFFFEB 		bl	vPortExitCritical
+  91 00e4 0500A0E1 		mov	r0, r5
+  92 00e8 04D08DE2 		add	sp, sp, #4
+  93 00ec F081BDE8 		ldmfd	sp!, {r4, r5, r6, r7, r8, pc}
+  94              	.L16:
+  95              		.align	2
+  96              	.L15:
+  97 00f0 08000000 		.word	lTHREEmpty1
+  98 00f4 000001E0 		.word	-536805376
+  99 00f8 04000000 		.word	xTX1Queue
+ 101              		.global	__udivsi3
+ 102              		.align	2
+ 103              		.global	uart1Init
+ 105              	uart1Init:
+ 106              		@ args = 0, pretend = 0, frame = 0
+ 107              		@ frame_needed = 0, uses_anonymous_args = 0
+ 108 00fc 000051E3 		cmp	r1, #0
+ 109 0100 70402DE9 		stmfd	sp!, {r4, r5, r6, lr}
+ 110 0104 0150A011 		movne	r5, r1
+ 111 0108 4050A003 		moveq	r5, #64
+ 112 010c 000050E3 		cmp	r0, #0
+ 113 0110 0060A011 		movne	r6, r0
+ 114 0114 0110A0E3 		mov	r1, #1
+ 115 0118 0020A0E3 		mov	r2, #0
+ 116 011c 0500A0E1 		mov	r0, r5
+ 117 0120 966CA003 		moveq	r6, #38400
+ 118 0124 FEFFFFEB 		bl	xQueueGenericCreate
+ 119 0128 F8409FE5 		ldr	r4, .L23
+ 120 012c 0110A0E3 		mov	r1, #1
+ 121 0130 000084E5 		str	r0, [r4, #0]
+ 122 0134 0020A0E3 		mov	r2, #0
+ 123 0138 010085E2 		add	r0, r5, #1
+ 124 013c FEFFFFEB 		bl	xQueueGenericCreate
+ 125 0140 003094E5 		ldr	r3, [r4, #0]
+ 126 0144 000053E3 		cmp	r3, #0
+ 127 0148 DC309FE5 		ldr	r3, .L23+4
+ 128 014c 000083E5 		str	r0, [r3, #0]
+ 129 0150 D8309FE5 		ldr	r3, .L23+8
+ 130 0154 0140A0E3 		mov	r4, #1
+ 131 0158 004083E5 		str	r4, [r3, #0]
+ 132 015c 2F00000A 		beq	.L20
+ 133 0160 000050E3 		cmp	r0, #0
+ 134 0164 2D00000A 		beq	.L20
+ 135 0168 FEFFFFEB 		bl	vPortEnterCritical
+ 136 016c C0209FE5 		ldr	r2, .L23+12
+ 137 0170 003092E5 		ldr	r3, [r2, #0]
+ 138 0174 0F38C3E3 		bic	r3, r3, #983040
+ 139 0178 053883E3 		orr	r3, r3, #327680
+ 140 017c 003082E5 		str	r3, [r2, #0]
+ 141 0180 1D2882E2 		add	r2, r2, #1900544
+ 142 0184 C43092E5 		ldr	r3, [r2, #196]
+ 143 0188 103083E3 		orr	r3, r3, #16
+ 144 018c C43082E5 		str	r3, [r2, #196]
+ 145 0190 0612A0E1 		mov	r1, r6, asl #4
+ 146 0194 9C009FE5 		ldr	r0, .L23+16
+ 147 0198 FEFFFFEB 		bl	__udivsi3
+ 148 019c 98109FE5 		ldr	r1, .L23+20
+ 149 01a0 0C3091E5 		ldr	r3, [r1, #12]
+ 150 01a4 2024A0E1 		mov	r2, r0, lsr #8
+ 151 01a8 803083E3 		orr	r3, r3, #128
+ 152 01ac 0C3081E5 		str	r3, [r1, #12]
+ 153 01b0 FF0000E2 		and	r0, r0, #255
+ 154 01b4 FF2002E2 		and	r2, r2, #255
+ 155 01b8 0730A0E3 		mov	r3, #7
+ 156 01bc 000081E5 		str	r0, [r1, #0]
+ 157 01c0 042081E5 		str	r2, [r1, #4]
+ 158 01c4 083081E5 		str	r3, [r1, #8]
+ 159 01c8 083091E5 		ldr	r3, [r1, #8]
+ 160 01cc 403083E3 		orr	r3, r3, #64
+ 161 01d0 083081E5 		str	r3, [r1, #8]
+ 162 01d4 0330A0E3 		mov	r3, #3
+ 163 01d8 0C3081E5 		str	r3, [r1, #12]
+ 164 01dc 0020E0E3 		mvn	r2, #0
+ 165 01e0 F33F12E5 		ldr	r3, [r2, #-4083]
+ 166 01e4 8030C3E3 		bic	r3, r3, #128
+ 167 01e8 F33F02E5 		str	r3, [r2, #-4083]
+ 168 01ec 4C309FE5 		ldr	r3, .L23+24
+ 169 01f0 F33E02E5 		str	r3, [r2, #-3827]
+ 170 01f4 2730A0E3 		mov	r3, #39
+ 171 01f8 F33D02E5 		str	r3, [r2, #-3571]
+ 172 01fc EF3F12E5 		ldr	r3, [r2, #-4079]
+ 173 0200 803083E3 		orr	r3, r3, #128
+ 174 0204 EF3F02E5 		str	r3, [r2, #-4079]
+ 175 0208 043091E5 		ldr	r3, [r1, #4]
+ 176 020c 033083E3 		orr	r3, r3, #3
+ 177 0210 043081E5 		str	r3, [r1, #4]
+ 178 0214 FEFFFFEB 		bl	vPortExitCritical
+ 179 0218 0400A0E1 		mov	r0, r4
+ 180 021c 7080BDE8 		ldmfd	sp!, {r4, r5, r6, pc}
+ 181              	.L20:
+ 182 0220 0000A0E3 		mov	r0, #0
+ 183 0224 7080BDE8 		ldmfd	sp!, {r4, r5, r6, pc}
+ 184              	.L24:
+ 185              		.align	2
+ 186              	.L23:
+ 187 0228 00000000 		.word	xRX1Queue
+ 188 022c 04000000 		.word	xTX1Queue
+ 189 0230 08000000 		.word	lTHREEmpty1
+ 190 0234 00C002E0 		.word	-536690688
+ 191 0238 006CDC02 		.word	48000000
+ 192 023c 000001E0 		.word	-536805376
+ 193 0240 00000000 		.word	uart1ISR
+ 195              		.align	2
+ 196              		.global	uart1ISR
+ 198              	uart1ISR:
+ 199              		@ Naked Function: prologue and epilogue provided by programmer.
+ 200              		@ args = 0, pretend = 0, frame = 8
+ 201              		@ frame_needed = 0, uses_anonymous_args = 0
+ 202              	@ 88 "../drivers/uart1.c" 1
+ 203 0244 01002DE9 		STMDB	SP!, {R0}											
+ 204 0248 00204DE9 		STMDB	SP,{SP}^											
+ 205 024c 0000A0E1 		NOP														
+ 206 0250 04D04DE2 		SUB	SP, SP, #4											
+ 207 0254 0100BDE8 		LDMIA	SP!,{R0}											
+ 208 0258 004020E9 		STMDB	R0!, {LR}											
+ 209 025c 00E0A0E1 		MOV	LR, R0												
+ 210 0260 0100BDE8 		LDMIA	SP!, {R0}											
+ 211 0264 FF7F4EE9 		STMDB	LR,{R0-LR}^											
+ 212 0268 0000A0E1 		NOP														
+ 213 026c 3CE04EE2 		SUB	LR, LR, #60											
+ 214 0270 00004FE1 		MRS	R0, SPSR											
+ 215 0274 01002EE9 		STMDB	LR!, {R0}											
+ 216 0278 9C019FE5 		LDR	R0, =ulCriticalNesting								
+ 217 027c 000090E5 		LDR	R0, [R0]											
+ 218 0280 01002EE9 		STMDB	LR!, {R0}											
+ 219 0284 94019FE5 		LDR	R0, =pxCurrentTCB									
+ 220 0288 000090E5 		LDR	R0, [R0]											
+ 221 028c 00E080E5 		STR	LR, [R0]											
+ 222              		
+ 223              	@ 0 "" 2
+ 224 0290 6C319FE5 		ldr	r3, .L39
+ 225 0294 003093E5 		ldr	r3, [r3, #0]
+ 226 0298 68319FE5 		ldr	r3, .L39+4
+ 227 029c 003093E5 		ldr	r3, [r3, #0]
+ 228 02a0 FEFFFFEB 		bl	runTimeStatISREntry
+ 229 02a4 0030A0E3 		mov	r3, #0
+ 230 02a8 00308DE5 		str	r3, [sp, #0]
+ 231 02ac 58319FE5 		ldr	r3, .L39+8
+ 232 02b0 082093E5 		ldr	r2, [r3, #8]
+ 233 02b4 0F3002E2 		and	r3, r2, #15
+ 234 02b8 023043E2 		sub	r3, r3, #2
+ 235 02bc 0A0053E3 		cmp	r3, #10
+ 236 02c0 03F19F97 		ldrls	pc, [pc, r3, asl #2]
+ 237 02c4 370000EA 		b	.L26
+ 238              	.L30:
+ 239 02c8 04030000 		.word	.L27
+ 240 02cc A8030000 		.word	.L26
+ 241 02d0 80030000 		.word	.L28
+ 242 02d4 A8030000 		.word	.L26
+ 243 02d8 F4020000 		.word	.L29
+ 244 02dc A8030000 		.word	.L26
+ 245 02e0 A8030000 		.word	.L26
+ 246 02e4 A8030000 		.word	.L26
+ 247 02e8 A8030000 		.word	.L26
+ 248 02ec A8030000 		.word	.L26
+ 249 02f0 80030000 		.word	.L28
+ 250              	.L29:
+ 251 02f4 10319FE5 		ldr	r3, .L39+8
+ 252 02f8 143093E5 		ldr	r3, [r3, #20]
+ 253 02fc 0730CDE5 		strb	r3, [sp, #7]
+ 254 0300 280000EA 		b	.L26
+ 255              	.L27:
+ 256 0304 C00012E3 		tst	r2, #192
+ 257 0308 1040A013 		movne	r4, #16
+ 258 030c 0140A003 		moveq	r4, #1
+ 259 0310 F8809FE5 		ldr	r8, .L39+12
+ 260 0314 07708DE2 		add	r7, sp, #7
+ 261 0318 0D60A0E1 		mov	r6, sp
+ 262 031c E8509FE5 		ldr	r5, .L39+8
+ 263 0320 010000EA 		b	.L32
+ 264              	.L34:
+ 265 0324 D730DDE1 		ldrsb	r3, [sp, #7]
+ 266 0328 003085E5 		str	r3, [r5, #0]
+ 267              	.L32:
+ 268 032c 013044E2 		sub	r3, r4, #1
+ 269 0330 FF4003E2 		and	r4, r3, #255
+ 270 0334 FF0054E3 		cmp	r4, #255
+ 271 0338 0710A0E1 		mov	r1, r7
+ 272 033c 0D20A0E1 		mov	r2, sp
+ 273 0340 0300000A 		beq	.L33
+ 274 0344 000098E5 		ldr	r0, [r8, #0]
+ 275 0348 FEFFFFEB 		bl	xQueueReceiveFromISR
+ 276 034c 000050E3 		cmp	r0, #0
+ 277 0350 F3FFFF1A 		bne	.L34
+ 278              	.L33:
+ 279 0354 043CA0E1 		mov	r3, r4, asl #24
+ 280 0358 000053E3 		cmp	r3, #0
+ 281 035c B0309FC5 		ldrgt	r3, .L39+16
+ 282 0360 0120A0C3 		movgt	r2, #1
+ 283 0364 002083C5 		strgt	r2, [r3, #0]
+ 284 0368 0E0000EA 		b	.L26
+ 285              	.L35:
+ 286 036c 00C094E5 		ldr	ip, [r4, #0]
+ 287 0370 000097E5 		ldr	r0, [r7, #0]
+ 288 0374 07C0CDE5 		strb	ip, [sp, #7]
+ 289 0378 FEFFFFEB 		bl	xQueueGenericSendFromISR
+ 290 037c 030000EA 		b	.L38
+ 291              	.L28:
+ 292 0380 84409FE5 		ldr	r4, .L39+8
+ 293 0384 8C709FE5 		ldr	r7, .L39+20
+ 294 0388 07608DE2 		add	r6, sp, #7
+ 295 038c 0D50A0E1 		mov	r5, sp
+ 296              	.L38:
+ 297 0390 140094E5 		ldr	r0, [r4, #20]
+ 298 0394 010010E3 		tst	r0, #1
+ 299 0398 0610A0E1 		mov	r1, r6
+ 300 039c 0D20A0E1 		mov	r2, sp
+ 301 03a0 0030A0E3 		mov	r3, #0
+ 302 03a4 F0FFFF1A 		bne	.L35
+ 303              	.L26:
+ 304 03a8 0030A0E3 		mov	r3, #0
+ 305 03ac 0020E0E3 		mvn	r2, #0
+ 306 03b0 CF3F02E5 		str	r3, [r2, #-4047]
+ 307 03b4 00309DE5 		ldr	r3, [sp, #0]
+ 308 03b8 000053E3 		cmp	r3, #0
+ 309 03bc FEFFFF1B 		blne	vTaskSwitchContext
+ 310              	.L36:
+ 311 03c0 FEFFFFEB 		bl	runTimeStatISRExit
+ 312              	@ 92 "../drivers/uart1.c" 1
+ 313 03c4 54009FE5 		LDR		R0, =pxCurrentTCB								
+ 314 03c8 000090E5 		LDR		R0, [R0]										
+ 315 03cc 00E090E5 		LDR		LR, [R0]										
+ 316 03d0 44009FE5 		LDR		R0, =ulCriticalNesting							
+ 317 03d4 0200BEE8 		LDMFD	LR!, {R1}											
+ 318 03d8 001080E5 		STR		R1, [R0]										
+ 319 03dc 0100BEE8 		LDMFD	LR!, {R0}											
+ 320 03e0 00F069E1 		MSR		SPSR, R0										
+ 321 03e4 FF7FDEE8 		LDMFD	LR, {R0-R14}^										
+ 322 03e8 0000A0E1 		NOP														
+ 323 03ec 3CE09EE5 		LDR		LR, [LR, #+60]									
+ 324 03f0 04F05EE2 		SUBS	PC, LR, #4											
+ 325              		
+ 326              	@ 0 "" 2
+ 327 03f4 08309FE5 		ldr	r3, .L39
+ 328 03f8 003093E5 		ldr	r3, [r3, #0]
+ 329 03fc 04309FE5 		ldr	r3, .L39+4
+ 330 0400 003093E5 		ldr	r3, [r3, #0]
+ 331              	.L40:
+ 332              		.align	2
+ 333              	.L39:
+ 334 0404 00000000 		.word	ulCriticalNesting
+ 335 0408 00000000 		.word	pxCurrentTCB
+ 336 040c 000001E0 		.word	-536805376
+ 337 0410 04000000 		.word	xTX1Queue
+ 338 0414 08000000 		.word	lTHREEmpty1
+ 339 0418 00000000 		.word	xRX1Queue
+ 341              		.bss
+ 342              		.align	2
+ 343              	xRX1Queue:
+ 344 0000 00000000 		.space	4
+ 345              		.align	2
+ 346              	xTX1Queue:
+ 347 0004 00000000 		.space	4
+ 348              		.align	2
+ 349              	lTHREEmpty1:
+ 350 0008 00000000 		.space	4
+ 351              		.ident	"GCC: (GNU) 4.3.2"
+DEFINED SYMBOLS
+                            *ABS*:00000000 uart1.c
+/cygdrive/c/Users/User/AppData/Local/Temp/ccCmR57m.s:6      .text:00000000 uart1PutCharPolling
+/cygdrive/c/Users/User/AppData/Local/Temp/ccCmR57m.s:10     .text:00000000 $a
+/cygdrive/c/Users/User/AppData/Local/Temp/ccCmR57m.s:23     .text:00000024 $d
+/cygdrive/c/Users/User/AppData/Local/Temp/ccCmR57m.s:28     .text:00000028 uart1GetChar
+/cygdrive/c/Users/User/AppData/Local/Temp/ccCmR57m.s:32     .text:00000028 $a
+/cygdrive/c/Users/User/AppData/Local/Temp/ccCmR57m.s:42     .text:00000044 $d
+/cygdrive/c/Users/User/AppData/Local/Temp/ccCmR57m.s:343    .bss:00000000 xRX1Queue
+/cygdrive/c/Users/User/AppData/Local/Temp/ccCmR57m.s:47     .text:00000048 uart1PutChar
+/cygdrive/c/Users/User/AppData/Local/Temp/ccCmR57m.s:50     .text:00000048 $a
+/cygdrive/c/Users/User/AppData/Local/Temp/ccCmR57m.s:97     .text:000000f0 $d
+/cygdrive/c/Users/User/AppData/Local/Temp/ccCmR57m.s:349    .bss:00000008 lTHREEmpty1
+/cygdrive/c/Users/User/AppData/Local/Temp/ccCmR57m.s:346    .bss:00000004 xTX1Queue
+/cygdrive/c/Users/User/AppData/Local/Temp/ccCmR57m.s:105    .text:000000fc uart1Init
+/cygdrive/c/Users/User/AppData/Local/Temp/ccCmR57m.s:108    .text:000000fc $a
+/cygdrive/c/Users/User/AppData/Local/Temp/ccCmR57m.s:187    .text:00000228 $d
+/cygdrive/c/Users/User/AppData/Local/Temp/ccCmR57m.s:198    .text:00000244 uart1ISR
+/cygdrive/c/Users/User/AppData/Local/Temp/ccCmR57m.s:203    .text:00000244 $a
+/cygdrive/c/Users/User/AppData/Local/Temp/ccCmR57m.s:239    .text:000002c8 $d
+/cygdrive/c/Users/User/AppData/Local/Temp/ccCmR57m.s:251    .text:000002f4 $a
+/cygdrive/c/Users/User/AppData/Local/Temp/ccCmR57m.s:334    .text:00000404 $d
+
+UNDEFINED SYMBOLS
+xQueueGenericReceive
+vPortEnterCritical
+xQueueGenericSend
+vPortExitCritical
+__udivsi3
+xQueueGenericCreate
+ulCriticalNesting
+pxCurrentTCB
+runTimeStatISREntry
+xQueueReceiveFromISR
+xQueueGenericSendFromISR
+vTaskSwitchContext
+runTimeStatISRExit

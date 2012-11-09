@@ -1,0 +1,181 @@
+   1              		.file	"cpu.c"
+   2              		.text
+   3              		.align	2
+   4              		.global	cpuSetupHardware
+   6              	cpuSetupHardware:
+   7              		@ args = 0, pretend = 0, frame = 0
+   8              		@ frame_needed = 0, uses_anonymous_args = 0
+   9              		@ link register save eliminated.
+  10 0000 88209FE5 		ldr	r2, .L5
+  11 0004 88009FE5 		ldr	r0, .L5+4
+  12 0008 0030A0E3 		mov	r3, #0
+  13 000c 84109FE5 		ldr	r1, .L5+8
+  14 0010 003082E5 		str	r3, [r2, #0]
+  15 0014 043082E5 		str	r3, [r2, #4]
+  16 0018 143082E5 		str	r3, [r2, #20]
+  17 001c 083080E5 		str	r3, [r0, #8]
+  18 0020 183080E5 		str	r3, [r0, #24]
+  19 0024 233083E2 		add	r3, r3, #35
+  20 0028 843081E5 		str	r3, [r1, #132]
+  21 002c 0130A0E3 		mov	r3, #1
+  22 0030 803081E5 		str	r3, [r1, #128]
+  23 0034 A93083E2 		add	r3, r3, #169
+  24 0038 8C3081E5 		str	r3, [r1, #140]
+  25 003c 5530A0E3 		mov	r3, #85
+  26 0040 8C3081E5 		str	r3, [r1, #140]
+  27              	.L2:
+  28 0044 883091E5 		ldr	r3, [r1, #136]
+  29 0048 010B13E3 		tst	r3, #1024
+  30 004c 44009FE5 		ldr	r0, .L5+8
+  31 0050 FBFFFF0A 		beq	.L2
+  32 0054 0320A0E3 		mov	r2, #3
+  33 0058 AA30A0E3 		mov	r3, #170
+  34 005c 802080E5 		str	r2, [r0, #128]
+  35 0060 8C3080E5 		str	r3, [r0, #140]
+  36 0064 5530A0E3 		mov	r3, #85
+  37 0068 8C3080E5 		str	r3, [r0, #140]
+  38 006c 0230A0E3 		mov	r3, #2
+  39 0070 042080E5 		str	r2, [r0, #4]
+  40 0074 003080E5 		str	r3, [r0, #0]
+  41 0078 1C209FE5 		ldr	r2, .L5+12
+  42 007c 0130A0E3 		mov	r3, #1
+  43 0080 003180E5 		str	r3, [r0, #256]
+  44 0084 0030E0E3 		mvn	r3, #0
+  45 0088 EB2F03E5 		str	r2, [r3, #-4075]
+  46 008c 1EFF2FE1 		bx	lr
+  47              	.L6:
+  48              		.align	2
+  49              	.L5:
+  50 0090 00C002E0 		.word	-536690688
+  51 0094 008002E0 		.word	-536707072
+  52 0098 00C01FE0 		.word	-534790144
+  53 009c FDFF7F00 		.word	8388605
+  55              		.section	.rodata.str1.1,"aMS",%progbits,1
+  56              	.LC0:
+  57 0000 0A00     		.ascii	"\012\000"
+  58              	.LC1:
+  59 0002 2D2D2D2D 		.ascii	"---------------------------------------\012\000"
+  59      2D2D2D2D 
+  59      2D2D2D2D 
+  59      2D2D2D2D 
+  59      2D2D2D2D 
+  60              	.LC2:
+  61 002b 2D2D204D 		.ascii	"-- Memory Information: \012\000"
+  61      656D6F72 
+  61      7920496E 
+  61      666F726D 
+  61      6174696F 
+  62              	.LC3:
+  63 0044 2D2D2020 		.ascii	"--      Total Stack: % 5u\012\000"
+  63      20202020 
+  63      546F7461 
+  63      6C205374 
+  63      61636B3A 
+  64              	.LC4:
+  65 005f 2D2D2041 		.ascii	"-- Approx. Used RAM: % 5u\012\000"
+  65      7070726F 
+  65      782E2055 
+  65      73656420 
+  65      52414D3A 
+  66              	.LC5:
+  67 007a 2D2D2041 		.ascii	"-- Approx. Free RAM: % 5u\012\000"
+  67      7070726F 
+  67      782E2046 
+  67      72656520 
+  67      52414D3A 
+  68              	.LC6:
+  69 0095 5372616D 		.ascii	"Sram Start : %x\012\000"
+  69      20537461 
+  69      7274203A 
+  69      2025780A 
+  69      00
+  70              	.LC7:
+  71 00a6 53746163 		.ascii	"Stack Start: %x\012\000"
+  71      6B205374 
+  71      6172743A 
+  71      2025780A 
+  71      00
+  72              	.LC8:
+  73 00b7 48656170 		.ascii	"Heap Start : %x\012\000"
+  73      20537461 
+  73      7274203A 
+  73      2025780A 
+  73      00
+  74              		.text
+  75              		.align	2
+  76              		.global	cpuPrintMemoryInfo
+  78              	cpuPrintMemoryInfo:
+  79              		@ args = 0, pretend = 0, frame = 0
+  80              		@ frame_needed = 0, uses_anonymous_args = 0
+  81 00a0 F0412DE9 		stmfd	sp!, {r4, r5, r6, r7, r8, lr}
+  82 00a4 8C709FE5 		ldr	r7, .L9
+  83 00a8 8C809FE5 		ldr	r8, .L9+4
+  84 00ac 0700A0E1 		mov	r0, r7
+  85 00b0 FEFFFFEB 		bl	rprintf
+  86 00b4 0800A0E1 		mov	r0, r8
+  87 00b8 FEFFFFEB 		bl	rprintf
+  88 00bc 7C009FE5 		ldr	r0, .L9+8
+  89 00c0 FEFFFFEB 		bl	rprintf
+  90 00c4 78609FE5 		ldr	r6, .L9+12
+  91 00c8 78109FE5 		ldr	r1, .L9+16
+  92 00cc 78009FE5 		ldr	r0, .L9+20
+  93 00d0 011066E0 		rsb	r1, r6, r1
+  94 00d4 FEFFFFEB 		bl	rprintf
+  95 00d8 70409FE5 		ldr	r4, .L9+24
+  96 00dc 70109FE5 		ldr	r1, .L9+28
+  97 00e0 70509FE5 		ldr	r5, .L9+32
+  98 00e4 011064E0 		rsb	r1, r4, r1
+  99 00e8 6C009FE5 		ldr	r0, .L9+36
+ 100 00ec FEFFFFEB 		bl	rprintf
+ 101 00f0 021965E2 		rsb	r1, r5, #32768
+ 102 00f4 011084E0 		add	r1, r4, r1
+ 103 00f8 60009FE5 		ldr	r0, .L9+40
+ 104 00fc FEFFFFEB 		bl	rprintf
+ 105 0100 0700A0E1 		mov	r0, r7
+ 106 0104 FEFFFFEB 		bl	rprintf
+ 107 0108 0410A0E1 		mov	r1, r4
+ 108 010c 50009FE5 		ldr	r0, .L9+44
+ 109 0110 FEFFFFEB 		bl	rprintf
+ 110 0114 0610A0E1 		mov	r1, r6
+ 111 0118 48009FE5 		ldr	r0, .L9+48
+ 112 011c FEFFFFEB 		bl	rprintf
+ 113 0120 0510A0E1 		mov	r1, r5
+ 114 0124 40009FE5 		ldr	r0, .L9+52
+ 115 0128 FEFFFFEB 		bl	rprintf
+ 116 012c 0800A0E1 		mov	r0, r8
+ 117 0130 F041BDE8 		ldmfd	sp!, {r4, r5, r6, r7, r8, lr}
+ 118 0134 FEFFFFEA 		b	rprintf
+ 119              	.L10:
+ 120              		.align	2
+ 121              	.L9:
+ 122 0138 00000000 		.word	.LC0
+ 123 013c 02000000 		.word	.LC1
+ 124 0140 2B000000 		.word	.LC2
+ 125 0144 00000000 		.word	__stack_user_start__
+ 126 0148 00000000 		.word	__stack_und_end__
+ 127 014c 44000000 		.word	.LC3
+ 128 0150 00000000 		.word	__SRAM_segment_start__
+ 129 0154 00000000 		.word	__non_init_end__
+ 130 0158 00000000 		.word	__heap_start__
+ 131 015c 5F000000 		.word	.LC4
+ 132 0160 7A000000 		.word	.LC5
+ 133 0164 95000000 		.word	.LC6
+ 134 0168 A6000000 		.word	.LC7
+ 135 016c B7000000 		.word	.LC8
+ 137              		.ident	"GCC: (GNU) 4.3.2"
+DEFINED SYMBOLS
+                            *ABS*:00000000 cpu.c
+/cygdrive/c/Users/User/AppData/Local/Temp/cc4B6fTV.s:6      .text:00000000 cpuSetupHardware
+/cygdrive/c/Users/User/AppData/Local/Temp/cc4B6fTV.s:10     .text:00000000 $a
+/cygdrive/c/Users/User/AppData/Local/Temp/cc4B6fTV.s:50     .text:00000090 $d
+/cygdrive/c/Users/User/AppData/Local/Temp/cc4B6fTV.s:78     .text:000000a0 cpuPrintMemoryInfo
+/cygdrive/c/Users/User/AppData/Local/Temp/cc4B6fTV.s:81     .text:000000a0 $a
+/cygdrive/c/Users/User/AppData/Local/Temp/cc4B6fTV.s:122    .text:00000138 $d
+
+UNDEFINED SYMBOLS
+rprintf
+__stack_user_start__
+__stack_und_end__
+__SRAM_segment_start__
+__non_init_end__
+__heap_start__

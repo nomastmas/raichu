@@ -1,0 +1,1838 @@
+Archive member included because of file (symbol)
+
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
+                              ./utils/src/rprintf.o (__udivsi3)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
+                              ./fat/ff.o (__divsi3)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
+                              ./utils/src/rprintf.o (__umodsi3)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_dvmd_tls.o)
+                              /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o) (__div0)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+                              ./General/userInterface.o (atoi)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+                              ./General/userInterface.o (iprintf)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+                              ./System/cppmem.o (free)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+                              /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o) (_malloc_r)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+                              ./FreeRTOS/src/tasks.o (memcmp)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+                              ./main.o (memcpy)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+                              ./main.o (memset)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+                              /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o) (__malloc_lock)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-realloc.o)
+                              ./main.o (realloc)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+                              /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-realloc.o) (_realloc_r)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+                              ./FreeRTOS/src/tasks.o (siprintf)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+                              ./General/userInterface.o (strcmp)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+                              ./FreeRTOS/src/tasks.o (strcpy)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+                              ./FreeRTOS/src/tasks.o (strlen)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+                              ./main.o (strncpy)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strstr.o)
+                              ./main.o (strstr)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+                              ./General/userInterface.o (strtok)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+                              /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o) (__strtok_r)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+                              /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o) (_strtol_r)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+                              /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o) (_vfiprintf_r)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+                              /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o) (__swsetup_r)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+                              /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o) (__ctype_ptr)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+                              /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o) (_fflush_r)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+                              /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o) (__sinit)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+                              /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o) (_free_r)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+                              /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o) (__sfvwrite_r)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+                              /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o) (_fwalk_reent)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+                              /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o) (_impure_ptr)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+                              /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o) (__smakebuf_r)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+                              /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o) (memchr)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+                              /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o) (memmove)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+                              /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o) (__sclose)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-syscalls.o)
+                              /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o) (isatty)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-errno.o)
+                              /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-syscalls.o) (__errno)
+/cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+                              /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o) (fclose)
+
+Allocating common symbols
+Common symbol       size              file
+
+i2cReadCompleteSignal
+                    0x4               ./drivers/i2c.o
+CardType            0x1               ./fat/diskio.o
+i2cLock             0x4               ./drivers/i2c.o
+sspSpiDummyByte     0x1               ./drivers/ssp_spi.o
+Timer2              0x1               ./fat/diskio.o
+SPIAccessSemaphore  0x4               ./fat/diskio.o
+Timer1              0x1               ./fat/diskio.o
+
+Discarded input sections
+
+ _ZN12SongNameTypeaSEPc
+                0x00000000        0x0 ./main.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH_BOOT       0x00000000         0x00001000         xr
+FLASH_APP        0x00001000         0x0007c000         xr
+SRAM             0x40000000         0x00008000         xw
+USB_DMA_RAM      0x7fd00000         0x00002000         xw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD ./main.o
+LOAD ./utils/src/rprintf.o
+LOAD ./utils/src/timer.o
+LOAD ./fat/diskio.o
+LOAD ./fat/ff.o
+LOAD ./fat/rtc.o
+LOAD ./fat/option/ccsbcs.o
+LOAD ./fat/option/reentrant.o
+LOAD ./drivers/i2c.o
+LOAD ./drivers/pcm1774.o
+LOAD ./drivers/ssp_spi.o
+LOAD ./drivers/sta013.o
+LOAD ./drivers/uart0.o
+LOAD ./drivers/watchdog.o
+LOAD ./System/cppmem.o
+LOAD ./System/cpu.o
+LOAD ./System/syscalls.o
+LOAD ./System/startup/Arm7CStartup.o
+LOAD ./System/startup/Lpc2000ExceptionVectors.o
+LOAD ./System/startup/exceptionHandlers.o
+LOAD ./MP3/mp3.o
+LOAD ./General/userInterface.o
+LOAD ./FreeRTOS/src/croutine.o
+LOAD ./FreeRTOS/src/list.o
+LOAD ./FreeRTOS/src/port.o
+LOAD ./FreeRTOS/src/portISR.o
+LOAD ./FreeRTOS/src/queue.o
+LOAD ./FreeRTOS/src/tasks.o
+LOAD ./FreeRTOS/src/timers.o
+LOAD ./FreeRTOS/mem/heap_3.o
+LOAD ./FreeRTOS/hooks/hooks.o
+LOAD /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libstdc++.a
+LOAD /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libm.a
+START GROUP
+LOAD /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a
+LOAD /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a
+END GROUP
+                0x00001000                __FLASH_segment_start__ = 0x1000
+                0x40000000                __SRAM_segment_start__ = 0x40000000
+                0x00000000                __STACKSIZE_SYS__ = 0x0
+                0x00000000                __STACKSIZE_USER__ = 0x0
+                0x00000200                __STACKSIZE_IRQ__ = 0x200
+                0x00000040                __STACKSIZE_FIQ__ = 0x40
+                0x00000200                __STACKSIZE_SVC__ = 0x200
+                0x00000000                __STACKSIZE_ABT__ = 0x0
+                0x00000000                __STACKSIZE_UND__ = 0x0
+                0x00000000                __HEAPSIZE__ = 0x0
+                0x0000003c                __EXCEPTION_VECTORS_SIZE__ = 0x3c
+                0x40000000                __lpc2000ExceptionVectors_ram_load_start__ = __SRAM_segment_start__
+
+.lpc2000ExceptionVectors_ram
+                0x40000000       0x3c
+                0x40000000                __lpc2000ExceptionVectors_ram_start__ = .
+ *(.lpc2000ExceptionVectors_ram)
+                0x4000003c                . = ((__lpc2000ExceptionVectors_ram_start__ + __EXCEPTION_VECTORS_SIZE__) MAX .)
+ *fill*         0x40000000       0x3c 00
+                0x4000003c                __lpc2000ExceptionVectors_ram_end__ = (__lpc2000ExceptionVectors_ram_start__ + SIZEOF (.lpc2000ExceptionVectors_ram))
+                0x00001000                __lpc2000ExceptionVectors_load_start__ = __FLASH_segment_start__
+
+.lpc2000ExceptionVectors
+                0x00001000       0x38
+                0x00001000                __lpc2000ExceptionVectors_start__ = .
+ *(.lpc2000ExceptionVectors .lpc2000ExceptionVectors.*)
+ .lpc2000ExceptionVectors
+                0x00001000       0x38 ./System/startup/Lpc2000ExceptionVectors.o
+                0x00001038                __lpc2000ExceptionVectors_end__ = (__lpc2000ExceptionVectors_start__ + SIZEOF (.lpc2000ExceptionVectors))
+                0x00001038                __init_start__ = (__lpc2000ExceptionVectors_end__ ALIGN 0x4)
+
+.init           0x00001038      0x1fc
+                0x00001038                __init_start__ = .
+ *(.init .init.*)
+ *fill*         0x00001038        0x8 00
+ .init          0x00001040      0x1b0 ./System/startup/Arm7CStartup.o
+                0x00001040                Arm7StartupStart
+ .init          0x000011f0       0x44 ./System/startup/Lpc2000ExceptionVectors.o
+                0x00001228                _Lpc2000ExceptionVectorsFIQHandler
+                0x0000121c                _Lpc2000ExceptionVectorsSoftwareIntHandler
+                0x00001224                _Lpc2000ExceptionVectorsAbortDataHandler
+                0x00001218                _Lpc2000ExceptionVectorsUndefinedHandler
+                0x00001220                _Lpc2000ExceptionVectorsAbortPrefetchHandler
+                0x00001234                __init_end__ = (__init_start__ + SIZEOF (.init))
+                0x00001234                __text_load_start__ = (__init_end__ ALIGN 0x4)
+
+.text           0x00001234     0xe284
+                0x00001234                __text_start__ = .
+ *(.text .text.* .glue_7t .glue_7 .gnu.linkonce.t.* .gcc_except_table)
+ .text          0x00001234      0x6a4 ./main.o
+                0x0000141c                _Z9blinkTaskPv
+                0x000013f4                _Z16initPortExpanderv
+                0x00001470                _Z8controlsPv
+                0x000018d4                _Z14FatFsDiskTimerPv
+                0x00001234                main
+ .text._ZN12SongNameTypeaSEPc
+                0x000018d8       0x2c ./main.o
+                0x000018d8                _ZN12SongNameTypeaSEPc
+ .glue_7        0x00001904        0x0 ./main.o
+ .glue_7t       0x00001904        0x0 ./main.o
+ .text          0x00001904      0x264 ./utils/src/rprintf.o
+                0x00001904                rprintf_devopen
+                0x00001954                rprintf
+ .glue_7        0x00001b68        0x0 ./utils/src/rprintf.o
+ .glue_7t       0x00001b68        0x0 ./utils/src/rprintf.o
+ .text          0x00001b68      0x294 ./utils/src/timer.o
+                0x00001c7c                _ZN5Timer12resetFromISREv
+                0x00001d0c                _ZN5Timer9isRunningEv
+                0x00001dc4                _ZN5TimerC2EPFvPvEm9TimerType
+                0x00001d8c                _ZN5TimerC1EPFvPvEm9TimerType
+                0x00001c08                _ZN5Timer19changePeriodFromISREm
+                0x00001cc4                _ZN5Timer12startFromISREv
+                0x00001d24                _ZN5Timer5resetEv
+                0x00001b90                _ZN5Timer4stopEv
+                0x00001b68                _ZN5Timer12changePeriodEm
+                0x00001bb8                _ZN5TimerD1Ev
+                0x00001be0                _ZN5TimerD2Ev
+                0x00001d58                _ZN5Timer5startEv
+                0x00001c44                _ZN5Timer11stopFromISREv
+ .glue_7        0x00001dfc        0x0 ./utils/src/timer.o
+ .glue_7t       0x00001dfc        0x0 ./utils/src/timer.o
+ .text          0x00001dfc      0xcc4 ./fat/diskio.o
+                0x00001fd4                wait_ready
+                0x000028c4                disk_initialize
+                0x00001e90                disk_status
+                0x00002534                disk_ioctl
+                0x000021e8                getSDCardInfo
+                0x000020e4                xmit_datablock
+                0x00001dfc                diskio_initializeSPIMutex
+                0x00001f30                rcvr_datablock
+                0x00001eac                disk_timerproc
+                0x00001e74                chk_power
+                0x00002504                power_off
+                0x000021a4                get_spi
+                0x00002010                send_cmd
+                0x000022fc                disk_write
+                0x00001e0c                initialize_SdCardSignals
+                0x00002164                release_spi
+                0x00002414                disk_read
+                0x00001e70                power_on
+ .glue_7        0x00002ac0        0x0 ./fat/diskio.o
+ .glue_7t       0x00002ac0        0x0 ./fat/diskio.o
+ .text          0x00002ac0     0x3514 ./fat/ff.o
+                0x00003518                get_fat
+                0x000047a0                f_rename
+                0x00004cb0                f_truncate
+                0x00002ae4                gen_numname
+                0x00004b58                f_unlink
+                0x00005d04                f_close
+                0x000056bc                f_read
+                0x00004fac                f_readdir
+                0x00004aa4                f_chmod
+                0x00005c1c                f_sync
+                0x00005f60                f_mount
+                0x00005068                f_opendir
+                0x00003390                put_fat
+                0x00005134                f_lseek
+                0x00004f24                f_stat
+                0x00002ac0                clust2sect
+                0x000049e8                f_utime
+                0x00005388                f_write
+                0x00005d1c                f_open
+                0x00005928                f_mkdir
+                0x00004db4                f_getfree
+ .glue_7        0x00005fd4        0x0 ./fat/ff.o
+ .glue_7t       0x00005fd4        0x0 ./fat/ff.o
+ .text          0x00005fd4      0x15c ./fat/rtc.o
+                0x00005ffc                rtc_gettime
+                0x00005fd4                initialize_RTC
+                0x000060e0                get_fattime
+                0x0000607c                rtc_settime
+ .glue_7        0x00006130        0x0 ./fat/rtc.o
+ .glue_7t       0x00006130        0x0 ./fat/rtc.o
+ .text          0x00006130       0xb4 ./fat/option/ccsbcs.o
+                0x000061a4                ff_wtoupper
+                0x00006130                ff_convert
+ .glue_7        0x000061e4        0x0 ./fat/option/ccsbcs.o
+ .glue_7t       0x000061e4        0x0 ./fat/option/ccsbcs.o
+ .text          0x000061e4       0x60 ./fat/option/reentrant.o
+                0x000061e4                ff_del_syncobj
+                0x00006224                ff_cre_syncobj
+                0x000061ec                ff_rel_grant
+                0x000061fc                ff_req_grant
+ .glue_7        0x00006244        0x0 ./fat/option/reentrant.o
+ .glue_7t       0x00006244        0x0 ./fat/option/reentrant.o
+ .text          0x00006244      0x738 ./drivers/i2c.o
+                0x00006754                initialize_I2C0
+                0x0000664c                i2cWriteDeviceRegister
+                0x00006244                i2cStateMachine
+                0x000066ac                i2cReadDeviceRegister
+                0x000065e0                i2cKickOffTransfer
+ .glue_7        0x0000697c        0x0 ./drivers/i2c.o
+ .glue_7t       0x0000697c        0x0 ./drivers/i2c.o
+ .text          0x0000697c      0x748 ./drivers/pcm1774.o
+                0x00006a7c                pcm1774_bassBoost
+                0x000069c8                pcm1774_sendByte
+                0x00006df4                pcm1774_LineOutputConfiguration
+                0x00006f78                pcm1774_ConnectDigitalOutputs
+                0x0000697c                pcm1774_readByte
+                0x00006de4                pcm1774_PowerUpVcom
+                0x00006f18                pcm1774_DigitalInterfaceSelection
+                0x00006f48                pcm1774_DigitalDeEmphasisFilter
+                0x00006eac                pcm1774_PowerUpMixer
+                0x00006da4                pcm1774_setShortCircuitProtectionRight
+                0x00006cd8                pcm1774_redirectAnalogInputToLeftOutput
+                0x00006e9c                pcm1774_PowerUpAnalogBiasControl
+                0x00007028                pcm1774_3dSoundEffect
+                0x00006c9c                pcm1774_redirectAnalogInputToRightOutput
+                0x000069a8                pcm1774_readShortCircuitStatusLeft
+                0x00006acc                pcm1774_DigitalVolume
+                0x00006b5c                initialize_pcm1774
+                0x000069dc                pcm1774_trebleBoost
+                0x0000706c                pcm1774_Reset
+                0x00006a2c                pcm1774_middleBoost
+                0x00006ee8                pcm1774_DigitalGainControl
+                0x00006d78                pcm1774_PowerUpGainAmplifierAnalog
+                0x00006c50                pcm1774_bitMask
+                0x00006e44                pcm1774_PowerUpAnalog
+                0x00006e70                pcm1774_PowerUpDAC
+                0x00006d4c                pcm1774_selectAnalogInput
+                0x00006dc4                pcm1774_setShortCircuitProtectionLeft
+                0x00006b14                pcm1774_OutputVolume
+                0x00006ed8                pcm1774_DigitalOversamplingControl
+                0x00006d14                pcm1774_gainAmplifierAnalogInput
+                0x00006988                pcm1774_readShortCircuitStatusRight
+                0x00006fa4                pcm1774_LoadDefaultDigitalConfiguration
+ .glue_7        0x000070c4        0x0 ./drivers/pcm1774.o
+ .glue_7t       0x000070c4        0x0 ./drivers/pcm1774.o
+ .text          0x000070c4       0x88 ./drivers/ssp_spi.o
+                0x000070c4                initialize_SSPSPI
+                0x00007138                setSSPSPI_Divider
+                0x00007108                rxTxByteSSPSPI
+ .glue_7        0x0000714c        0x0 ./drivers/ssp_spi.o
+ .glue_7t       0x0000714c        0x0 ./drivers/ssp_spi.o
+ .text          0x0000714c      0x558 ./drivers/sta013.o
+                0x00007554                sta013GetAverageBitrate
+                0x00007284                sta013SetVolume
+                0x00007358                sta013StopDecoder
+                0x00007308                sta013ResumeDecoder
+                0x00007330                sta013PauseDecoder
+                0x000074fc                sta013DownloadUpdate
+                0x00007390                sta013StartDecoder
+                0x00007548                sta013ReadReg
+                0x00007600                initialize_sta013
+                0x00007570                sta013GetMP3Info
+                0x0000714c                sta013HWReset
+                0x000071c0                sta013WriteReg
+                0x000071d4                sta013SetTone
+ .glue_7        0x000076a4        0x0 ./drivers/sta013.o
+ .glue_7t       0x000076a4        0x0 ./drivers/sta013.o
+ .text          0x000076a4      0x468 ./drivers/uart0.o
+                0x00007700                uart0GetChar
+                0x000076d8                uart0PutCharPolling
+                0x000077e4                uart0Init
+                0x000076a4                uart0Deinit
+                0x0000792c                uart0ISR
+                0x00007730                uart0PutChar
+ .glue_7        0x00007b0c        0x0 ./drivers/uart0.o
+ .glue_7t       0x00007b0c        0x0 ./drivers/uart0.o
+ .text          0x00007b0c       0xd4 ./drivers/watchdog.o
+                0x00007b3c                watchdog_Start
+                0x00007b0c                watchdog_Reset
+                0x00007b24                watchdog_Feed
+                0x00007b84                watchdogDelayUs
+                0x00007b64                watchdog_Stop
+ .glue_7        0x00007be0        0x0 ./drivers/watchdog.o
+ .glue_7t       0x00007be0        0x0 ./drivers/watchdog.o
+ .text          0x00007be0       0x10 ./System/cppmem.o
+                0x00007bec                _Znwm
+                0x00007be4                _ZdlPv
+                0x00007be0                _ZdaPv
+                0x00007be8                _Znam
+ .glue_7        0x00007bf0        0x0 ./System/cppmem.o
+ .glue_7t       0x00007bf0        0x0 ./System/cppmem.o
+ .text          0x00007bf0      0x170 ./System/cpu.o
+                0x00007c90                cpuPrintMemoryInfo
+                0x00007bf0                cpuSetupHardware
+ .glue_7        0x00007d60        0x0 ./System/cpu.o
+ .glue_7t       0x00007d60        0x0 ./System/cpu.o
+ .text          0x00007d60       0xfc ./System/syscalls.o
+                0x00007d68                _lseek_r
+                0x00007e2c                _kill_r
+                0x00007d70                _fstat_r
+                0x00007e44                _getpid_r
+                0x00007d80                _sbrk_r
+                0x00007dec                _read_r
+                0x00007d60                _close_r
+                0x00007db0                _write_r
+ .glue_7        0x00007e5c        0x0 ./System/syscalls.o
+ .glue_7t       0x00007e5c        0x0 ./System/syscalls.o
+ .text          0x00007e5c        0x0 ./System/startup/Arm7CStartup.o
+ .glue_7        0x00007e5c        0x0 ./System/startup/Arm7CStartup.o
+ .glue_7t       0x00007e5c        0x0 ./System/startup/Arm7CStartup.o
+ .text          0x00007e5c        0x0 ./System/startup/Lpc2000ExceptionVectors.o
+ .glue_7        0x00007e5c        0x0 ./System/startup/Lpc2000ExceptionVectors.o
+ .glue_7t       0x00007e5c        0x0 ./System/startup/Lpc2000ExceptionVectors.o
+ .text          0x00007e5c       0x9c ./System/startup/exceptionHandlers.o
+                0x00007ec8                Exception_PrefetchAbort
+                0x00007ee0                Exception_UndefinedAddress
+                0x00007e98                Exception_FIQHandler
+                0x00007eb0                Exception_DataAbort
+                0x00007e5c                printExceptionInfo
+ .glue_7        0x00007ef8        0x0 ./System/startup/exceptionHandlers.o
+ .glue_7t       0x00007ef8        0x0 ./System/startup/exceptionHandlers.o
+ .text          0x00007ef8      0x158 ./MP3/mp3.o
+                0x00007ef8                _Z7mp3TaskPv
+ .glue_7        0x00008050        0x0 ./MP3/mp3.o
+ .glue_7t       0x00008050        0x0 ./MP3/mp3.o
+ .text          0x00008050      0x740 ./General/userInterface.o
+                0x000080f4                _Z9printLinev
+                0x00008050                _Z11getUartLinePc
+                0x00008100                _Z6uartUIPv
+ .glue_7        0x00008790        0x0 ./General/userInterface.o
+ .glue_7t       0x00008790        0x0 ./General/userInterface.o
+ .text          0x00008790        0x0 ./FreeRTOS/src/croutine.o
+ .glue_7        0x00008790        0x0 ./FreeRTOS/src/croutine.o
+ .glue_7t       0x00008790        0x0 ./FreeRTOS/src/croutine.o
+ .text          0x00008790       0xf4 ./FreeRTOS/src/list.o
+                0x000087c0                vListInsertEnd
+                0x00008848                vListRemove
+                0x000087b4                vListInitialiseItem
+                0x00008790                vListInitialise
+                0x000087f4                vListInsert
+ .glue_7        0x00008884        0x0 ./FreeRTOS/src/list.o
+ .glue_7t       0x00008884        0x0 ./FreeRTOS/src/list.o
+ .text          0x00008884      0x1c0 ./FreeRTOS/src/port.o
+                0x000089d8                xPortStartScheduler
+                0x000089d4                vPortEndScheduler
+                0x00008884                pxPortInitialiseStack
+ .glue_7        0x00008a44        0x0 ./FreeRTOS/src/port.o
+ .glue_7t       0x00008a44        0x0 ./FreeRTOS/src/port.o
+ .text          0x00008a44      0x228 ./FreeRTOS/src/portISR.o
+                0x00008b34                vTickISR
+                0x00008c20                vPortExitCritical
+                0x00008a90                vPortYieldProcessor
+                0x00008a44                vPortISRStartFirstTask
+                0x00008bf4                vPortEnterCritical
+ .glue_7        0x00008c6c        0x0 ./FreeRTOS/src/portISR.o
+ .glue_7t       0x00008c6c        0x0 ./FreeRTOS/src/portISR.o
+ .text          0x00008c6c      0x77c ./FreeRTOS/src/queue.o
+                0x00008d74                vQueueWaitForMessageRestricted
+                0x0000910c                xQueueGenericSendFromISR
+                0x00008dc8                vQueueDelete
+                0x0000917c                xQueueGenericSend
+                0x00008c74                ucQueueGetQueueNumber
+                0x00008c84                ucQueueGetQueueType
+                0x00008de4                xQueueReceiveFromISR
+                0x00009340                xQueueGenericCreate
+                0x00008c7c                vQueueSetQueueNumber
+                0x00008c9c                xQueueIsQueueFullFromISR
+                0x00008cb4                uxQueueMessagesWaiting
+                0x00008e8c                xQueueGenericReceive
+                0x00008c6c                uxQueueMessagesWaitingFromISR
+                0x00008c8c                xQueueIsQueueEmptyFromISR
+                0x000092c4                xQueueCreateMutex
+ .glue_7        0x000093e8        0x0 ./FreeRTOS/src/queue.o
+ .glue_7t       0x000093e8        0x0 ./FreeRTOS/src/queue.o
+ .text          0x000093e8     0x13d8 ./FreeRTOS/src/tasks.o
+                0x0000a120                vTaskGetRunTimeStats
+                0x0000a468                vTaskEndScheduler
+                0x00009dbc                vTaskPlaceOnEventList
+                0x0000a49c                xTaskGenericCreate
+                0x000093e8                xTaskIsTaskSuspended
+                0x0000951c                uxTaskGetStackHighWaterMark
+                0x0000988c                xTaskResumeFromISR
+                0x00009498                runTimeStatISRExit
+                0x000099f0                xTaskGetTickCount
+                0x00009698                xTaskRemoveFromEventList
+                0x00009954                xTaskCheckForTimeOut
+                0x00009424                vTaskSuspendAll
+                0x0000943c                xTaskGetTickCountFromISR
+                0x00009590                vTaskPriorityDisinherit
+                0x000095f8                vTaskPriorityInherit
+                0x00009b50                vTaskResume
+                0x00009e1c                vTaskSwitchContext
+                0x00009c84                vTaskPlaceOnEventListRestricted
+                0x00009510                vTaskSetTaskNumber
+                0x00009f50                vTaskSuspend
+                0x0000944c                uxTaskGetNumberOfTasks
+                0x00009730                vTaskIncrementTick
+                0x0000a38c                vTaskList
+                0x00009504                uxTaskGetTaskNumber
+                0x00009d20                vTaskDelayUntil
+                0x00009550                xTaskGetCurrentTaskHandle
+                0x00009a10                xTaskResumeAll
+                0x0000a714                vTaskStartScheduler
+                0x000094f0                vTaskMissedYield
+                0x0000945c                runTimeStatISREntry
+                0x00009cc4                vTaskDelay
+                0x00009560                xTaskGetSchedulerState
+                0x000094d0                vTaskSetTimeOutState
+ .glue_7        0x0000a7c0        0x0 ./FreeRTOS/src/tasks.o
+ .glue_7t       0x0000a7c0        0x0 ./FreeRTOS/src/tasks.o
+ .text          0x0000a7c0      0x53c ./FreeRTOS/src/timers.o
+                0x0000a8dc                xTimerCreate
+                0x0000a7ec                xTimerGenericCommand
+                0x0000a934                xTimerCreateTimerTask
+                0x0000a7c0                pvTimerGetTimerID
+                0x0000a7c8                xTimerIsTimerActive
+ .glue_7        0x0000acfc        0x0 ./FreeRTOS/src/timers.o
+ .glue_7t       0x0000acfc        0x0 ./FreeRTOS/src/timers.o
+ .text          0x0000acfc       0x4c ./FreeRTOS/mem/heap_3.o
+                0x0000acfc                vPortFree
+                0x0000ad1c                pvPortMalloc
+ .glue_7        0x0000ad48        0x0 ./FreeRTOS/mem/heap_3.o
+ .glue_7t       0x0000ad48        0x0 ./FreeRTOS/mem/heap_3.o
+ .text          0x0000ad48       0x6c ./FreeRTOS/hooks/hooks.o
+                0x0000ad60                vApplicationMallocFailedHook
+                0x0000ad80                vApplicationStackOverflowHook
+                0x0000ad48                vApplicationIdleHook
+ .glue_7        0x0000adb4        0x0 ./FreeRTOS/hooks/hooks.o
+ .glue_7t       0x0000adb4        0x0 ./FreeRTOS/hooks/hooks.o
+ .text          0x0000adb4      0x110 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
+                0x0000adb4                __udivsi3
+                0x0000adb4                __aeabi_uidiv
+                0x0000aeac                __aeabi_uidivmod
+ .glue_7        0x0000aec4        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
+ .glue_7t       0x0000aec4        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
+ .text          0x0000aec4      0x140 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
+                0x0000aec4                __aeabi_idiv
+                0x0000aec4                __divsi3
+                0x0000afec                __aeabi_idivmod
+ .glue_7        0x0000b004        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
+ .glue_7t       0x0000b004        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
+ .text          0x0000b004       0xcc /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
+                0x0000b004                __umodsi3
+ .glue_7        0x0000b0d0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
+ .glue_7t       0x0000b0d0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
+ .text          0x0000b0d0        0x4 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_dvmd_tls.o)
+                0x0000b0d0                __aeabi_ldiv0
+                0x0000b0d0                __div0
+                0x0000b0d0                __aeabi_idiv0
+ .glue_7        0x0000b0d4        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_dvmd_tls.o)
+ .glue_7t       0x0000b0d4        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_dvmd_tls.o)
+ .text          0x0000b0d4       0x18 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+                0x0000b0d4                _atoi_r
+                0x0000b0e0                atoi
+ .glue_7        0x0000b0ec        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+ .glue_7t       0x0000b0ec        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+ .text          0x0000b0ec       0x54 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+                0x0000b0ec                _iprintf_r
+                0x0000b110                iprintf
+ .glue_7        0x0000b140        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+ .glue_7t       0x0000b140        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+ .text          0x0000b140       0x28 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+                0x0000b154                malloc
+                0x0000b140                free
+ .glue_7        0x0000b168        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+ .glue_7t       0x0000b168        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+ .text          0x0000b168      0x734 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+                0x0000b168                _malloc_r
+ .glue_7        0x0000b89c        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+ .glue_7t       0x0000b89c        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+ .text          0x0000b89c       0xac /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+                0x0000b89c                memcmp
+ .glue_7        0x0000b948        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+ .glue_7t       0x0000b948        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+ .text          0x0000b948       0xfc /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+                0x0000b948                memcpy
+ .glue_7        0x0000ba44        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+ .glue_7t       0x0000ba44        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+ .text          0x0000ba44       0xd0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+                0x0000ba44                memset
+ .glue_7        0x0000bb14        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+ .glue_7t       0x0000bb14        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+ .text          0x0000bb14        0x8 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+                0x0000bb18                __malloc_unlock
+                0x0000bb14                __malloc_lock
+ .glue_7        0x0000bb1c        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+ .glue_7t       0x0000bb1c        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+ .text          0x0000bb1c       0x1c /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-realloc.o)
+                0x0000bb1c                realloc
+ .glue_7        0x0000bb38        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-realloc.o)
+ .glue_7t       0x0000bb38        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-realloc.o)
+ .text          0x0000bb38      0x510 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+                0x0000bb38                _realloc_r
+ .glue_7        0x0000c048        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+ .glue_7t       0x0000c048        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+ .text          0x0000c048       0xcc /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+                0x0000c0b4                _siprintf_r
+                0x0000c048                siprintf
+ .glue_7        0x0000c114        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+ .glue_7t       0x0000c114        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+ .text          0x0000c114       0xe8 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+                0x0000c114                strcmp
+ .glue_7        0x0000c1fc        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+ .glue_7t       0x0000c1fc        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+ .text          0x0000c1fc       0xb8 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+                0x0000c1fc                strcpy
+ .glue_7        0x0000c2b4        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+ .glue_7t       0x0000c2b4        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+ .text          0x0000c2b4       0x9c /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+                0x0000c2b4                strlen
+ .glue_7        0x0000c350        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+ .glue_7t       0x0000c350        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+ .text          0x0000c350      0x10c /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+                0x0000c350                strncpy
+ .glue_7        0x0000c45c        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+ .glue_7t       0x0000c45c        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+ .text          0x0000c45c       0x5c /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strstr.o)
+                0x0000c45c                strstr
+ .glue_7        0x0000c4b8        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strstr.o)
+ .glue_7t       0x0000c4b8        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strstr.o)
+ .text          0x0000c4b8       0x18 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+                0x0000c4b8                strtok
+ .glue_7        0x0000c4d0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+ .glue_7t       0x0000c4d0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+ .text          0x0000c4d0       0xd0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+                0x0000c598                strtok_r
+                0x0000c4d0                __strtok_r
+ .glue_7        0x0000c5a0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+ .glue_7t       0x0000c5a0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+ .text          0x0000c5a0      0x1e0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+                0x0000c754                strtol
+                0x0000c5a0                _strtol_r
+ .glue_7        0x0000c780        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+ .glue_7t       0x0000c780        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+ .text          0x0000c780      0xff0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+                0x0000d744                vfiprintf
+                0x0000c7b0                _vfiprintf_r
+ .glue_7        0x0000d770        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .glue_7t       0x0000d770        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .text          0x0000d770      0x144 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+                0x0000d770                __swsetup_r
+ .glue_7        0x0000d8b4        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+ .glue_7t       0x0000d8b4        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+ .text          0x0000d8b4        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+ .glue_7        0x0000d8b4        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+ .glue_7t       0x0000d8b4        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+ .text          0x0000d8b4      0x1dc /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+                0x0000da5c                fflush
+                0x0000d8b4                _fflush_r
+ .glue_7        0x0000da90        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+ .glue_7t       0x0000da90        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+ .text          0x0000da90      0x2ac /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+                0x0000da90                __sinit
+                0x0000dc20                __sfmoreglue
+                0x0000dc08                _cleanup
+                0x0000dbfc                _cleanup_r
+                0x0000dbe4                __fp_lock_all
+                0x0000dbac                __sfp_lock_acquire
+                0x0000dc68                __sfp
+                0x0000dbb8                __sinit_lock_release
+                0x0000dbcc                __fp_unlock_all
+                0x0000dbb0                __sfp_lock_release
+                0x0000dbb4                __sinit_lock_acquire
+ .glue_7        0x0000dd3c        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+ .glue_7t       0x0000dd3c        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+ .text          0x0000dd3c      0x370 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+                0x0000de34                _free_r
+                0x0000dd3c                _malloc_trim_r
+ .glue_7        0x0000e0ac        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+ .glue_7t       0x0000e0ac        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+ .text          0x0000e0ac      0x46c /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+                0x0000e0ac                __sfvwrite_r
+ .glue_7        0x0000e518        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+ .glue_7t       0x0000e518        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+ .text          0x0000e518      0x10c /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+                0x0000e5a0                _fwalk
+                0x0000e518                _fwalk_reent
+ .glue_7        0x0000e624        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+ .glue_7t       0x0000e624        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+ .text          0x0000e624        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+ .glue_7        0x0000e624        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+ .glue_7t       0x0000e624        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+ .text          0x0000e624      0x164 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+                0x0000e624                __smakebuf_r
+ .glue_7        0x0000e788        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+ .glue_7t       0x0000e788        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+ .text          0x0000e788      0x118 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+                0x0000e788                memchr
+ .glue_7        0x0000e8a0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+ .glue_7t       0x0000e8a0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+ .text          0x0000e8a0      0x144 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+                0x0000e8a0                memmove
+ .glue_7        0x0000e9e4        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+ .glue_7t       0x0000e9e4        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+ .text          0x0000e9e4       0xc0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+                0x0000e9ec                __sseek
+                0x0000ea74                __sread
+                0x0000e9e4                __sclose
+                0x0000ea20                __swrite
+ .glue_7        0x0000eaa4        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+ .glue_7t       0x0000eaa4        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+ .text          0x0000eaa4      0x8ec /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-syscalls.o)
+                0x0000ebcc                _getpid
+                0x0000eaa4                initialise_monitor_handles
+                0x0000ef9c                isatty
+                0x0000f360                _fstat
+                0x0000eeac                _open
+                0x0000eecc                _sbrk
+                0x0000ebdc                _raise
+                0x0000ec24                _times
+                0x0000f314                _stat
+                0x0000f224                _lseek
+                0x0000ebd4                _link
+                0x0000f04c                _swiwrite
+                0x0000eca0                _rename
+                0x0000f130                _swilseek
+                0x0000efd4                _swiclose
+                0x0000edcc                _swiopen
+                0x0000ed88                _unlink
+                0x0000f088                _write
+                0x0000eb58                _kill
+                0x0000ebe0                _gettimeofday
+                0x0000f270                _read
+                0x0000ebac                _exit
+                0x0000ecf8                _system
+                0x0000f234                _swiread
+                0x0000f03c                _close
+ .glue_7        0x0000f390        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-syscalls.o)
+ .glue_7t       0x0000f390        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-syscalls.o)
+ .text          0x0000f390       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-errno.o)
+                0x0000f390                __errno
+ .glue_7        0x0000f3a0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-errno.o)
+ .glue_7t       0x0000f3a0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-errno.o)
+ .text          0x0000f3a0      0x118 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+                0x0000f3a0                _fclose_r
+                0x0000f4a4                fclose
+ .glue_7        0x0000f4b8        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+ .glue_7t       0x0000f4b8        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+                0x0000f4b8                __text_end__ = (__text_start__ + SIZEOF (.text))
+                0x0000f4b8                __dtors_load_start__ = (__text_end__ ALIGN 0x4)
+
+.vfp11_veneer   0x00000000        0x0
+ .vfp11_veneer  0x00000000        0x0 ./main.o
+ .vfp11_veneer  0x00000000        0x0 ./utils/src/rprintf.o
+ .vfp11_veneer  0x00000000        0x0 ./utils/src/timer.o
+ .vfp11_veneer  0x00000000        0x0 ./fat/diskio.o
+ .vfp11_veneer  0x00000000        0x0 ./fat/ff.o
+ .vfp11_veneer  0x00000000        0x0 ./fat/rtc.o
+ .vfp11_veneer  0x00000000        0x0 ./fat/option/ccsbcs.o
+ .vfp11_veneer  0x00000000        0x0 ./fat/option/reentrant.o
+ .vfp11_veneer  0x00000000        0x0 ./drivers/i2c.o
+ .vfp11_veneer  0x00000000        0x0 ./drivers/pcm1774.o
+ .vfp11_veneer  0x00000000        0x0 ./drivers/ssp_spi.o
+ .vfp11_veneer  0x00000000        0x0 ./drivers/sta013.o
+ .vfp11_veneer  0x00000000        0x0 ./drivers/uart0.o
+ .vfp11_veneer  0x00000000        0x0 ./drivers/watchdog.o
+ .vfp11_veneer  0x00000000        0x0 ./System/cppmem.o
+ .vfp11_veneer  0x00000000        0x0 ./System/cpu.o
+ .vfp11_veneer  0x00000000        0x0 ./System/syscalls.o
+ .vfp11_veneer  0x00000000        0x0 ./System/startup/Arm7CStartup.o
+ .vfp11_veneer  0x00000000        0x0 ./System/startup/Lpc2000ExceptionVectors.o
+ .vfp11_veneer  0x00000000        0x0 ./System/startup/exceptionHandlers.o
+ .vfp11_veneer  0x00000000        0x0 ./MP3/mp3.o
+ .vfp11_veneer  0x00000000        0x0 ./General/userInterface.o
+ .vfp11_veneer  0x00000000        0x0 ./FreeRTOS/src/croutine.o
+ .vfp11_veneer  0x00000000        0x0 ./FreeRTOS/src/list.o
+ .vfp11_veneer  0x00000000        0x0 ./FreeRTOS/src/port.o
+ .vfp11_veneer  0x00000000        0x0 ./FreeRTOS/src/portISR.o
+ .vfp11_veneer  0x00000000        0x0 ./FreeRTOS/src/queue.o
+ .vfp11_veneer  0x00000000        0x0 ./FreeRTOS/src/tasks.o
+ .vfp11_veneer  0x00000000        0x0 ./FreeRTOS/src/timers.o
+ .vfp11_veneer  0x00000000        0x0 ./FreeRTOS/mem/heap_3.o
+ .vfp11_veneer  0x00000000        0x0 ./FreeRTOS/hooks/hooks.o
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_dvmd_tls.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-realloc.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strstr.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-syscalls.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-errno.o)
+ .vfp11_veneer  0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+
+.v4_bx          0x00000000        0x0
+ .v4_bx         0x00000000        0x0 ./main.o
+ .v4_bx         0x00000000        0x0 ./utils/src/rprintf.o
+ .v4_bx         0x00000000        0x0 ./utils/src/timer.o
+ .v4_bx         0x00000000        0x0 ./fat/diskio.o
+ .v4_bx         0x00000000        0x0 ./fat/ff.o
+ .v4_bx         0x00000000        0x0 ./fat/rtc.o
+ .v4_bx         0x00000000        0x0 ./fat/option/ccsbcs.o
+ .v4_bx         0x00000000        0x0 ./fat/option/reentrant.o
+ .v4_bx         0x00000000        0x0 ./drivers/i2c.o
+ .v4_bx         0x00000000        0x0 ./drivers/pcm1774.o
+ .v4_bx         0x00000000        0x0 ./drivers/ssp_spi.o
+ .v4_bx         0x00000000        0x0 ./drivers/sta013.o
+ .v4_bx         0x00000000        0x0 ./drivers/uart0.o
+ .v4_bx         0x00000000        0x0 ./drivers/watchdog.o
+ .v4_bx         0x00000000        0x0 ./System/cppmem.o
+ .v4_bx         0x00000000        0x0 ./System/cpu.o
+ .v4_bx         0x00000000        0x0 ./System/syscalls.o
+ .v4_bx         0x00000000        0x0 ./System/startup/Arm7CStartup.o
+ .v4_bx         0x00000000        0x0 ./System/startup/Lpc2000ExceptionVectors.o
+ .v4_bx         0x00000000        0x0 ./System/startup/exceptionHandlers.o
+ .v4_bx         0x00000000        0x0 ./MP3/mp3.o
+ .v4_bx         0x00000000        0x0 ./General/userInterface.o
+ .v4_bx         0x00000000        0x0 ./FreeRTOS/src/croutine.o
+ .v4_bx         0x00000000        0x0 ./FreeRTOS/src/list.o
+ .v4_bx         0x00000000        0x0 ./FreeRTOS/src/port.o
+ .v4_bx         0x00000000        0x0 ./FreeRTOS/src/portISR.o
+ .v4_bx         0x00000000        0x0 ./FreeRTOS/src/queue.o
+ .v4_bx         0x00000000        0x0 ./FreeRTOS/src/tasks.o
+ .v4_bx         0x00000000        0x0 ./FreeRTOS/src/timers.o
+ .v4_bx         0x00000000        0x0 ./FreeRTOS/mem/heap_3.o
+ .v4_bx         0x00000000        0x0 ./FreeRTOS/hooks/hooks.o
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_dvmd_tls.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-realloc.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strstr.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-syscalls.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-errno.o)
+ .v4_bx         0x00000000        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+
+.dtors          0x0000f4b8        0x0
+                0x0000f4b8                __dtors_start__ = .
+ *(SORT(.dtors.*))
+ *(.dtors)
+                0x0000f4b8                __dtors_end__ = (__dtors_start__ + SIZEOF (.dtors))
+                0x0000f4b8                __ctors_load_start__ = (__dtors_end__ ALIGN 0x4)
+
+.ctors          0x0000f4b8        0x0
+                0x0000f4b8                __ctors_start__ = .
+ *(SORT(.ctors.*))
+ *(.ctors)
+                0x0000f4b8                __ctors_end__ = (__ctors_start__ + SIZEOF (.ctors))
+                0x0000f4b8                __rodata_load_start__ = (__ctors_end__ ALIGN 0x4)
+
+.rodata         0x0000f4b8     0x1fd0
+                0x0000f4b8                __rodata_start__ = .
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata.str1.1
+                0x0000f4b8      0x134 ./main.o
+                                0x142 (size before relaxing)
+ .rodata.str1.1
+                0x0000f5ec       0x10 ./fat/ff.o
+ .rodata        0x0000f5fc       0x8d ./fat/ff.o
+ *fill*         0x0000f689        0x1 00
+ .rodata        0x0000f68a      0x4c0 ./fat/option/ccsbcs.o
+ .rodata        0x0000fb4a       0x19 ./drivers/pcm1774.o
+ .rodata        0x0000fb63      0xfe0 ./drivers/sta013.o
+                0x0000fb93                STA013_UpdateData
+                0x0000fb63                MP3_Bitrates
+                0x0000fb83                MP3_SamplingFrequencies
+ .rodata.str1.1
+                0x00010b43       0x9d ./System/cpu.o
+                                 0xc8 (size before relaxing)
+ .rodata.str1.1
+                0x00010be0       0x14 ./System/syscalls.o
+ .rodata.str1.1
+                0x00010bf4       0xd6 ./System/startup/exceptionHandlers.o
+ .rodata.str1.1
+                0x00010cca       0x5a ./MP3/mp3.o
+ .rodata.str1.1
+                0x00010d24      0x4c2 ./General/userInterface.o
+                                0x4e9 (size before relaxing)
+ .rodata.str1.1
+                0x000111e6       0x80 ./FreeRTOS/src/tasks.o
+ .rodata        0x00011266       0x14 ./FreeRTOS/src/tasks.o
+ .rodata.str1.1
+                0x0001127a        0x8 ./FreeRTOS/src/timers.o
+ .rodata.str1.1
+                0x00011282       0x8d ./FreeRTOS/hooks/hooks.o
+ *fill*         0x0001130f        0x1 00
+ .rodata.str1.4
+                0x00011310       0x4a /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+                                 0x4c (size before relaxing)
+ .rodata        0x0001135a       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .rodata        0x0001137a      0x101 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+                0x0001137a                _ctype_
+ *fill*         0x0001147b        0x1 00
+ .rodata        0x0001147c        0x4 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+                0x0001147c                _global_impure_ptr
+ .rodata.str1.4
+                0x00011480        0x2 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+                                  0x4 (size before relaxing)
+ *fill*         0x00011482        0x2 00
+ .rodata.str1.4
+                0x00011484        0x4 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-syscalls.o)
+                0x00011488                __rodata_end__ = (__rodata_start__ + SIZEOF (.rodata))
+                0x00011488                __symbol_table_start__ = (__rodata_end__ ALIGN 0x4)
+
+.symbol_table   0x00011488        0x0
+                0x00011488                __symbol_table_start__ = .
+ *(.symbol_table)
+                0x00011488                __symbol_table_end__ = (__symbol_table_start__ + SIZEOF (.symbol_table))
+                0x00011488                __fast_load_start__ = (__symbol_table_end__ ALIGN 0x4)
+
+.fast           0x4000003c        0x0 load address 0x00011488
+                0x4000003c                __fast_start__ = .
+ *(.fast .fast.*)
+                0x4000003c                __fast_end__ = (__fast_start__ + SIZEOF (.fast))
+                0x00011488                __fast_load_end__ = (__fast_load_start__ + SIZEOF (.fast))
+
+.fast_run       0x4000003c        0x0
+                0x4000003c                __fast_run_start__ = .
+                0x4000003c                . = ((__fast_run_start__ + SIZEOF (.fast)) MAX .)
+                0x4000003c                __fast_run_end__ = (__fast_run_start__ + SIZEOF (.fast_run))
+                0x00011488                __data_load_start__ = ((__fast_load_start__ + SIZEOF (.fast)) ALIGN 0x4)
+
+.data           0x4000003c      0x828 load address 0x00011488
+                0x4000003c                __data_start__ = .
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x4000003c        0x0 ./main.o
+ .data          0x4000003c        0x0 ./utils/src/rprintf.o
+ .data          0x4000003c        0x4 ./utils/src/timer.o
+ .data          0x40000040        0x1 ./fat/diskio.o
+                0x40000040                Stat
+ .data          0x40000041        0x0 ./fat/ff.o
+ .data          0x40000041        0x0 ./fat/rtc.o
+ .data          0x40000041        0x0 ./fat/option/ccsbcs.o
+ .data          0x40000041        0x0 ./fat/option/reentrant.o
+ .data          0x40000041        0x0 ./drivers/i2c.o
+ .data          0x40000041        0x0 ./drivers/pcm1774.o
+ .data          0x40000041        0x0 ./drivers/ssp_spi.o
+ .data          0x40000041        0x0 ./drivers/sta013.o
+ .data          0x40000041        0x0 ./drivers/uart0.o
+ .data          0x40000041        0x0 ./drivers/watchdog.o
+ .data          0x40000041        0x0 ./System/cppmem.o
+ .data          0x40000041        0x0 ./System/cpu.o
+ .data          0x40000041        0x0 ./System/syscalls.o
+ .data          0x40000041        0x0 ./System/startup/Arm7CStartup.o
+ .data          0x40000041        0x0 ./System/startup/Lpc2000ExceptionVectors.o
+ .data          0x40000041        0x0 ./System/startup/exceptionHandlers.o
+ .data          0x40000041        0x0 ./MP3/mp3.o
+ .data          0x40000041        0x0 ./General/userInterface.o
+ .data          0x40000041        0x0 ./FreeRTOS/src/croutine.o
+ .data          0x40000041        0x0 ./FreeRTOS/src/list.o
+ .data          0x40000041        0x0 ./FreeRTOS/src/port.o
+ *fill*         0x40000041        0x3 00
+ .data          0x40000044        0x4 ./FreeRTOS/src/portISR.o
+                0x40000044                ulCriticalNesting
+ .data          0x40000048        0x0 ./FreeRTOS/src/queue.o
+ .data          0x40000048        0x4 ./FreeRTOS/src/tasks.o
+ .data          0x4000004c        0x0 ./FreeRTOS/src/timers.o
+ .data          0x4000004c        0x0 ./FreeRTOS/mem/heap_3.o
+ .data          0x4000004c        0x0 ./FreeRTOS/hooks/hooks.o
+ .data          0x4000004c        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
+ .data          0x4000004c        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
+ .data          0x4000004c        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
+ .data          0x4000004c        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_dvmd_tls.o)
+ .data          0x4000004c        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+ .data          0x4000004c        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+ .data          0x4000004c        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+ .data          0x4000004c      0x410 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+                0x40000458                __malloc_sbrk_base
+                0x4000004c                __malloc_av_
+                0x40000454                __malloc_trim_threshold
+ .data          0x4000045c        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+ .data          0x4000045c        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+ .data          0x4000045c        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+ .data          0x4000045c        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+ .data          0x4000045c        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-realloc.o)
+ .data          0x4000045c        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+ .data          0x4000045c        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+ .data          0x4000045c        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+ .data          0x4000045c        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+ .data          0x4000045c        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+ .data          0x4000045c        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+ .data          0x4000045c        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strstr.o)
+ .data          0x4000045c        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+ .data          0x4000045c        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+ .data          0x4000045c        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+ .data          0x4000045c        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .data          0x4000045c        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+ .data          0x4000045c        0x4 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+                0x4000045c                __ctype_ptr
+ .data          0x40000460        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+ .data          0x40000460        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+ .data          0x40000460        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+ .data          0x40000460        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+ .data          0x40000460        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+ .data          0x40000460      0x404 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+                0x40000460                _impure_ptr
+ .data          0x40000864        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+ .data          0x40000864        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+ .data          0x40000864        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+ .data          0x40000864        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+ .data          0x40000864        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-syscalls.o)
+ .data          0x40000864        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-errno.o)
+ .data          0x40000864        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+                0x40000864                __data_end__ = (__data_start__ + SIZEOF (.data))
+                0x00011cb0                __data_load_end__ = (__data_load_start__ + SIZEOF (.data))
+
+.data_run       0x4000003c      0x828
+                0x4000003c                __data_run_start__ = .
+                0x40000864                . = ((__data_run_start__ + SIZEOF (.data)) MAX .)
+ *fill*         0x4000003c      0x828 00
+                0x40000864                __data_run_end__ = (__data_run_start__ + SIZEOF (.data_run))
+                0x40000864                __bss_load_start__ = (__data_run_end__ ALIGN 0x4)
+
+.bss            0x40000864      0x241 load address 0x00011cb0
+                0x40000864                __bss_start__ = .
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x40000864        0x0 ./main.o
+ .bss           0x40000864        0x4 ./utils/src/rprintf.o
+ .bss           0x40000868        0x0 ./utils/src/timer.o
+ .bss           0x40000868        0x1 ./fat/diskio.o
+ *fill*         0x40000869        0x3 00
+ .bss           0x4000086c        0x8 ./fat/ff.o
+ .bss           0x40000874        0x0 ./fat/rtc.o
+ .bss           0x40000874        0x0 ./fat/option/ccsbcs.o
+ .bss           0x40000874        0x0 ./fat/option/reentrant.o
+ .bss           0x40000874       0x14 ./drivers/i2c.o
+ .bss           0x40000888        0x0 ./drivers/pcm1774.o
+ .bss           0x40000888        0x0 ./drivers/ssp_spi.o
+ .bss           0x40000888        0x0 ./drivers/sta013.o
+ .bss           0x40000888        0xc ./drivers/uart0.o
+ .bss           0x40000894        0x0 ./drivers/watchdog.o
+ .bss           0x40000894        0x0 ./System/cppmem.o
+ .bss           0x40000894        0x0 ./System/cpu.o
+ .bss           0x40000894        0x4 ./System/syscalls.o
+ .bss           0x40000898        0x0 ./System/startup/Arm7CStartup.o
+ .bss           0x40000898        0x0 ./System/startup/Lpc2000ExceptionVectors.o
+ .bss           0x40000898        0x0 ./System/startup/exceptionHandlers.o
+ .bss           0x40000898        0x0 ./MP3/mp3.o
+ .bss           0x40000898        0x0 ./General/userInterface.o
+ .bss           0x40000898        0x0 ./FreeRTOS/src/croutine.o
+ .bss           0x40000898        0x0 ./FreeRTOS/src/list.o
+ .bss           0x40000898        0x0 ./FreeRTOS/src/port.o
+ .bss           0x40000898        0x0 ./FreeRTOS/src/portISR.o
+ .bss           0x40000898        0x0 ./FreeRTOS/src/queue.o
+ .bss           0x40000898       0xdc ./FreeRTOS/src/tasks.o
+                0x40000898                pxCurrentTCB
+                0x4000089c                ulISROverhead
+ .bss           0x40000974       0x38 ./FreeRTOS/src/timers.o
+ .bss           0x400009ac        0x0 ./FreeRTOS/mem/heap_3.o
+ .bss           0x400009ac        0x0 ./FreeRTOS/hooks/hooks.o
+ .bss           0x400009ac        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
+ .bss           0x400009ac        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
+ .bss           0x400009ac        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
+ .bss           0x400009ac        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_dvmd_tls.o)
+ .bss           0x400009ac        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+ .bss           0x400009ac        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+ .bss           0x400009ac        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+ .bss           0x400009ac       0x34 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+                0x400009ac                __malloc_top_pad
+                0x400009b0                __malloc_max_sbrked_mem
+                0x400009b8                __malloc_current_mallinfo
+                0x400009b4                __malloc_max_total_mem
+ .bss           0x400009e0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+ .bss           0x400009e0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+ .bss           0x400009e0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+ .bss           0x400009e0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+ .bss           0x400009e0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-realloc.o)
+ .bss           0x400009e0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+ .bss           0x400009e0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+ .bss           0x400009e0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+ .bss           0x400009e0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+ .bss           0x400009e0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+ .bss           0x400009e0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+ .bss           0x400009e0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strstr.o)
+ .bss           0x400009e0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+ .bss           0x400009e0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+ .bss           0x400009e0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+ .bss           0x400009e0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .bss           0x400009e0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+ .bss           0x400009e0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+ .bss           0x400009e0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+ .bss           0x400009e0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+ .bss           0x400009e0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+ .bss           0x400009e0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+ .bss           0x400009e0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+ .bss           0x400009e0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+ .bss           0x400009e0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+ .bss           0x400009e0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+ .bss           0x400009e0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+ .bss           0x400009e0        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+ .bss           0x400009e0       0xb0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-syscalls.o)
+ .bss           0x40000a90        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-errno.o)
+ .bss           0x40000a90        0x0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+ *(COMMON)
+ COMMON         0x40000a90        0x9 ./fat/diskio.o
+                0x40000a90                CardType
+                0x40000a91                Timer2
+                0x40000a94                SPIAccessSemaphore
+                0x40000a98                Timer1
+ *fill*         0x40000a99        0x3 00
+ COMMON         0x40000a9c        0x8 ./drivers/i2c.o
+                0x40000a9c                i2cReadCompleteSignal
+                0x40000aa0                i2cLock
+ COMMON         0x40000aa4        0x1 ./drivers/ssp_spi.o
+                0x40000aa4                sspSpiDummyByte
+                0x40000aa5                __bss_end__ = (__bss_start__ + SIZEOF (.bss))
+                0x40000aa8                __non_init_load_start__ = (__bss_end__ ALIGN 0x4)
+
+.non_init       0x40000aa8        0x0
+                0x40000aa8                __non_init_start__ = .
+ *(.non_init .non_init.*)
+                0x40000aa8                __non_init_end__ = (__non_init_start__ + SIZEOF (.non_init))
+                0x40000aa8                __stack_user_load_start__ = (__non_init_end__ ALIGN 0x4)
+
+.stack          0x40000aa8        0x0
+                0x40000aa8                __stack_user_start__ = .
+ *(.stack)
+                0x40000aa8                . = ((__stack_user_start__ + __STACKSIZE_USER__) MAX .)
+                0x40000aa8                __stack_user_end__ = (__stack_user_start__ + SIZEOF (.stack))
+                0x40000aa8                __stack_irq_load_start__ = (__stack_user_end__ ALIGN 0x4)
+
+.stack_irq      0x40000aa8      0x200
+                0x40000aa8                __stack_irq_start__ = .
+ *(.stack_irq)
+                0x40000ca8                . = ((__stack_irq_start__ + __STACKSIZE_IRQ__) MAX .)
+ *fill*         0x40000aa8      0x200 00
+                0x40000ca8                __stack_irq_end__ = (__stack_irq_start__ + SIZEOF (.stack_irq))
+                0x40000ca8                __stack_fiq_load_start__ = (__stack_irq_end__ ALIGN 0x4)
+
+.stack_fiq      0x40000ca8       0x40
+                0x40000ca8                __stack_fiq_start__ = .
+ *(.stack_fiq)
+                0x40000ce8                . = ((__stack_fiq_start__ + __STACKSIZE_FIQ__) MAX .)
+ *fill*         0x40000ca8       0x40 00
+                0x40000ce8                __stack_fiq_end__ = (__stack_fiq_start__ + SIZEOF (.stack_fiq))
+                0x40000ce8                __stack_svc_load_start__ = (__stack_fiq_end__ ALIGN 0x4)
+
+.stack_svc      0x40000ce8      0x200
+                0x40000ce8                __stack_svc_start__ = .
+ *(.stack_svc)
+                0x40000ee8                . = ((__stack_svc_start__ + __STACKSIZE_SVC__) MAX .)
+ *fill*         0x40000ce8      0x200 00
+                0x40000ee8                __stack_svc_end__ = (__stack_svc_start__ + SIZEOF (.stack_svc))
+                0x40000ee8                __stack_abt_load_start__ = (__stack_svc_end__ ALIGN 0x4)
+
+.stack_abt      0x40000ee8        0x0
+                0x40000ee8                __stack_abt_start__ = .
+ *(.stack_abt)
+                0x40000ee8                . = ((__stack_abt_start__ + __STACKSIZE_ABT__) MAX .)
+                0x40000ee8                __stack_abt_end__ = (__stack_abt_start__ + SIZEOF (.stack_abt))
+                0x40000ee8                __stack_und_load_start__ = (__stack_abt_end__ ALIGN 0x4)
+
+.stack_und      0x40000ee8        0x0
+                0x40000ee8                __stack_und_start__ = .
+ *(.stack_und)
+                0x40000ee8                . = ((__stack_und_start__ + __STACKSIZE_UND__) MAX .)
+                0x40000ee8                __stack_und_end__ = (__stack_und_start__ + SIZEOF (.stack_und))
+                0x40000ee8                __heap_load_start__ = (__stack_und_end__ ALIGN 0x4)
+
+.heap           0x40000ee8        0x0
+                0x40000ee8                __heap_start__ = .
+ *(.heap)
+                0x40000ee8                . = ((__heap_start__ + __HEAPSIZE__) MAX .)
+                0x40000ee8                __heap_end__ = (__heap_start__ + SIZEOF (.heap))
+                0x40000ee8                end = .
+OUTPUT(L4_lpc2148_freertos_cpp_mp3.elf elf32-littlearm)
+
+.comment        0x00000000      0x480
+ .comment       0x00000000       0x12 ./main.o
+ .comment       0x00000012       0x12 ./utils/src/rprintf.o
+ .comment       0x00000024       0x12 ./utils/src/timer.o
+ .comment       0x00000036       0x12 ./fat/diskio.o
+ .comment       0x00000048       0x12 ./fat/ff.o
+ .comment       0x0000005a       0x12 ./fat/rtc.o
+ .comment       0x0000006c       0x12 ./fat/option/ccsbcs.o
+ .comment       0x0000007e       0x12 ./fat/option/reentrant.o
+ .comment       0x00000090       0x12 ./drivers/i2c.o
+ .comment       0x000000a2       0x12 ./drivers/pcm1774.o
+ .comment       0x000000b4       0x12 ./drivers/ssp_spi.o
+ .comment       0x000000c6       0x12 ./drivers/sta013.o
+ .comment       0x000000d8       0x12 ./drivers/uart0.o
+ .comment       0x000000ea       0x12 ./drivers/watchdog.o
+ .comment       0x000000fc       0x12 ./System/cppmem.o
+ .comment       0x0000010e       0x12 ./System/cpu.o
+ .comment       0x00000120       0x12 ./System/syscalls.o
+ .comment       0x00000132       0x12 ./System/startup/exceptionHandlers.o
+ .comment       0x00000144       0x12 ./MP3/mp3.o
+ .comment       0x00000156       0x12 ./General/userInterface.o
+ .comment       0x00000168       0x12 ./FreeRTOS/src/croutine.o
+ .comment       0x0000017a       0x12 ./FreeRTOS/src/list.o
+ .comment       0x0000018c       0x12 ./FreeRTOS/src/port.o
+ .comment       0x0000019e       0x12 ./FreeRTOS/src/portISR.o
+ .comment       0x000001b0       0x12 ./FreeRTOS/src/queue.o
+ .comment       0x000001c2       0x12 ./FreeRTOS/src/tasks.o
+ .comment       0x000001d4       0x12 ./FreeRTOS/src/timers.o
+ .comment       0x000001e6       0x12 ./FreeRTOS/mem/heap_3.o
+ .comment       0x000001f8       0x12 ./FreeRTOS/hooks/hooks.o
+ .comment       0x0000020a       0x12 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+ .comment       0x0000021c       0x12 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+ .comment       0x0000022e       0x12 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+ .comment       0x00000240       0x12 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+ .comment       0x00000252       0x12 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+ .comment       0x00000264       0x12 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+ .comment       0x00000276       0x12 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+ .comment       0x00000288       0x12 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+ .comment       0x0000029a       0x12 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-realloc.o)
+ .comment       0x000002ac       0x12 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+ .comment       0x000002be       0x12 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+ .comment       0x000002d0       0x12 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+ .comment       0x000002e2       0x12 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+ .comment       0x000002f4       0x12 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+ .comment       0x00000306       0x12 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+ .comment       0x00000318       0x12 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strstr.o)
+ .comment       0x0000032a       0x12 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+ .comment       0x0000033c       0x12 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+ .comment       0x0000034e       0x12 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+ .comment       0x00000360       0x12 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .comment       0x00000372       0x12 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+ .comment       0x00000384       0x12 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+ .comment       0x00000396       0x12 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+ .comment       0x000003a8       0x12 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+ .comment       0x000003ba       0x12 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+ .comment       0x000003cc       0x12 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+ .comment       0x000003de       0x12 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+ .comment       0x000003f0       0x12 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+ .comment       0x00000402       0x12 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+ .comment       0x00000414       0x12 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+ .comment       0x00000426       0x12 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+ .comment       0x00000438       0x12 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+ .comment       0x0000044a       0x12 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-syscalls.o)
+ .comment       0x0000045c       0x12 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-errno.o)
+ .comment       0x0000046e       0x12 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+
+.ARM.attributes
+                0x00000000       0x10
+ .ARM.attributes
+                0x00000000       0x10 ./main.o
+ .ARM.attributes
+                0x00000010       0x10 ./utils/src/rprintf.o
+ .ARM.attributes
+                0x00000020       0x10 ./utils/src/timer.o
+ .ARM.attributes
+                0x00000030       0x10 ./fat/diskio.o
+ .ARM.attributes
+                0x00000040       0x10 ./fat/ff.o
+ .ARM.attributes
+                0x00000050       0x10 ./fat/rtc.o
+ .ARM.attributes
+                0x00000060       0x10 ./fat/option/ccsbcs.o
+ .ARM.attributes
+                0x00000070       0x10 ./fat/option/reentrant.o
+ .ARM.attributes
+                0x00000080       0x10 ./drivers/i2c.o
+ .ARM.attributes
+                0x00000090       0x10 ./drivers/pcm1774.o
+ .ARM.attributes
+                0x000000a0       0x10 ./drivers/ssp_spi.o
+ .ARM.attributes
+                0x000000b0       0x10 ./drivers/sta013.o
+ .ARM.attributes
+                0x000000c0       0x10 ./drivers/uart0.o
+ .ARM.attributes
+                0x000000d0       0x10 ./drivers/watchdog.o
+ .ARM.attributes
+                0x000000e0       0x10 ./System/cppmem.o
+ .ARM.attributes
+                0x000000f0       0x10 ./System/cpu.o
+ .ARM.attributes
+                0x00000100       0x10 ./System/syscalls.o
+ .ARM.attributes
+                0x00000110       0x10 ./System/startup/Arm7CStartup.o
+ .ARM.attributes
+                0x00000120       0x10 ./System/startup/Lpc2000ExceptionVectors.o
+ .ARM.attributes
+                0x00000130       0x10 ./System/startup/exceptionHandlers.o
+ .ARM.attributes
+                0x00000140       0x10 ./MP3/mp3.o
+ .ARM.attributes
+                0x00000150       0x10 ./General/userInterface.o
+ .ARM.attributes
+                0x00000160       0x10 ./FreeRTOS/src/croutine.o
+ .ARM.attributes
+                0x00000170       0x10 ./FreeRTOS/src/list.o
+ .ARM.attributes
+                0x00000180       0x10 ./FreeRTOS/src/port.o
+ .ARM.attributes
+                0x00000190       0x10 ./FreeRTOS/src/portISR.o
+ .ARM.attributes
+                0x000001a0       0x10 ./FreeRTOS/src/queue.o
+ .ARM.attributes
+                0x000001b0       0x10 ./FreeRTOS/src/tasks.o
+ .ARM.attributes
+                0x000001c0       0x10 ./FreeRTOS/src/timers.o
+ .ARM.attributes
+                0x000001d0       0x10 ./FreeRTOS/mem/heap_3.o
+ .ARM.attributes
+                0x000001e0       0x10 ./FreeRTOS/hooks/hooks.o
+ .ARM.attributes
+                0x000001f0       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
+ .ARM.attributes
+                0x00000200       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
+ .ARM.attributes
+                0x00000210       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
+ .ARM.attributes
+                0x00000220       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_dvmd_tls.o)
+ .ARM.attributes
+                0x00000230       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+ .ARM.attributes
+                0x00000240       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+ .ARM.attributes
+                0x00000250       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+ .ARM.attributes
+                0x00000260       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+ .ARM.attributes
+                0x00000270       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+ .ARM.attributes
+                0x00000280       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+ .ARM.attributes
+                0x00000290       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+ .ARM.attributes
+                0x000002a0       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+ .ARM.attributes
+                0x000002b0       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-realloc.o)
+ .ARM.attributes
+                0x000002c0       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+ .ARM.attributes
+                0x000002d0       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+ .ARM.attributes
+                0x000002e0       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+ .ARM.attributes
+                0x000002f0       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+ .ARM.attributes
+                0x00000300       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+ .ARM.attributes
+                0x00000310       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+ .ARM.attributes
+                0x00000320       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strstr.o)
+ .ARM.attributes
+                0x00000330       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+ .ARM.attributes
+                0x00000340       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+ .ARM.attributes
+                0x00000350       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+ .ARM.attributes
+                0x00000360       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .ARM.attributes
+                0x00000370       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+ .ARM.attributes
+                0x00000380       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+ .ARM.attributes
+                0x00000390       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+ .ARM.attributes
+                0x000003a0       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+ .ARM.attributes
+                0x000003b0       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+ .ARM.attributes
+                0x000003c0       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+ .ARM.attributes
+                0x000003d0       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+ .ARM.attributes
+                0x000003e0       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+ .ARM.attributes
+                0x000003f0       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+ .ARM.attributes
+                0x00000400       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+ .ARM.attributes
+                0x00000410       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+ .ARM.attributes
+                0x00000420       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+ .ARM.attributes
+                0x00000430       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-syscalls.o)
+ .ARM.attributes
+                0x00000440       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-errno.o)
+ .ARM.attributes
+                0x00000450       0x10 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+
+.debug_frame    0x00000000      0xb28
+ .debug_frame   0x00000000       0x28 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
+ .debug_frame   0x00000028       0x28 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
+ .debug_frame   0x00000050       0x28 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
+ .debug_frame   0x00000078       0x30 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+ .debug_frame   0x000000a8       0x50 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+ .debug_frame   0x000000f8       0x30 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+ .debug_frame   0x00000128       0x38 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+ .debug_frame   0x00000160       0x2c /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+ .debug_frame   0x0000018c       0x2c /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+ .debug_frame   0x000001b8       0x28 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+ .debug_frame   0x000001e0       0x30 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+ .debug_frame   0x00000210       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-realloc.o)
+ .debug_frame   0x00000230       0x38 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+ .debug_frame   0x00000268       0x58 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+ .debug_frame   0x000002c0       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+ .debug_frame   0x000002e0       0x28 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+ .debug_frame   0x00000308       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+ .debug_frame   0x00000328       0x28 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+ .debug_frame   0x00000350       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strstr.o)
+ .debug_frame   0x00000370       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+ .debug_frame   0x00000390       0x3c /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+ .debug_frame   0x000003cc       0x50 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+ .debug_frame   0x0000041c       0x6c /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .debug_frame   0x00000488       0x2c /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+ .debug_frame   0x000004b4       0x40 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+ .debug_frame   0x000004f4      0x10c /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+ .debug_frame   0x00000600       0x50 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+ .debug_frame   0x00000650       0x38 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+ .debug_frame   0x00000688       0x58 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+ .debug_frame   0x000006e0       0x30 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+ .debug_frame   0x00000710       0x28 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+ .debug_frame   0x00000738       0x2c /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+ .debug_frame   0x00000764       0x70 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+ .debug_frame   0x000007d4      0x2f8 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-syscalls.o)
+ .debug_frame   0x00000acc       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-errno.o)
+ .debug_frame   0x00000aec       0x3c /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+
+.debug_line     0x00000000     0x2d0e
+ .debug_line    0x00000000       0x96 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
+ .debug_line    0x00000096       0xa2 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
+ .debug_line    0x00000138       0x7f /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
+ .debug_line    0x000001b7       0x6a /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_dvmd_tls.o)
+ .debug_line    0x00000221       0xf2 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+ .debug_line    0x00000313       0xfe /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+ .debug_line    0x00000411       0xf8 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+ .debug_line    0x00000509      0x227 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+ .debug_line    0x00000730       0xc3 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+ .debug_line    0x000007f3       0xda /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+ .debug_line    0x000008cd       0xe1 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+ .debug_line    0x000009ae       0xec /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+ .debug_line    0x00000a9a       0xf1 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-realloc.o)
+ .debug_line    0x00000b8b      0x19c /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+ .debug_line    0x00000d27      0x15f /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+ .debug_line    0x00000e86       0x86 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+ .debug_line    0x00000f0c       0x83 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+ .debug_line    0x00000f8f       0xac /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+ .debug_line    0x0000103b       0xd3 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+ .debug_line    0x0000110e       0xad /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strstr.o)
+ .debug_line    0x000011bb       0xee /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+ .debug_line    0x000012a9       0x9f /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+ .debug_line    0x00001348      0x174 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+ .debug_line    0x000014bc      0x382 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .debug_line    0x0000183e      0x14a /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+ .debug_line    0x00001988       0x58 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+ .debug_line    0x000019e0      0x18b /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+ .debug_line    0x00001b6b      0x208 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+ .debug_line    0x00001d73      0x17c /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+ .debug_line    0x00001eef      0x1e5 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+ .debug_line    0x000020d4      0x146 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+ .debug_line    0x0000221a       0xda /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+ .debug_line    0x000022f4      0x17a /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+ .debug_line    0x0000246e       0xd9 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+ .debug_line    0x00002547       0xe9 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+ .debug_line    0x00002630      0x153 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+ .debug_line    0x00002783      0x35a /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-syscalls.o)
+ .debug_line    0x00002add       0xea /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-errno.o)
+ .debug_line    0x00002bc7      0x147 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+
+.debug_info     0x00000000    0x10bd0
+ .debug_info    0x00000000       0x80 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
+ .debug_info    0x00000080       0x80 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
+ .debug_info    0x00000100       0x80 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
+ .debug_info    0x00000180       0x80 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_dvmd_tls.o)
+ .debug_info    0x00000200      0x95c /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+ .debug_info    0x00000b5c      0x9cb /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+ .debug_info    0x00001527      0x96a /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+ .debug_info    0x00001e91      0xcca /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+ .debug_info    0x00002b5b      0x10f /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+ .debug_info    0x00002c6a      0x10e /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+ .debug_info    0x00002d78      0x113 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+ .debug_info    0x00002e8b      0x953 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+ .debug_info    0x000037de      0x951 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-realloc.o)
+ .debug_info    0x0000412f      0xbb3 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+ .debug_info    0x00004ce2      0x9ff /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+ .debug_info    0x000056e1       0xdb /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+ .debug_info    0x000057bc      0x10e /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+ .debug_info    0x000058ca       0xd7 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+ .debug_info    0x000059a1      0x12a /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+ .debug_info    0x00005acb       0xdb /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strstr.o)
+ .debug_info    0x00005ba6      0x945 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+ .debug_info    0x000064eb      0x164 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+ .debug_info    0x0000664f      0xa24 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+ .debug_info    0x00007073      0xde0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .debug_info    0x00007e53      0x959 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+ .debug_info    0x000087ac       0x75 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+ .debug_info    0x00008821      0x9f2 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+ .debug_info    0x00009213      0xc04 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+ .debug_info    0x00009e17      0xbbf /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+ .debug_info    0x0000a9d6      0xa80 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+ .debug_info    0x0000b456      0xae1 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+ .debug_info    0x0000bf37      0x939 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+ .debug_info    0x0000c870      0xb1a /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+ .debug_info    0x0000d38a      0x134 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+ .debug_info    0x0000d4be      0x142 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+ .debug_info    0x0000d600      0xaaa /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+ .debug_info    0x0000e0aa     0x186e /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-syscalls.o)
+ .debug_info    0x0000f918      0x92a /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-errno.o)
+ .debug_info    0x00010242      0x98e /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+
+.debug_abbrev   0x00000000     0x32e2
+ .debug_abbrev  0x00000000       0x14 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
+ .debug_abbrev  0x00000014       0x14 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
+ .debug_abbrev  0x00000028       0x14 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
+ .debug_abbrev  0x0000003c       0x14 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_dvmd_tls.o)
+ .debug_abbrev  0x00000050      0x17f /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+ .debug_abbrev  0x000001cf      0x1b2 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+ .debug_abbrev  0x00000381      0x190 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+ .debug_abbrev  0x00000511      0x22e /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+ .debug_abbrev  0x0000073f       0x94 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+ .debug_abbrev  0x000007d3       0x99 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+ .debug_abbrev  0x0000086c       0xb2 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+ .debug_abbrev  0x0000091e      0x173 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+ .debug_abbrev  0x00000a91      0x188 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-realloc.o)
+ .debug_abbrev  0x00000c19      0x1ef /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+ .debug_abbrev  0x00000e08      0x1b2 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+ .debug_abbrev  0x00000fba       0x7a /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+ .debug_abbrev  0x00001034       0x98 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+ .debug_abbrev  0x000010cc       0x94 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+ .debug_abbrev  0x00001160       0x96 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+ .debug_abbrev  0x000011f6       0x9d /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strstr.o)
+ .debug_abbrev  0x00001293      0x188 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+ .debug_abbrev  0x0000141b       0xb8 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+ .debug_abbrev  0x000014d3      0x1c6 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+ .debug_abbrev  0x00001699      0x2e6 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .debug_abbrev  0x0000197f      0x179 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+ .debug_abbrev  0x00001af8       0x5b /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+ .debug_abbrev  0x00001b53      0x1c4 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+ .debug_abbrev  0x00001d17      0x2b3 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+ .debug_abbrev  0x00001fca      0x200 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+ .debug_abbrev  0x000021ca      0x1ac /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+ .debug_abbrev  0x00002376      0x1ee /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+ .debug_abbrev  0x00002564      0x160 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+ .debug_abbrev  0x000026c4      0x193 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+ .debug_abbrev  0x00002857       0xbe /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+ .debug_abbrev  0x00002915       0xa2 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+ .debug_abbrev  0x000029b7      0x1c3 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+ .debug_abbrev  0x00002b7a      0x450 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-syscalls.o)
+ .debug_abbrev  0x00002fca      0x168 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-errno.o)
+ .debug_abbrev  0x00003132      0x1b0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+
+.debug_aranges  0x00000000      0x4a0
+ .debug_aranges
+                0x00000000       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_udivsi3.o)
+ .debug_aranges
+                0x00000020       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_divsi3.o)
+ .debug_aranges
+                0x00000040       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_umodsi3.o)
+ .debug_aranges
+                0x00000060       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/libgcc.a(_dvmd_tls.o)
+ .debug_aranges
+                0x00000080       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+ .debug_aranges
+                0x000000a0       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+ .debug_aranges
+                0x000000c0       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+ .debug_aranges
+                0x000000e0       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+ .debug_aranges
+                0x00000100       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+ .debug_aranges
+                0x00000120       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+ .debug_aranges
+                0x00000140       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+ .debug_aranges
+                0x00000160       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+ .debug_aranges
+                0x00000180       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-realloc.o)
+ .debug_aranges
+                0x000001a0       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+ .debug_aranges
+                0x000001c0       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+ .debug_aranges
+                0x000001e0       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+ .debug_aranges
+                0x00000200       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+ .debug_aranges
+                0x00000220       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+ .debug_aranges
+                0x00000240       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+ .debug_aranges
+                0x00000260       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strstr.o)
+ .debug_aranges
+                0x00000280       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+ .debug_aranges
+                0x000002a0       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+ .debug_aranges
+                0x000002c0       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+ .debug_aranges
+                0x000002e0       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .debug_aranges
+                0x00000300       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+ .debug_aranges
+                0x00000320       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+ .debug_aranges
+                0x00000340       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+ .debug_aranges
+                0x00000360       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+ .debug_aranges
+                0x00000380       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+ .debug_aranges
+                0x000003a0       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+ .debug_aranges
+                0x000003c0       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+ .debug_aranges
+                0x000003e0       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+ .debug_aranges
+                0x00000400       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+ .debug_aranges
+                0x00000420       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+ .debug_aranges
+                0x00000440       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-syscalls.o)
+ .debug_aranges
+                0x00000460       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-errno.o)
+ .debug_aranges
+                0x00000480       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+
+.debug_loc      0x00000000     0x43aa
+ .debug_loc     0x00000000       0x39 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+ .debug_loc     0x00000039       0x7c /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+ .debug_loc     0x000000b5       0x3c /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+ .debug_loc     0x000000f1      0x75d /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+ .debug_loc     0x0000084e      0x102 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+ .debug_loc     0x00000950      0x130 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+ .debug_loc     0x00000a80      0x12b /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+ .debug_loc     0x00000bab       0x3c /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-realloc.o)
+ .debug_loc     0x00000be7      0x727 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+ .debug_loc     0x0000130e       0xbf /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+ .debug_loc     0x000013cd       0xba /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+ .debug_loc     0x00001487       0xaa /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+ .debug_loc     0x00001531       0x47 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+ .debug_loc     0x00001578      0x128 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+ .debug_loc     0x000016a0       0x1e /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strstr.o)
+ .debug_loc     0x000016be       0x26 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+ .debug_loc     0x000016e4      0x1c4 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+ .debug_loc     0x000018a8      0x210 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+ .debug_loc     0x00001ab8      0xdd7 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .debug_loc     0x0000288f       0x5b /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+ .debug_loc     0x000028ea      0x151 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+ .debug_loc     0x00002a3b      0x1a7 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+ .debug_loc     0x00002be2      0x2ab /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+ .debug_loc     0x00002e8d      0x42e /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+ .debug_loc     0x000032bb       0xc1 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+ .debug_loc     0x0000337c       0xcd /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+ .debug_loc     0x00003449      0x196 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+ .debug_loc     0x000035df      0x193 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+ .debug_loc     0x00003772      0x1cf /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+ .debug_loc     0x00003941      0x9f0 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-syscalls.o)
+ .debug_loc     0x00004331       0x79 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+
+.debug_pubnames
+                0x00000000      0x7d2
+ .debug_pubnames
+                0x00000000       0x27 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+ .debug_pubnames
+                0x00000027       0x2d /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+ .debug_pubnames
+                0x00000054       0x26 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+ .debug_pubnames
+                0x0000007a       0xce /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+ .debug_pubnames
+                0x00000148       0x1d /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+ .debug_pubnames
+                0x00000165       0x1d /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+ .debug_pubnames
+                0x00000182       0x1d /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+ .debug_pubnames
+                0x0000019f       0x38 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+ .debug_pubnames
+                0x000001d7       0x1e /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-realloc.o)
+ .debug_pubnames
+                0x000001f5       0x21 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+ .debug_pubnames
+                0x00000216       0x2f /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+ .debug_pubnames
+                0x00000245       0x1d /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+ .debug_pubnames
+                0x00000262       0x1d /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+ .debug_pubnames
+                0x0000027f       0x1d /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+ .debug_pubnames
+                0x0000029c       0x1e /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+ .debug_pubnames
+                0x000002ba       0x1d /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strstr.o)
+ .debug_pubnames
+                0x000002d7       0x1d /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+ .debug_pubnames
+                0x000002f4       0x2e /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+ .debug_pubnames
+                0x00000322       0x2b /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+ .debug_pubnames
+                0x0000034d       0x31 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .debug_pubnames
+                0x0000037e       0x22 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+ .debug_pubnames
+                0x000003a0       0x2e /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+ .debug_pubnames
+                0x000003ce       0x2b /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+ .debug_pubnames
+                0x000003f9       0xdb /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+ .debug_pubnames
+                0x000004d4       0x31 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+ .debug_pubnames
+                0x00000505       0x23 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+ .debug_pubnames
+                0x00000528       0x2e /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+ .debug_pubnames
+                0x00000556       0x39 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+ .debug_pubnames
+                0x0000058f       0x23 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+ .debug_pubnames
+                0x000005b2       0x1d /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+ .debug_pubnames
+                0x000005cf       0x1e /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+ .debug_pubnames
+                0x000005ed       0x44 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+ .debug_pubnames
+                0x00000631      0x158 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-syscalls.o)
+ .debug_pubnames
+                0x00000789       0x1e /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-errno.o)
+ .debug_pubnames
+                0x000007a7       0x2b /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+
+.debug_str      0x00000000     0x160b
+ .debug_str     0x00000000      0x418 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-atoi.o)
+                                0x49d (size before relaxing)
+ .debug_str     0x00000418       0x93 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-iprintf.o)
+                                0x4d9 (size before relaxing)
+ .debug_str     0x000004ab       0x51 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-malloc.o)
+                                0x4bd (size before relaxing)
+ .debug_str     0x000004fc      0x206 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+                                0x692 (size before relaxing)
+ .debug_str     0x00000702       0x6f /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcmp.o)
+                                0x10b (size before relaxing)
+ .debug_str     0x00000771       0x67 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memcpy.o)
+                                 0xc9 (size before relaxing)
+ .debug_str     0x000007d8       0x54 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memset.o)
+                                0x11f (size before relaxing)
+ .debug_str     0x0000082c       0x6b /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mlock.o)
+                                0x4c4 (size before relaxing)
+ .debug_str     0x00000897       0x42 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-realloc.o)
+                                0x4b5 (size before relaxing)
+ .debug_str     0x000008d9       0x61 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+                                0x564 (size before relaxing)
+ .debug_str     0x0000093a       0x4f /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-siprintf.o)
+                                0x4e1 (size before relaxing)
+ .debug_str     0x00000989       0x40 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcmp.o)
+                                0x104 (size before relaxing)
+ .debug_str     0x000009c9       0x40 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strcpy.o)
+                                0x126 (size before relaxing)
+ .debug_str     0x00000a09       0x46 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strlen.o)
+                                0x11e (size before relaxing)
+ .debug_str     0x00000a4f       0x42 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strncpy.o)
+                                0x135 (size before relaxing)
+ .debug_str     0x00000a91       0x51 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strstr.o)
+                                0x11c (size before relaxing)
+ .debug_str     0x00000ae2       0x40 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok.o)
+                                0x4ab (size before relaxing)
+ .debug_str     0x00000b22       0x6a /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtok_r.o)
+                                0x13d (size before relaxing)
+ .debug_str     0x00000b8c       0x70 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-strtol.o)
+                                0x4df (size before relaxing)
+ .debug_str     0x00000bfc      0x139 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+                                0x604 (size before relaxing)
+ .debug_str     0x00000d35       0x44 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-wsetup.o)
+                                0x4ad (size before relaxing)
+ .debug_str     0x00000d79       0x6e /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-ctype_.o)
+                                 0x8b (size before relaxing)
+ .debug_str     0x00000de7       0x63 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+                                0x4d3 (size before relaxing)
+ .debug_str     0x00000e4a      0x100 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+                                0x595 (size before relaxing)
+ .debug_str     0x00000f4a       0x3c /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-freer.o)
+                                0x5e4 (size before relaxing)
+ .debug_str     0x00000f86       0x5c /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+                                0x504 (size before relaxing)
+ .debug_str     0x00000fe2       0x5c /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+                                0x4d6 (size before relaxing)
+ .debug_str     0x0000103e       0x72 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-impure.o)
+                                0x4bb (size before relaxing)
+ .debug_str     0x000010b0      0x121 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-makebuf.o)
+                                0x5a7 (size before relaxing)
+ .debug_str     0x000011d1       0x5a /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memchr.o)
+                                0x12c (size before relaxing)
+ .debug_str     0x0000122b       0x4b /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-memmove.o)
+                                0x13e (size before relaxing)
+ .debug_str     0x00001276       0x60 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-stdio.o)
+                                0x4d2 (size before relaxing)
+ .debug_str     0x000012d6      0x27f /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-syscalls.o)
+                                0x7e0 (size before relaxing)
+ .debug_str     0x00001555       0x6d /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-errno.o)
+                                0x4a3 (size before relaxing)
+ .debug_str     0x000015c2       0x49 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fclose.o)
+                                0x4b7 (size before relaxing)
+
+.debug_ranges   0x00000000      0x460
+ .debug_ranges  0x00000000       0x58 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-mallocr.o)
+ .debug_ranges  0x00000058       0x58 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-reallocr.o)
+ .debug_ranges  0x000000b0       0x40 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-vfiprintf.o)
+ .debug_ranges  0x000000f0       0x38 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fflush.o)
+ .debug_ranges  0x00000128       0x80 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-findfp.o)
+ .debug_ranges  0x000001a8       0x20 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fvwrite.o)
+ .debug_ranges  0x000001c8       0x40 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-fwalk.o)
+ .debug_ranges  0x00000208      0x258 /cygdrive/c/Users/User/Desktop/Spring2012/CMPE146/CmpE146Package/GNUARM/bin/../lib/gcc/arm-elf/4.3.2/../../../../arm-elf/lib/libc.a(lib_a-syscalls.o)

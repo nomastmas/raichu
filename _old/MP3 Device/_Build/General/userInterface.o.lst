@@ -1,0 +1,1024 @@
+   1              		.file	"userInterface.cpp"
+   2              		.section	.rodata.str1.1,"aMS",%progbits,1
+   3              	.LC0:
+   4 0000 08200800 		.ascii	"\010 \010\000"
+   5              		.text
+   6              		.align	2
+   7              		.global	_Z12getUart1LinePc
+   9              	_Z12getUart1LinePc:
+  10              		@ args = 0, pretend = 0, frame = 4
+  11              		@ frame_needed = 0, uses_anonymous_args = 0
+  12 0000 70402DE9 		stmfd	sp!, {r4, r5, r6, lr}
+  13 0004 04D04DE2 		sub	sp, sp, #4
+  14 0008 0050A0E1 		mov	r5, r0
+  15 000c 0040A0E3 		mov	r4, #0
+  16 0010 03608DE2 		add	r6, sp, #3
+  17              	.L9:
+  18 0014 0010E0E3 		mvn	r1, #0
+  19 0018 0600A0E1 		mov	r0, r6
+  20 001c FEFFFFEB 		bl	uart1GetChar
+  21 0020 000050E3 		cmp	r0, #0
+  22 0024 FAFFFF0A 		beq	.L9
+  23 0028 0320DDE5 		ldrb	r2, [sp, #3]	@ zero_extendqisi2
+  24 002c 0A0052E3 		cmp	r2, #10
+  25 0030 0600001A 		bne	.L3
+  26 0034 0030A0E3 		mov	r3, #0
+  27 0038 0430C5E7 		strb	r3, [r5, r4]
+  28 003c 0200A0E1 		mov	r0, r2
+  29 0040 6410A0E3 		mov	r1, #100
+  30 0044 FEFFFFEB 		bl	uart1PutChar
+  31 0048 04D08DE2 		add	sp, sp, #4
+  32 004c 7080BDE8 		ldmfd	sp!, {r4, r5, r6, pc}
+  33              	.L3:
+  34 0050 0D0052E3 		cmp	r2, #13
+  35 0054 EEFFFF0A 		beq	.L9
+  36 0058 080052E3 		cmp	r2, #8
+  37 005c 0200A0E1 		mov	r0, r2
+  38 0060 6410A0E3 		mov	r1, #100
+  39 0064 0800001A 		bne	.L4
+  40 0068 001054E2 		subs	r1, r4, #0
+  41 006c 2C009FE5 		ldr	r0, .L10
+  42 0070 0200000A 		beq	.L5
+  43 0074 014044E2 		sub	r4, r4, #1
+  44 0078 FEFFFFEB 		bl	rprintf
+  45 007c E4FFFFEA 		b	.L9
+  46              	.L5:
+  47 0080 0700A0E3 		mov	r0, #7
+  48 0084 FEFFFFEB 		bl	uart1PutChar
+  49 0088 E1FFFFEA 		b	.L9
+  50              	.L4:
+  51 008c FEFFFFEB 		bl	uart1PutChar
+  52 0090 0330DDE5 		ldrb	r3, [sp, #3]	@ zero_extendqisi2
+  53 0094 0430C5E7 		strb	r3, [r5, r4]
+  54 0098 014084E2 		add	r4, r4, #1
+  55 009c DCFFFFEA 		b	.L9
+  56              	.L11:
+  57              		.align	2
+  58              	.L10:
+  59 00a0 00000000 		.word	.LC0
+  61              		.section	.rodata.str1.1
+  62              	.LC1:
+  63 0004 2D2D2D2D 		.ascii	"---------------------------------------------------"
+  63      2D2D2D2D 
+  63      2D2D2D2D 
+  63      2D2D2D2D 
+  63      2D2D2D2D 
+  64 0037 2D2D2D2D 		.ascii	"---------------------------------\012\000"
+  64      2D2D2D2D 
+  64      2D2D2D2D 
+  64      2D2D2D2D 
+  64      2D2D2D2D 
+  65              		.text
+  66              		.align	2
+  67              		.global	_Z9printLinev
+  69              	_Z9printLinev:
+  70              		@ args = 0, pretend = 0, frame = 0
+  71              		@ frame_needed = 0, uses_anonymous_args = 0
+  72              		@ link register save eliminated.
+  73 00a4 00009FE5 		ldr	r0, .L14
+  74 00a8 FEFFFFEA 		b	rprintf
+  75              	.L15:
+  76              		.align	2
+  77              	.L14:
+  78 00ac 04000000 		.word	.LC1
+  80              		.align	2
+  81              		.global	_Z11getUartLinePc
+  83              	_Z11getUartLinePc:
+  84              		@ args = 0, pretend = 0, frame = 4
+  85              		@ frame_needed = 0, uses_anonymous_args = 0
+  86 00b0 70402DE9 		stmfd	sp!, {r4, r5, r6, lr}
+  87 00b4 04D04DE2 		sub	sp, sp, #4
+  88 00b8 0050A0E1 		mov	r5, r0
+  89 00bc 0040A0E3 		mov	r4, #0
+  90 00c0 03608DE2 		add	r6, sp, #3
+  91              	.L24:
+  92 00c4 0010E0E3 		mvn	r1, #0
+  93 00c8 0600A0E1 		mov	r0, r6
+  94 00cc FEFFFFEB 		bl	uart0GetChar
+  95 00d0 000050E3 		cmp	r0, #0
+  96 00d4 FAFFFF0A 		beq	.L24
+  97 00d8 0320DDE5 		ldrb	r2, [sp, #3]	@ zero_extendqisi2
+  98 00dc 0A0052E3 		cmp	r2, #10
+  99 00e0 0600001A 		bne	.L18
+ 100 00e4 0030A0E3 		mov	r3, #0
+ 101 00e8 0430C5E7 		strb	r3, [r5, r4]
+ 102 00ec 0200A0E1 		mov	r0, r2
+ 103 00f0 6410A0E3 		mov	r1, #100
+ 104 00f4 FEFFFFEB 		bl	uart0PutChar
+ 105 00f8 04D08DE2 		add	sp, sp, #4
+ 106 00fc 7080BDE8 		ldmfd	sp!, {r4, r5, r6, pc}
+ 107              	.L18:
+ 108 0100 0D0052E3 		cmp	r2, #13
+ 109 0104 EEFFFF0A 		beq	.L24
+ 110 0108 080052E3 		cmp	r2, #8
+ 111 010c 0200A0E1 		mov	r0, r2
+ 112 0110 6410A0E3 		mov	r1, #100
+ 113 0114 0800001A 		bne	.L19
+ 114 0118 001054E2 		subs	r1, r4, #0
+ 115 011c 2C009FE5 		ldr	r0, .L25
+ 116 0120 0200000A 		beq	.L20
+ 117 0124 014044E2 		sub	r4, r4, #1
+ 118 0128 FEFFFFEB 		bl	rprintf
+ 119 012c E4FFFFEA 		b	.L24
+ 120              	.L20:
+ 121 0130 0700A0E3 		mov	r0, #7
+ 122 0134 FEFFFFEB 		bl	uart0PutChar
+ 123 0138 E1FFFFEA 		b	.L24
+ 124              	.L19:
+ 125 013c FEFFFFEB 		bl	uart0PutChar
+ 126 0140 0330DDE5 		ldrb	r3, [sp, #3]	@ zero_extendqisi2
+ 127 0144 0430C5E7 		strb	r3, [r5, r4]
+ 128 0148 014084E2 		add	r4, r4, #1
+ 129 014c DCFFFFEA 		b	.L24
+ 130              	.L26:
+ 131              		.align	2
+ 132              	.L25:
+ 133 0150 00000000 		.word	.LC0
+ 135              		.section	.rodata.str1.1
+ 136              	.LC2:
+ 137 005a 596F7520 		.ascii	"You did not create an SPI Mutex\012\000"
+ 137      64696420 
+ 137      6E6F7420 
+ 137      63726561 
+ 137      74652061 
+ 138              	.LC3:
+ 139 007b 5741524E 		.ascii	"WARNING: SD CARD Could not be mounted!\012\000"
+ 139      494E473A 
+ 139      20534420 
+ 139      43415244 
+ 139      20436F75 
+ 140              	.LC4:
+ 141 00a3 4C50433A 		.ascii	"LPC: \000"
+ 141      2000
+ 142              	.LC5:
+ 143 00a9 2000     		.ascii	" \000"
+ 144              	.LC6:
+ 145 00ab 6563686F 		.ascii	"echo\000"
+ 145      00
+ 146              	.LC7:
+ 147 00b0 00       		.ascii	"\000"
+ 148              	.LC8:
+ 149 00b1 4563686F 		.ascii	"Echo: %s\012\000"
+ 149      3A202573 
+ 149      0A00
+ 150              	.LC9:
+ 151 00bb 6C7300   		.ascii	"ls\000"
+ 152              	.LC11:
+ 153 00be 496E7661 		.ascii	"Invalid directory: |%s|\012\000"
+ 153      6C696420 
+ 153      64697265 
+ 153      63746F72 
+ 153      793A207C 
+ 154              	.LC12:
+ 155 00d7 44697265 		.ascii	"Directory listing of: %s\012\012\000"
+ 155      63746F72 
+ 155      79206C69 
+ 155      7374696E 
+ 155      67206F66 
+ 156              	.LC13:
+ 157 00f2 25632563 		.ascii	"%c%c%c%c%c %u/%2u/%2u %2u:%2u %10lu %13s\000"
+ 157      25632563 
+ 157      25632025 
+ 157      752F2532 
+ 157      752F2532 
+ 158              	.LC14:
+ 159 011b 202D2D20 		.ascii	" -- %s\000"
+ 159      257300
+ 160              	.LC15:
+ 161 0122 0A00     		.ascii	"\012\000"
+ 162              	.LC16:
+ 163 0124 0A253475 		.ascii	"\012%4u File(s), %10u bytes total\012%4u Dir(s)\000"
+ 163      2046696C 
+ 163      65287329 
+ 163      2C202531 
+ 163      30752062 
+ 164              	.LC17:
+ 165 014e 2C202531 		.ascii	", %10uK bytes free\012\000"
+ 165      30754B20 
+ 165      62797465 
+ 165      73206672 
+ 165      65650A00 
+ 166              	.LC18:
+ 167 0162 706C6179 		.ascii	"play\000"
+ 167      00
+ 168              	.LC19:
+ 169 0167 536F6E67 		.ascii	"Song to be play: |%s|\012\000"
+ 169      20746F20 
+ 169      62652070 
+ 169      6C61793A 
+ 169      207C2573 
+ 170              	.LC20:
+ 171 017e 77696669 		.ascii	"wifi_cmd\000"
+ 171      5F636D64 
+ 171      00
+ 172              	.LC21:
+ 173 0187 77696669 		.ascii	"wifi_exitcmd\000"
+ 173      5F657869 
+ 173      74636D64 
+ 173      00
+ 174              	.LC22:
+ 175 0194 77696669 		.ascii	"wifi\000"
+ 175      00
+ 176              	.LC23:
+ 177 0199 2D2D2D2D 		.ascii	"----------------------------\012\000"
+ 177      2D2D2D2D 
+ 177      2D2D2D2D 
+ 177      2D2D2D2D 
+ 177      2D2D2D2D 
+ 178              	.LC24:
+ 179 01b7 25730A00 		.ascii	"%s\012\000"
+ 180              	.LC25:
+ 181 01bb 77696669 		.ascii	"wifi_open\000"
+ 181      5F6F7065 
+ 181      6E00
+ 182              	.LC26:
+ 183 01c5 72656164 		.ascii	"read\000"
+ 183      00
+ 184              	.LC27:
+ 185 01ca 46696C65 		.ascii	"File to read: |%s|\012\000"
+ 185      20746F20 
+ 185      72656164 
+ 185      3A207C25 
+ 185      737C0A00 
+ 186              	.LC28:
+ 187 01de 46696C65 		.ascii	"File successfully opened\012\000"
+ 187      20737563 
+ 187      63657373 
+ 187      66756C6C 
+ 187      79206F70 
+ 188              	.LC29:
+ 189 01f8 46696C65 		.ascii	"File Contents:\012\000"
+ 189      20436F6E 
+ 189      74656E74 
+ 189      733A0A00 
+ 190              	.LC30:
+ 191 0208 2D2D4661 		.ascii	"--Failed to read file after having it opened--\012\000"
+ 191      696C6564 
+ 191      20746F20 
+ 191      72656164 
+ 191      2066696C 
+ 192              	.LC31:
+ 193 0238 20202020 		.ascii	"    %s\000"
+ 193      257300
+ 194              	.LC32:
+ 195 023f 46696C65 		.ascii	"File is closed\012\000"
+ 195      20697320 
+ 195      636C6F73 
+ 195      65640A00 
+ 196              	.LC33:
+ 197 024f 4661696C 		.ascii	"Failed to open the file\012\000"
+ 197      65642074 
+ 197      6F206F70 
+ 197      656E2074 
+ 197      68652066 
+ 198              	.LC34:
+ 199 0268 77726974 		.ascii	"write\000"
+ 199      6500
+ 200              	.LC35:
+ 201 026e 46696C65 		.ascii	"File to write: |%s|\012\000"
+ 201      20746F20 
+ 201      77726974 
+ 201      653A207C 
+ 201      25737C0A 
+ 202              	.LC37:
+ 203 0283 4661696C 		.ascii	"Failed to write file\012\000"
+ 203      65642074 
+ 203      6F207772 
+ 203      69746520 
+ 203      66696C65 
+ 204              	.LC38:
+ 205 0299 43505500 		.ascii	"CPU\000"
+ 206              	.LC39:
+ 207 029d 257300   		.ascii	"%s\000"
+ 208              	.LC40:
+ 209 02a0 43505572 		.ascii	"CPUr\000"
+ 209      00
+ 210              	.LC41:
+ 211 02a5 4350556E 		.ascii	"CPUn\000"
+ 211      00
+ 212              	.LC42:
+ 213 02aa 44656C61 		.ascii	"Delaying for %ims.  CPU Usage will be reported afte"
+ 213      79696E67 
+ 213      20666F72 
+ 213      2025696D 
+ 213      732E2020 
+ 214 02dd 72776172 		.ascii	"rwards...\012\000"
+ 214      64732E2E 
+ 214      2E0A00
+ 215              	.LC43:
+ 216 02e8 596F7520 		.ascii	"You must define a delay time in milliseconds as par"
+ 216      6D757374 
+ 216      20646566 
+ 216      696E6520 
+ 216      61206465 
+ 217 031b 616D6574 		.ascii	"ameter.\012\000"
+ 217      65722E0A 
+ 217      00
+ 218              	.LC44:
+ 219 0324 696E666F 		.ascii	"info\000"
+ 219      00
+ 220              	.LC45:
+ 221 0329 48454C50 		.ascii	"HELP\000"
+ 221      00
+ 222              	.LC46:
+ 223 032e 436F6D6D 		.ascii	"Command list:\012\000"
+ 223      616E6420 
+ 223      6C697374 
+ 223      3A0A00
+ 224              	.LC47:
+ 225 033d 6563686F 		.ascii	"echo <anything>    - Echoes back anything sent.\012"
+ 225      203C616E 
+ 225      79746869 
+ 225      6E673E20 
+ 225      2020202D 
+ 226 036d 00       		.ascii	"\000"
+ 227              	.LC48:
+ 228 036e 6C732020 		.ascii	"ls                 - Get directory listing.\012\000"
+ 228      20202020 
+ 228      20202020 
+ 228      20202020 
+ 228      2020202D 
+ 229              	.LC49:
+ 230 039b 72656164 		.ascii	"read <filename>    - Read a file.\012\000"
+ 230      203C6669 
+ 230      6C656E61 
+ 230      6D653E20 
+ 230      2020202D 
+ 231              	.LC50:
+ 232 03be 77726974 		.ascii	"write <filename>   - Wrie a file.\012\000"
+ 232      65203C66 
+ 232      696C656E 
+ 232      616D653E 
+ 232      2020202D 
+ 233              	.LC51:
+ 234 03e1 43505520 		.ascii	"CPU                - Show tasks and CPU Allocation."
+ 234      20202020 
+ 234      20202020 
+ 234      20202020 
+ 234      2020202D 
+ 235 0414 0A00     		.ascii	"\012\000"
+ 236              	.LC52:
+ 237 0416 43505572 		.ascii	"CPUr               - Show tasks and CPU Allocation "
+ 237      20202020 
+ 237      20202020 
+ 237      20202020 
+ 237      2020202D 
+ 238 0449 26207265 		.ascii	"& reset counters\012\000"
+ 238      73657420 
+ 238      636F756E 
+ 238      74657273 
+ 238      0A00
+ 239              	.LC53:
+ 240 045b 4350556E 		.ascii	"CPUn <# ms>        - Reset counters, delay, then re"
+ 240      203C2320 
+ 240      6D733E20 
+ 240      20202020 
+ 240      2020202D 
+ 241 048e 706F7274 		.ascii	"port CPU usage & reset counters\012\000"
+ 241      20435055 
+ 241      20757361 
+ 241      67652026 
+ 241      20726573 
+ 242              	.LC54:
+ 243 04af 696E666F 		.ascii	"info               - Show tasks and their Stack-hig"
+ 243      20202020 
+ 243      20202020 
+ 243      20202020 
+ 243      2020202D 
+ 244 04e2 68207761 		.ascii	"h watermark.\012\000"
+ 244      7465726D 
+ 244      61726B2E 
+ 244      0A00
+ 245              	.LC55:
+ 246 04f0 436F6D6D 		.ascii	"Command not recognized.\012\000"
+ 246      616E6420 
+ 246      6E6F7420 
+ 246      7265636F 
+ 246      676E697A 
+ 247              	.LC10:
+ 248 0509 303A00   		.ascii	"0:\000"
+ 249              	.LC36:
+ 250 050c 46696C65 		.ascii	"File written using FATFS From Chen\012\000"
+ 250      20777269 
+ 250      7474656E 
+ 250      20757369 
+ 250      6E672046 
+ 251              		.text
+ 252              		.align	2
+ 253              		.global	_Z6uartUIPv
+ 255              	_Z6uartUIPv:
+ 256              		@ args = 0, pretend = 0, frame = 2144
+ 257              		@ frame_needed = 0, uses_anonymous_args = 0
+ 258 0154 F04F2DE9 		stmfd	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+ 259 0158 22DD4DE2 		sub	sp, sp, #2176
+ 260 015c 04D04DE2 		sub	sp, sp, #4
+ 261 0160 2C008DE5 		str	r0, [sp, #44]
+ 262 0164 100090E5 		ldr	r0, [r0, #16]
+ 263 0168 FEFFFFEB 		bl	vTaskSuspend
+ 264 016c 2C209DE5 		ldr	r2, [sp, #44]
+ 265 0170 183092E5 		ldr	r3, [r2, #24]
+ 266 0174 000053E3 		cmp	r3, #0
+ 267 0178 0200001A 		bne	.L28
+ 268 017c 10079FE5 		ldr	r0, .L78
+ 269 0180 FEFFFFEB 		bl	rprintf
+ 270              	.L29:
+ 271 0184 FEFFFFEA 		b	.L29
+ 272              	.L28:
+ 273 0188 FEFFFFEB 		bl	initialize_SSPSPI
+ 274 018c 04079FE5 		ldr	r0, .L78+4
+ 275 0190 FEFFFFEB 		bl	initialize_I2C0
+ 276 0194 2C309DE5 		ldr	r3, [sp, #44]
+ 277 0198 180083E2 		add	r0, r3, #24
+ 278 019c FEFFFFEB 		bl	diskio_initializeSPIMutex
+ 279 01a0 FEFFFFEB 		bl	initialize_SdCardSignals
+ 280 01a4 FEFFFFEB 		bl	initialize_sta013
+ 281 01a8 FEFFFFEB 		bl	initialize_pcm1774
+ 282 01ac 34108DE2 		add	r1, sp, #52
+ 283 01b0 041041E2 		sub	r1, r1, #4
+ 284 01b4 0000A0E3 		mov	r0, #0
+ 285 01b8 FEFFFFEB 		bl	f_mount
+ 286 01bc 000050E3 		cmp	r0, #0
+ 287 01c0 D4069F15 		ldrne	r0, .L78+8
+ 288 01c4 FEFFFF1B 		blne	rprintf
+ 289              	.L30:
+ 290 01c8 FEFFFFEB 		bl	_Z9wifiBeginv
+ 291 01cc 000050E3 		cmp	r0, #0
+ 292 01d0 1C00000A 		beq	.L69
+ 293 01d4 FEFFFFEB 		bl	_Z23wifiJoinWirelessNetworkv
+ 294 01d8 000050E3 		cmp	r0, #0
+ 295 01dc 1900000A 		beq	.L69
+ 296 01e0 FEFFFFEB 		bl	_Z21wifiOpenTCPConnectionv
+ 297 01e4 000050E3 		cmp	r0, #0
+ 298 01e8 1600000A 		beq	.L69
+ 299 01ec FEFFFFEB 		bl	_Z24wifiSendDeviceIDToServerv
+ 300 01f0 000050E3 		cmp	r0, #0
+ 301 01f4 1300000A 		beq	.L69
+ 302 01f8 FEFFFFEB 		bl	_Z24wifiSentPlayListToServerv
+ 303 01fc 000050E3 		cmp	r0, #0
+ 304 0200 1000000A 		beq	.L69
+ 305 0204 FEFFFFEB 		bl	_Z21wifiReceiveFromServerv
+ 306 0208 000050E3 		cmp	r0, #0
+ 307 020c 0D00000A 		beq	.L69
+ 308 0210 FEFFFFEB 		bl	_Z22wifiCloseTCPConnectionv
+ 309 0214 000050E3 		cmp	r0, #0
+ 310 0218 0A00000A 		beq	.L69
+ 311 021c FEFFFFEB 		bl	_Z20wifiConnectionStatusv
+ 312 0220 000050E3 		cmp	r0, #0
+ 313 0224 0700000A 		beq	.L69
+ 314              	.L73:
+ 315 0228 2CC09DE5 		ldr	ip, [sp, #44]
+ 316 022c 10009CE5 		ldr	r0, [ip, #16]
+ 317 0230 FEFFFFEB 		bl	vTaskResume
+ 318 0234 2C209DE5 		ldr	r2, [sp, #44]
+ 319 0238 0110A0E3 		mov	r1, #1
+ 320 023c 080092E5 		ldr	r0, [r2, #8]
+ 321 0240 FEFFFFEB 		bl	vTaskPrioritySet
+ 322 0244 F7FFFFEA 		b	.L73
+ 323              	.L69:
+ 324 0248 85CE8DE2 		add	ip, sp, #2128
+ 325 024c 9D3F8DE2 		add	r3, sp, #628
+ 326 0250 04C08CE2 		add	ip, ip, #4
+ 327 0254 47BE8DE2 		add	fp, sp, #1136
+ 328 0258 0D3043E2 		sub	r3, r3, #13
+ 329 025c 09C08CE2 		add	ip, ip, #9
+ 330 0260 04B08BE2 		add	fp, fp, #4
+ 331 0264 28308DE5 		str	r3, [sp, #40]
+ 332 0268 24C08DE5 		str	ip, [sp, #36]
+ 333 026c 0CB04BE2 		sub	fp, fp, #12
+ 334              	.L72:
+ 335 0270 764E8DE2 		add	r4, sp, #1888
+ 336 0274 24069FE5 		ldr	r0, .L78+12
+ 337 0278 084084E2 		add	r4, r4, #8
+ 338 027c FEFFFFEB 		bl	rprintf
+ 339 0280 0010A0E3 		mov	r1, #0
+ 340 0284 8020A0E3 		mov	r2, #128
+ 341 0288 0400A0E1 		mov	r0, r4
+ 342 028c FEFFFFEB 		bl	memset
+ 343 0290 0400A0E1 		mov	r0, r4
+ 344 0294 FEFFFFEB 		bl	_Z11getUartLinePc
+ 345 0298 6837DDE5 		ldrb	r3, [sp, #1896]	@ zero_extendqisi2
+ 346 029c 000053E3 		cmp	r3, #0
+ 347 02a0 F2FFFF0A 		beq	.L72
+ 348 02a4 0400A0E1 		mov	r0, r4
+ 349 02a8 F4159FE5 		ldr	r1, .L78+16
+ 350 02ac FEFFFFEB 		bl	strtok
+ 351 02b0 F0159FE5 		ldr	r1, .L78+20
+ 352 02b4 0040A0E1 		mov	r4, r0
+ 353 02b8 FEFFFFEB 		bl	strcmp
+ 354 02bc 000050E3 		cmp	r0, #0
+ 355 02c0 0400001A 		bne	.L33
+ 356 02c4 E0159FE5 		ldr	r1, .L78+24
+ 357 02c8 FEFFFFEB 		bl	strtok
+ 358 02cc 0010A0E1 		mov	r1, r0
+ 359 02d0 D8059FE5 		ldr	r0, .L78+28
+ 360 02d4 4C0100EA 		b	.L74
+ 361              	.L33:
+ 362 02d8 D4059FE5 		ldr	r0, .L78+32
+ 363 02dc 0410A0E1 		mov	r1, r4
+ 364 02e0 FEFFFFEB 		bl	strcmp
+ 365 02e4 003050E2 		subs	r3, r0, #0
+ 366 02e8 6A00001A 		bne	.L34
+ 367 02ec 874E8DE2 		add	r4, sp, #2160
+ 368 02f0 0F4084E2 		add	r4, r4, #15
+ 369 02f4 BC159FE5 		ldr	r1, .L78+36
+ 370 02f8 0320A0E3 		mov	r2, #3
+ 371 02fc 0400A0E1 		mov	r0, r4
+ 372 0300 836E8DE2 		add	r6, sp, #2096
+ 373 0304 74388DE5 		str	r3, [sp, #2164]
+ 374 0308 FEFFFFEB 		bl	memcpy
+ 375 030c 0410A0E1 		mov	r1, r4
+ 376 0310 0600A0E1 		mov	r0, r6
+ 377 0314 FEFFFFEB 		bl	f_opendir
+ 378 0318 005050E2 		subs	r5, r0, #0
+ 379 031c 0410A011 		movne	r1, r4
+ 380 0320 94059F15 		ldrne	r0, .L78+40
+ 381 0324 3801001A 		bne	.L74
+ 382 0328 0410A0E1 		mov	r1, r4
+ 383 032c 8C059FE5 		ldr	r0, .L78+44
+ 384 0330 FEFFFFEB 		bl	rprintf
+ 385 0334 05A0A0E1 		mov	sl, r5
+ 386 0338 0590A0E1 		mov	r9, r5
+ 387              	.L47:
+ 388 033c 851E8DE2 		add	r1, sp, #2128
+ 389 0340 022CA0E3 		mov	r2, #512
+ 390 0344 041081E2 		add	r1, r1, #4
+ 391 0348 830E8DE2 		add	r0, sp, #2096
+ 392 034c 6CB88DE5 		str	fp, [sp, #2156]
+ 393 0350 70288DE5 		str	r2, [sp, #2160]
+ 394 0354 FEFFFFEB 		bl	f_readdir
+ 395 0358 FF0010E3 		tst	r0, #255
+ 396 035c 3700001A 		bne	.L36
+ 397 0360 5D38DDE5 		ldrb	r3, [sp, #2141]	@ zero_extendqisi2
+ 398 0364 000053E3 		cmp	r3, #0
+ 399 0368 3400000A 		beq	.L36
+ 400 036c 5C08DDE5 		ldrb	r0, [sp, #2140]	@ zero_extendqisi2
+ 401 0370 100010E3 		tst	r0, #16
+ 402 0374 74389D05 		ldreq	r3, [sp, #2164]
+ 403 0378 54289D05 		ldreq	r2, [sp, #2132]
+ 404 037c 02308300 		addeq	r3, r3, r2
+ 405 0380 74388D05 		streq	r3, [sp, #2164]
+ 406 0384 023B8DE2 		add	r3, sp, #2048
+ 407 0388 B845D3E1 		ldrh	r4, [r3, #88]
+ 408 038c C4C4A0E1 		mov	ip, r4, asr #9
+ 409 0390 7BCE8CE2 		add	ip, ip, #1968
+ 410 0394 4410A013 		movne	r1, #68
+ 411 0398 2D10A003 		moveq	r1, #45
+ 412 039c 01908912 		addne	r9, r9, #1
+ 413 03a0 01A08A02 		addeq	sl, sl, #1
+ 414 03a4 0CC08CE2 		add	ip, ip, #12
+ 415 03a8 010010E3 		tst	r0, #1
+ 416 03ac BA65D3E1 		ldrh	r6, [r3, #90]
+ 417 03b0 5220A013 		movne	r2, #82
+ 418 03b4 2D20A003 		moveq	r2, #45
+ 419 03b8 08C08DE5 		str	ip, [sp, #8]
+ 420 03bc 020010E3 		tst	r0, #2
+ 421 03c0 54C89DE5 		ldr	ip, [sp, #2132]
+ 422 03c4 4830A013 		movne	r3, #72
+ 423 03c8 2D30A003 		moveq	r3, #45
+ 424 03cc 040010E3 		tst	r0, #4
+ 425 03d0 5380A013 		movne	r8, #83
+ 426 03d4 2D80A003 		moveq	r8, #45
+ 427 03d8 1CC08DE5 		str	ip, [sp, #28]
+ 428 03dc 200010E3 		tst	r0, #32
+ 429 03e0 24C09DE5 		ldr	ip, [sp, #36]
+ 430 03e4 C652A0E1 		mov	r5, r6, asr #5
+ 431 03e8 C4E2A0E1 		mov	lr, r4, asr #5
+ 432 03ec 4170A013 		movne	r7, #65
+ 433 03f0 2D70A003 		moveq	r7, #45
+ 434 03f4 0FE00EE2 		and	lr, lr, #15
+ 435 03f8 1F4004E2 		and	r4, r4, #31
+ 436 03fc 3F5005E2 		and	r5, r5, #63
+ 437 0400 C665A0E1 		mov	r6, r6, asr #11
+ 438 0404 B8049FE5 		ldr	r0, .L78+48
+ 439 0408 0CE08DE5 		str	lr, [sp, #12]
+ 440 040c 20C08DE5 		str	ip, [sp, #32]
+ 441 0410 00808DE5 		str	r8, [sp, #0]
+ 442 0414 04708DE5 		str	r7, [sp, #4]
+ 443 0418 10408DE5 		str	r4, [sp, #16]
+ 444 041c 14608DE5 		str	r6, [sp, #20]
+ 445 0420 18508DE5 		str	r5, [sp, #24]
+ 446 0424 FEFFFFEB 		bl	iprintf
+ 447 0428 0B10A0E1 		mov	r1, fp
+ 448 042c 94049FE5 		ldr	r0, .L78+52
+ 449 0430 FEFFFFEB 		bl	iprintf
+ 450 0434 90049FE5 		ldr	r0, .L78+56
+ 451 0438 FEFFFFEB 		bl	iprintf
+ 452 043c BEFFFFEA 		b	.L47
+ 453              	.L36:
+ 454 0440 0A10A0E1 		mov	r1, sl
+ 455 0444 0930A0E1 		mov	r3, r9
+ 456 0448 74289DE5 		ldr	r2, [sp, #2164]
+ 457 044c 7C049FE5 		ldr	r0, .L78+60
+ 458 0450 FEFFFFEB 		bl	iprintf
+ 459 0454 760E8DE2 		add	r0, sp, #1888
+ 460 0458 871E8DE2 		add	r1, sp, #2160
+ 461 045c 872E8DE2 		add	r2, sp, #2160
+ 462 0460 080080E2 		add	r0, r0, #8
+ 463 0464 041081E2 		add	r1, r1, #4
+ 464 0468 082082E2 		add	r2, r2, #8
+ 465 046c FEFFFFEB 		bl	f_getfree
+ 466 0470 000050E3 		cmp	r0, #0
+ 467 0474 7DFFFF1A 		bne	.L72
+ 468 0478 78389DE5 		ldr	r3, [sp, #2168]
+ 469 047c 0220D3E5 		ldrb	r2, [r3, #2]	@ zero_extendqisi2
+ 470 0480 74389DE5 		ldr	r3, [sp, #2164]
+ 471 0484 930201E0 		mul	r1, r3, r2
+ 472 0488 44049FE5 		ldr	r0, .L78+64
+ 473 048c A110A0E1 		mov	r1, r1, lsr #1
+ 474 0490 FEFFFFEB 		bl	iprintf
+ 475 0494 75FFFFEA 		b	.L72
+ 476              	.L34:
+ 477 0498 0400A0E1 		mov	r0, r4
+ 478 049c 34149FE5 		ldr	r1, .L78+68
+ 479 04a0 FEFFFFEB 		bl	strcmp
+ 480 04a4 005050E2 		subs	r5, r0, #0
+ 481 04a8 0D00001A 		bne	.L48
+ 482 04ac F8139FE5 		ldr	r1, .L78+24
+ 483 04b0 FEFFFFEB 		bl	strtok
+ 484 04b4 2C209DE5 		ldr	r2, [sp, #44]
+ 485 04b8 0040A0E1 		mov	r4, r0
+ 486 04bc 0410A0E1 		mov	r1, r4
+ 487 04c0 000092E5 		ldr	r0, [r2, #0]
+ 488 04c4 0530A0E1 		mov	r3, r5
+ 489 04c8 FA2FA0E3 		mov	r2, #1000
+ 490 04cc FEFFFFEB 		bl	xQueueGenericSend
+ 491 04d0 000050E3 		cmp	r0, #0
+ 492 04d4 0410A011 		movne	r1, r4
+ 493 04d8 FC039F15 		ldrne	r0, .L78+72
+ 494 04dc 63FFFF0A 		beq	.L72
+ 495 04e0 C90000EA 		b	.L74
+ 496              	.L48:
+ 497 04e4 0400A0E1 		mov	r0, r4
+ 498 04e8 F0139FE5 		ldr	r1, .L78+76
+ 499 04ec FEFFFFEB 		bl	strcmp
+ 500 04f0 000050E3 		cmp	r0, #0
+ 501 04f4 0100001A 		bne	.L49
+ 502 04f8 FEFFFFEB 		bl	_Z20wifiEnterCommandModev
+ 503 04fc 5BFFFFEA 		b	.L72
+ 504              	.L49:
+ 505 0500 0400A0E1 		mov	r0, r4
+ 506 0504 D8139FE5 		ldr	r1, .L78+80
+ 507 0508 FEFFFFEB 		bl	strcmp
+ 508 050c 000050E3 		cmp	r0, #0
+ 509 0510 0100001A 		bne	.L50
+ 510 0514 FEFFFFEB 		bl	_Z19wifiExitCommandModev
+ 511 0518 54FFFFEA 		b	.L72
+ 512              	.L50:
+ 513 051c 0400A0E1 		mov	r0, r4
+ 514 0520 C0139FE5 		ldr	r1, .L78+84
+ 515 0524 FEFFFFEB 		bl	strcmp
+ 516 0528 005050E2 		subs	r5, r0, #0
+ 517 052c 1C00001A 		bne	.L51
+ 518 0530 74139FE5 		ldr	r1, .L78+24
+ 519 0534 FEFFFFEB 		bl	strtok
+ 520 0538 664E8DE2 		add	r4, sp, #1632
+ 521 053c 084084E2 		add	r4, r4, #8
+ 522 0540 012CA0E3 		mov	r2, #256
+ 523 0544 0510A0E1 		mov	r1, r5
+ 524 0548 0060A0E1 		mov	r6, r0
+ 525 054c 225D8DE2 		add	r5, sp, #2176
+ 526 0550 0400A0E1 		mov	r0, r4
+ 527 0554 FEFFFFEB 		bl	memset
+ 528 0558 045085E2 		add	r5, r5, #4
+ 529 055c 0D30A0E3 		mov	r3, #13	@ movhi
+ 530 0560 B23065E1 		strh	r3, [r5, #-2]!	@ movhi
+ 531 0564 FA0FA0E3 		mov	r0, #1000
+ 532 0568 FEFFFFEB 		bl	vTaskDelay
+ 533 056c 0600A0E1 		mov	r0, r6
+ 534 0570 FEFFFFEB 		bl	_Z14wifiSendStringPKc
+ 535 0574 0500A0E1 		mov	r0, r5
+ 536 0578 FEFFFFEB 		bl	_Z14wifiSendStringPKc
+ 537 057c 011CA0E3 		mov	r1, #256
+ 538 0580 0400A0E1 		mov	r0, r4
+ 539 0584 FEFFFFEB 		bl	_Z23wifiReceiveExpectedDataPci
+ 540 0588 5C039FE5 		ldr	r0, .L78+88
+ 541 058c FEFFFFEB 		bl	rprintf
+ 542 0590 58039FE5 		ldr	r0, .L78+92
+ 543 0594 0410A0E1 		mov	r1, r4
+ 544 0598 FEFFFFEB 		bl	rprintf
+ 545 059c 48039FE5 		ldr	r0, .L78+88
+ 546 05a0 B90000EA 		b	.L75
+ 547              	.L51:
+ 548 05a4 0400A0E1 		mov	r0, r4
+ 549 05a8 44139FE5 		ldr	r1, .L78+96
+ 550 05ac FEFFFFEB 		bl	strcmp
+ 551 05b0 000050E3 		cmp	r0, #0
+ 552 05b4 0100001A 		bne	.L52
+ 553 05b8 FEFFFFEB 		bl	_Z24wifiSentPlayListToServerv
+ 554 05bc 2BFFFFEA 		b	.L72
+ 555              	.L52:
+ 556 05c0 0400A0E1 		mov	r0, r4
+ 557 05c4 2C139FE5 		ldr	r1, .L78+100
+ 558 05c8 FEFFFFEB 		bl	strcmp
+ 559 05cc 000050E3 		cmp	r0, #0
+ 560 05d0 2D00001A 		bne	.L53
+ 561 05d4 D0129FE5 		ldr	r1, .L78+24
+ 562 05d8 FEFFFFEB 		bl	strtok
+ 563 05dc 0010A0E1 		mov	r1, r0
+ 564 05e0 0040A0E1 		mov	r4, r0
+ 565 05e4 10039FE5 		ldr	r0, .L78+104
+ 566 05e8 FEFFFFEB 		bl	rprintf
+ 567 05ec 020B8DE2 		add	r0, sp, #2048
+ 568 05f0 0410A0E1 		mov	r1, r4
+ 569 05f4 0C0080E2 		add	r0, r0, #12
+ 570 05f8 0120A0E3 		mov	r2, #1
+ 571 05fc FEFFFFEB 		bl	f_open
+ 572 0600 000050E3 		cmp	r0, #0
+ 573 0604 4A00001A 		bne	.L59
+ 574 0608 F0029FE5 		ldr	r0, .L78+108
+ 575 060c FEFFFFEB 		bl	rprintf
+ 576 0610 0010A0E3 		mov	r1, #0
+ 577 0614 E8229FE5 		ldr	r2, .L78+112
+ 578 0618 28009DE5 		ldr	r0, [sp, #40]
+ 579 061c FEFFFFEB 		bl	memset
+ 580 0620 0030A0E3 		mov	r3, #0
+ 581 0624 DC029FE5 		ldr	r0, .L78+116
+ 582 0628 74388DE5 		str	r3, [sp, #2164]
+ 583 062c FEFFFFEB 		bl	rprintf
+ 584 0630 FEFFFFEB 		bl	_Z9printLinev
+ 585 0634 025B8DE2 		add	r5, sp, #2048
+ 586 0638 874E8DE2 		add	r4, sp, #2160
+ 587 063c 0C5085E2 		add	r5, r5, #12
+ 588 0640 044084E2 		add	r4, r4, #4
+ 589              	.L57:
+ 590 0644 28109DE5 		ldr	r1, [sp, #40]
+ 591 0648 022CA0E3 		mov	r2, #512
+ 592 064c 0430A0E1 		mov	r3, r4
+ 593 0650 0500A0E1 		mov	r0, r5
+ 594 0654 FEFFFFEB 		bl	f_read
+ 595 0658 000050E3 		cmp	r0, #0
+ 596 065c 28109DE5 		ldr	r1, [sp, #40]
+ 597 0660 A4029FE5 		ldr	r0, .L78+120
+ 598 0664 0200000A 		beq	.L55
+ 599 0668 A0029FE5 		ldr	r0, .L78+124
+ 600 066c FEFFFFEB 		bl	rprintf
+ 601 0670 030000EA 		b	.L56
+ 602              	.L55:
+ 603 0674 FEFFFFEB 		bl	rprintf
+ 604 0678 74389DE5 		ldr	r3, [sp, #2164]
+ 605 067c 020C53E3 		cmp	r3, #512
+ 606 0680 EFFFFF0A 		beq	.L57
+ 607              	.L56:
+ 608 0684 FEFFFFEB 		bl	_Z9printLinev
+ 609 0688 240000EA 		b	.L60
+ 610              	.L53:
+ 611 068c 0400A0E1 		mov	r0, r4
+ 612 0690 7C129FE5 		ldr	r1, .L78+128
+ 613 0694 FEFFFFEB 		bl	strcmp
+ 614 0698 000050E3 		cmp	r0, #0
+ 615 069c 2600001A 		bne	.L58
+ 616 06a0 04129FE5 		ldr	r1, .L78+24
+ 617 06a4 FEFFFFEB 		bl	strtok
+ 618 06a8 026B8DE2 		add	r6, sp, #2048
+ 619 06ac 0010A0E1 		mov	r1, r0
+ 620 06b0 0040A0E1 		mov	r4, r0
+ 621 06b4 0C6086E2 		add	r6, r6, #12
+ 622 06b8 58029FE5 		ldr	r0, .L78+132
+ 623 06bc FEFFFFEB 		bl	rprintf
+ 624 06c0 0410A0E1 		mov	r1, r4
+ 625 06c4 0600A0E1 		mov	r0, r6
+ 626 06c8 0A20A0E3 		mov	r2, #10
+ 627 06cc FEFFFFEB 		bl	f_open
+ 628 06d0 005050E2 		subs	r5, r0, #0
+ 629 06d4 1600001A 		bne	.L59
+ 630 06d8 7E4E8DE2 		add	r4, sp, #2016
+ 631 06dc 1C029FE5 		ldr	r0, .L78+108
+ 632 06e0 084084E2 		add	r4, r4, #8
+ 633 06e4 FEFFFFEB 		bl	rprintf
+ 634 06e8 2C129FE5 		ldr	r1, .L78+136
+ 635 06ec 2420A0E3 		mov	r2, #36
+ 636 06f0 0400A0E1 		mov	r0, r4
+ 637 06f4 FEFFFFEB 		bl	memcpy
+ 638 06f8 223D8DE2 		add	r3, sp, #2176
+ 639 06fc 043083E2 		add	r3, r3, #4
+ 640 0700 105023E5 		str	r5, [r3, #-16]!
+ 641 0704 0600A0E1 		mov	r0, r6
+ 642 0708 0410A0E1 		mov	r1, r4
+ 643 070c 2420A0E3 		mov	r2, #36
+ 644 0710 FEFFFFEB 		bl	f_write
+ 645 0714 000050E3 		cmp	r0, #0
+ 646 0718 00029F15 		ldrne	r0, .L78+140
+ 647 071c FEFFFF1B 		blne	rprintf
+ 648              	.L60:
+ 649 0720 020B8DE2 		add	r0, sp, #2048
+ 650 0724 0C0080E2 		add	r0, r0, #12
+ 651 0728 FEFFFFEB 		bl	f_close
+ 652 072c F0019FE5 		ldr	r0, .L78+144
+ 653 0730 550000EA 		b	.L75
+ 654              	.L59:
+ 655 0734 EC019FE5 		ldr	r0, .L78+148
+ 656 0738 530000EA 		b	.L75
+ 657              	.L58:
+ 658 073c 0400A0E1 		mov	r0, r4
+ 659 0740 E4119FE5 		ldr	r1, .L78+152
+ 660 0744 FEFFFFEB 		bl	strcmp
+ 661 0748 000050E3 		cmp	r0, #0
+ 662 074c 764E8D02 		addeq	r4, sp, #1888
+ 663 0750 08408402 		addeq	r4, r4, #8
+ 664 0754 0010A001 		moveq	r1, r0
+ 665 0758 0400A001 		moveq	r0, r4
+ 666 075c 1D00000A 		beq	.L77
+ 667              	.L61:
+ 668 0760 0400A0E1 		mov	r0, r4
+ 669 0764 C4119FE5 		ldr	r1, .L78+156
+ 670 0768 FEFFFFEB 		bl	strcmp
+ 671 076c 000050E3 		cmp	r0, #0
+ 672 0770 764E8D02 		addeq	r4, sp, #1888
+ 673 0774 08408402 		addeq	r4, r4, #8
+ 674 0778 1400000A 		beq	.L76
+ 675 077c 0400A0E1 		mov	r0, r4
+ 676 0780 AC119FE5 		ldr	r1, .L78+160
+ 677 0784 FEFFFFEB 		bl	strcmp
+ 678 0788 000050E3 		cmp	r0, #0
+ 679 078c 1500001A 		bne	.L63
+ 680 0790 14119FE5 		ldr	r1, .L78+24
+ 681 0794 FEFFFFEB 		bl	strtok
+ 682 0798 FEFFFFEB 		bl	atoi
+ 683 079c 005050E2 		subs	r5, r0, #0
+ 684 07a0 90019FD5 		ldrle	r0, .L78+164
+ 685 07a4 380000DA 		ble	.L75
+ 686 07a8 764E8DE2 		add	r4, sp, #1888
+ 687 07ac 0510A0E1 		mov	r1, r5
+ 688 07b0 84019FE5 		ldr	r0, .L78+168
+ 689 07b4 084084E2 		add	r4, r4, #8
+ 690 07b8 FEFFFFEB 		bl	rprintf
+ 691 07bc 0400A0E1 		mov	r0, r4
+ 692 07c0 0110A0E3 		mov	r1, #1
+ 693 07c4 FEFFFFEB 		bl	vTaskGetRunTimeStats
+ 694 07c8 0500A0E1 		mov	r0, r5
+ 695 07cc FEFFFFEB 		bl	vTaskDelay
+ 696              	.L76:
+ 697 07d0 0400A0E1 		mov	r0, r4
+ 698 07d4 0110A0E3 		mov	r1, #1
+ 699              	.L77:
+ 700 07d8 FEFFFFEB 		bl	vTaskGetRunTimeStats
+ 701 07dc 0410A0E1 		mov	r1, r4
+ 702 07e0 58019FE5 		ldr	r0, .L78+172
+ 703 07e4 080000EA 		b	.L74
+ 704              	.L63:
+ 705 07e8 0400A0E1 		mov	r0, r4
+ 706 07ec 50119FE5 		ldr	r1, .L78+176
+ 707 07f0 FEFFFFEB 		bl	strcmp
+ 708 07f4 000050E3 		cmp	r0, #0
+ 709 07f8 0500001A 		bne	.L65
+ 710 07fc 0B00A0E1 		mov	r0, fp
+ 711 0800 FEFFFFEB 		bl	vTaskList
+ 712 0804 34019FE5 		ldr	r0, .L78+172
+ 713 0808 0B10A0E1 		mov	r1, fp
+ 714              	.L74:
+ 715 080c FEFFFFEB 		bl	rprintf
+ 716 0810 96FEFFEA 		b	.L72
+ 717              	.L65:
+ 718 0814 0410A0E1 		mov	r1, r4
+ 719 0818 28019FE5 		ldr	r0, .L78+180
+ 720 081c FEFFFFEB 		bl	strcmp
+ 721 0820 000050E3 		cmp	r0, #0
+ 722 0824 20019F15 		ldrne	r0, .L78+184
+ 723 0828 1700001A 		bne	.L75
+ 724 082c 98009FE5 		ldr	r0, .L78+56
+ 725 0830 FEFFFFEB 		bl	rprintf
+ 726 0834 FEFFFFEB 		bl	_Z9printLinev
+ 727 0838 10019FE5 		ldr	r0, .L78+188
+ 728 083c FEFFFFEB 		bl	rprintf
+ 729 0840 FEFFFFEB 		bl	_Z9printLinev
+ 730 0844 08019FE5 		ldr	r0, .L78+192
+ 731 0848 FEFFFFEB 		bl	rprintf
+ 732 084c 04019FE5 		ldr	r0, .L78+196
+ 733 0850 FEFFFFEB 		bl	rprintf
+ 734 0854 00019FE5 		ldr	r0, .L78+200
+ 735 0858 FEFFFFEB 		bl	rprintf
+ 736 085c FC009FE5 		ldr	r0, .L78+204
+ 737 0860 FEFFFFEB 		bl	rprintf
+ 738 0864 F8009FE5 		ldr	r0, .L78+208
+ 739 0868 FEFFFFEB 		bl	rprintf
+ 740 086c F4009FE5 		ldr	r0, .L78+212
+ 741 0870 FEFFFFEB 		bl	rprintf
+ 742 0874 F0009FE5 		ldr	r0, .L78+216
+ 743 0878 FEFFFFEB 		bl	rprintf
+ 744 087c EC009FE5 		ldr	r0, .L78+220
+ 745 0880 FEFFFFEB 		bl	rprintf
+ 746 0884 FEFFFFEB 		bl	_Z9printLinev
+ 747 0888 78FEFFEA 		b	.L72
+ 748              	.L75:
+ 749 088c FEFFFFEB 		bl	rprintf
+ 750 0890 76FEFFEA 		b	.L72
+ 751              	.L79:
+ 752              		.align	2
+ 753              	.L78:
+ 754 0894 5A000000 		.word	.LC2
+ 755 0898 A0860100 		.word	100000
+ 756 089c 7B000000 		.word	.LC3
+ 757 08a0 A3000000 		.word	.LC4
+ 758 08a4 A9000000 		.word	.LC5
+ 759 08a8 AB000000 		.word	.LC6
+ 760 08ac B0000000 		.word	.LC7
+ 761 08b0 B1000000 		.word	.LC8
+ 762 08b4 BB000000 		.word	.LC9
+ 763 08b8 09050000 		.word	.LC10
+ 764 08bc BE000000 		.word	.LC11
+ 765 08c0 D7000000 		.word	.LC12
+ 766 08c4 F2000000 		.word	.LC13
+ 767 08c8 1B010000 		.word	.LC14
+ 768 08cc 22010000 		.word	.LC15
+ 769 08d0 24010000 		.word	.LC16
+ 770 08d4 4E010000 		.word	.LC17
+ 771 08d8 62010000 		.word	.LC18
+ 772 08dc 67010000 		.word	.LC19
+ 773 08e0 7E010000 		.word	.LC20
+ 774 08e4 87010000 		.word	.LC21
+ 775 08e8 94010000 		.word	.LC22
+ 776 08ec 99010000 		.word	.LC23
+ 777 08f0 B7010000 		.word	.LC24
+ 778 08f4 BB010000 		.word	.LC25
+ 779 08f8 C5010000 		.word	.LC26
+ 780 08fc CA010000 		.word	.LC27
+ 781 0900 DE010000 		.word	.LC28
+ 782 0904 01020000 		.word	513
+ 783 0908 F8010000 		.word	.LC29
+ 784 090c 38020000 		.word	.LC31
+ 785 0910 08020000 		.word	.LC30
+ 786 0914 68020000 		.word	.LC34
+ 787 0918 6E020000 		.word	.LC35
+ 788 091c 0C050000 		.word	.LC36
+ 789 0920 83020000 		.word	.LC37
+ 790 0924 3F020000 		.word	.LC32
+ 791 0928 4F020000 		.word	.LC33
+ 792 092c 99020000 		.word	.LC38
+ 793 0930 A0020000 		.word	.LC40
+ 794 0934 A5020000 		.word	.LC41
+ 795 0938 E8020000 		.word	.LC43
+ 796 093c AA020000 		.word	.LC42
+ 797 0940 9D020000 		.word	.LC39
+ 798 0944 24030000 		.word	.LC44
+ 799 0948 29030000 		.word	.LC45
+ 800 094c F0040000 		.word	.LC55
+ 801 0950 2E030000 		.word	.LC46
+ 802 0954 3D030000 		.word	.LC47
+ 803 0958 6E030000 		.word	.LC48
+ 804 095c 9B030000 		.word	.LC49
+ 805 0960 BE030000 		.word	.LC50
+ 806 0964 E1030000 		.word	.LC51
+ 807 0968 16040000 		.word	.LC52
+ 808 096c 5B040000 		.word	.LC53
+ 809 0970 AF040000 		.word	.LC54
+ 811              		.ident	"GCC: (GNU) 4.3.2"
+DEFINED SYMBOLS
+                            *ABS*:00000000 userInterface.cpp
+/cygdrive/c/Users/User/AppData/Local/Temp/ccxM43mb.s:9      .text:00000000 _Z12getUart1LinePc
+/cygdrive/c/Users/User/AppData/Local/Temp/ccxM43mb.s:12     .text:00000000 $a
+/cygdrive/c/Users/User/AppData/Local/Temp/ccxM43mb.s:59     .text:000000a0 $d
+/cygdrive/c/Users/User/AppData/Local/Temp/ccxM43mb.s:69     .text:000000a4 _Z9printLinev
+/cygdrive/c/Users/User/AppData/Local/Temp/ccxM43mb.s:73     .text:000000a4 $a
+/cygdrive/c/Users/User/AppData/Local/Temp/ccxM43mb.s:78     .text:000000ac $d
+/cygdrive/c/Users/User/AppData/Local/Temp/ccxM43mb.s:83     .text:000000b0 _Z11getUartLinePc
+/cygdrive/c/Users/User/AppData/Local/Temp/ccxM43mb.s:86     .text:000000b0 $a
+/cygdrive/c/Users/User/AppData/Local/Temp/ccxM43mb.s:133    .text:00000150 $d
+/cygdrive/c/Users/User/AppData/Local/Temp/ccxM43mb.s:255    .text:00000154 _Z6uartUIPv
+/cygdrive/c/Users/User/AppData/Local/Temp/ccxM43mb.s:258    .text:00000154 $a
+/cygdrive/c/Users/User/AppData/Local/Temp/ccxM43mb.s:754    .text:00000894 $d
+
+UNDEFINED SYMBOLS
+uart1GetChar
+uart1PutChar
+rprintf
+uart0GetChar
+uart0PutChar
+vTaskSuspend
+initialize_SSPSPI
+initialize_I2C0
+diskio_initializeSPIMutex
+initialize_SdCardSignals
+initialize_sta013
+initialize_pcm1774
+f_mount
+_Z9wifiBeginv
+_Z23wifiJoinWirelessNetworkv
+_Z21wifiOpenTCPConnectionv
+_Z24wifiSendDeviceIDToServerv
+_Z24wifiSentPlayListToServerv
+_Z21wifiReceiveFromServerv
+_Z22wifiCloseTCPConnectionv
+_Z20wifiConnectionStatusv
+vTaskResume
+vTaskPrioritySet
+memset
+strtok
+strcmp
+memcpy
+f_opendir
+f_readdir
+iprintf
+f_getfree
+xQueueGenericSend
+_Z20wifiEnterCommandModev
+_Z19wifiExitCommandModev
+vTaskDelay
+_Z14wifiSendStringPKc
+_Z23wifiReceiveExpectedDataPci
+f_open
+f_read
+f_write
+f_close
+atoi
+vTaskGetRunTimeStats
+vTaskList

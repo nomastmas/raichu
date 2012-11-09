@@ -1,0 +1,274 @@
+   1              		.file	"timer.cpp"
+   2              		.text
+   3              		.align	2
+   4              		.global	_ZN5Timer12changePeriodEm
+   6              	_ZN5Timer12changePeriodEm:
+   7              		@ args = 0, pretend = 0, frame = 0
+   8              		@ frame_needed = 0, uses_anonymous_args = 0
+   9 0000 04E02DE5 		str	lr, [sp, #-4]!
+  10 0004 0030A0E3 		mov	r3, #0
+  11 0008 04D04DE2 		sub	sp, sp, #4
+  12 000c 00308DE5 		str	r3, [sp, #0]
+  13 0010 0120A0E1 		mov	r2, r1
+  14 0014 000090E5 		ldr	r0, [r0, #0]
+  15 0018 0210A0E3 		mov	r1, #2
+  16 001c FEFFFFEB 		bl	xTimerGenericCommand
+  17 0020 04D08DE2 		add	sp, sp, #4
+  18 0024 0080BDE8 		ldmfd	sp!, {pc}
+  20              		.align	2
+  21              		.global	_ZN5Timer4stopEv
+  23              	_ZN5Timer4stopEv:
+  24              		@ args = 0, pretend = 0, frame = 0
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26 0028 04E02DE5 		str	lr, [sp, #-4]!
+  27 002c 0020A0E3 		mov	r2, #0
+  28 0030 04D04DE2 		sub	sp, sp, #4
+  29 0034 00208DE5 		str	r2, [sp, #0]
+  30 0038 0110A0E3 		mov	r1, #1
+  31 003c 0230A0E1 		mov	r3, r2
+  32 0040 000090E5 		ldr	r0, [r0, #0]
+  33 0044 FEFFFFEB 		bl	xTimerGenericCommand
+  34 0048 04D08DE2 		add	sp, sp, #4
+  35 004c 0080BDE8 		ldmfd	sp!, {pc}
+  37              		.align	2
+  38              		.global	_ZN5TimerD1Ev
+  40              	_ZN5TimerD1Ev:
+  41              		@ args = 0, pretend = 0, frame = 0
+  42              		@ frame_needed = 0, uses_anonymous_args = 0
+  43 0050 04E02DE5 		str	lr, [sp, #-4]!
+  44 0054 0020A0E3 		mov	r2, #0
+  45 0058 04D04DE2 		sub	sp, sp, #4
+  46 005c 00208DE5 		str	r2, [sp, #0]
+  47 0060 0310A0E3 		mov	r1, #3
+  48 0064 0230A0E1 		mov	r3, r2
+  49 0068 000090E5 		ldr	r0, [r0, #0]
+  50 006c FEFFFFEB 		bl	xTimerGenericCommand
+  51 0070 04D08DE2 		add	sp, sp, #4
+  52 0074 0080BDE8 		ldmfd	sp!, {pc}
+  54              		.align	2
+  55              		.global	_ZN5TimerD2Ev
+  57              	_ZN5TimerD2Ev:
+  58              		@ args = 0, pretend = 0, frame = 0
+  59              		@ frame_needed = 0, uses_anonymous_args = 0
+  60 0078 04E02DE5 		str	lr, [sp, #-4]!
+  61 007c 0020A0E3 		mov	r2, #0
+  62 0080 04D04DE2 		sub	sp, sp, #4
+  63 0084 00208DE5 		str	r2, [sp, #0]
+  64 0088 0310A0E3 		mov	r1, #3
+  65 008c 0230A0E1 		mov	r3, r2
+  66 0090 000090E5 		ldr	r0, [r0, #0]
+  67 0094 FEFFFFEB 		bl	xTimerGenericCommand
+  68 0098 04D08DE2 		add	sp, sp, #4
+  69 009c 0080BDE8 		ldmfd	sp!, {pc}
+  71              		.align	2
+  72              		.global	_ZN5Timer19changePeriodFromISREm
+  74              	_ZN5Timer19changePeriodFromISREm:
+  75              		@ args = 0, pretend = 0, frame = 4
+  76              		@ frame_needed = 0, uses_anonymous_args = 0
+  77 00a0 04E02DE5 		str	lr, [sp, #-4]!
+  78 00a4 0020A0E3 		mov	r2, #0
+  79 00a8 08D04DE2 		sub	sp, sp, #8
+  80 00ac 00208DE5 		str	r2, [sp, #0]
+  81 00b0 08308DE2 		add	r3, sp, #8
+  82 00b4 042023E5 		str	r2, [r3, #-4]!
+  83 00b8 000090E5 		ldr	r0, [r0, #0]
+  84 00bc 0120A0E1 		mov	r2, r1
+  85 00c0 0210A0E3 		mov	r1, #2
+  86 00c4 FEFFFFEB 		bl	xTimerGenericCommand
+  87 00c8 04309DE5 		ldr	r3, [sp, #4]
+  88 00cc 000053E3 		cmp	r3, #0
+  89 00d0 FEFFFF1B 		blne	vTaskSwitchContext
+  90              	.L13:
+  91 00d4 08D08DE2 		add	sp, sp, #8
+  92 00d8 0080BDE8 		ldmfd	sp!, {pc}
+  94              		.align	2
+  95              		.global	_ZN5Timer11stopFromISREv
+  97              	_ZN5Timer11stopFromISREv:
+  98              		@ args = 0, pretend = 0, frame = 4
+  99              		@ frame_needed = 0, uses_anonymous_args = 0
+ 100 00dc 04E02DE5 		str	lr, [sp, #-4]!
+ 101 00e0 08D04DE2 		sub	sp, sp, #8
+ 102 00e4 0020A0E3 		mov	r2, #0
+ 103 00e8 08308DE2 		add	r3, sp, #8
+ 104 00ec 042023E5 		str	r2, [r3, #-4]!
+ 105 00f0 00208DE5 		str	r2, [sp, #0]
+ 106 00f4 0110A0E3 		mov	r1, #1
+ 107 00f8 000090E5 		ldr	r0, [r0, #0]
+ 108 00fc FEFFFFEB 		bl	xTimerGenericCommand
+ 109 0100 04309DE5 		ldr	r3, [sp, #4]
+ 110 0104 000053E3 		cmp	r3, #0
+ 111 0108 FEFFFF1B 		blne	vTaskSwitchContext
+ 112              	.L16:
+ 113 010c 08D08DE2 		add	sp, sp, #8
+ 114 0110 0080BDE8 		ldmfd	sp!, {pc}
+ 116              		.align	2
+ 117              		.global	_ZN5Timer12resetFromISREv
+ 119              	_ZN5Timer12resetFromISREv:
+ 120              		@ args = 0, pretend = 0, frame = 4
+ 121              		@ frame_needed = 0, uses_anonymous_args = 0
+ 122 0114 70402DE9 		stmfd	sp!, {r4, r5, r6, lr}
+ 123 0118 08D04DE2 		sub	sp, sp, #8
+ 124 011c 0050A0E3 		mov	r5, #0
+ 125 0120 08408DE2 		add	r4, sp, #8
+ 126 0124 045024E5 		str	r5, [r4, #-4]!
+ 127 0128 006090E5 		ldr	r6, [r0, #0]
+ 128 012c FEFFFFEB 		bl	xTaskGetTickCountFromISR
+ 129 0130 0430A0E1 		mov	r3, r4
+ 130 0134 0020A0E1 		mov	r2, r0
+ 131 0138 0510A0E1 		mov	r1, r5
+ 132 013c 0600A0E1 		mov	r0, r6
+ 133 0140 00508DE5 		str	r5, [sp, #0]
+ 134 0144 FEFFFFEB 		bl	xTimerGenericCommand
+ 135 0148 04309DE5 		ldr	r3, [sp, #4]
+ 136 014c 050053E1 		cmp	r3, r5
+ 137 0150 FEFFFF1B 		blne	vTaskSwitchContext
+ 138              	.L19:
+ 139 0154 08D08DE2 		add	sp, sp, #8
+ 140 0158 7080BDE8 		ldmfd	sp!, {r4, r5, r6, pc}
+ 142              		.align	2
+ 143              		.global	_ZN5Timer12startFromISREv
+ 145              	_ZN5Timer12startFromISREv:
+ 146              		@ args = 0, pretend = 0, frame = 4
+ 147              		@ frame_needed = 0, uses_anonymous_args = 0
+ 148 015c 70402DE9 		stmfd	sp!, {r4, r5, r6, lr}
+ 149 0160 08D04DE2 		sub	sp, sp, #8
+ 150 0164 0050A0E3 		mov	r5, #0
+ 151 0168 08408DE2 		add	r4, sp, #8
+ 152 016c 045024E5 		str	r5, [r4, #-4]!
+ 153 0170 006090E5 		ldr	r6, [r0, #0]
+ 154 0174 FEFFFFEB 		bl	xTaskGetTickCountFromISR
+ 155 0178 0430A0E1 		mov	r3, r4
+ 156 017c 0020A0E1 		mov	r2, r0
+ 157 0180 0510A0E1 		mov	r1, r5
+ 158 0184 0600A0E1 		mov	r0, r6
+ 159 0188 00508DE5 		str	r5, [sp, #0]
+ 160 018c FEFFFFEB 		bl	xTimerGenericCommand
+ 161 0190 04309DE5 		ldr	r3, [sp, #4]
+ 162 0194 050053E1 		cmp	r3, r5
+ 163 0198 FEFFFF1B 		blne	vTaskSwitchContext
+ 164              	.L22:
+ 165 019c 08D08DE2 		add	sp, sp, #8
+ 166 01a0 7080BDE8 		ldmfd	sp!, {r4, r5, r6, pc}
+ 168              		.align	2
+ 169              		.global	_ZN5Timer9isRunningEv
+ 171              	_ZN5Timer9isRunningEv:
+ 172              		@ args = 0, pretend = 0, frame = 0
+ 173              		@ frame_needed = 0, uses_anonymous_args = 0
+ 174 01a4 04E02DE5 		str	lr, [sp, #-4]!
+ 175 01a8 000090E5 		ldr	r0, [r0, #0]
+ 176 01ac FEFFFFEB 		bl	xTimerIsTimerActive
+ 177 01b0 000050E2 		subs	r0, r0, #0
+ 178 01b4 0100A013 		movne	r0, #1
+ 179 01b8 04F09DE4 		ldr	pc, [sp], #4
+ 181              		.align	2
+ 182              		.global	_ZN5Timer5resetEv
+ 184              	_ZN5Timer5resetEv:
+ 185              		@ args = 0, pretend = 0, frame = 0
+ 186              		@ frame_needed = 0, uses_anonymous_args = 0
+ 187 01bc 10402DE9 		stmfd	sp!, {r4, lr}
+ 188 01c0 04D04DE2 		sub	sp, sp, #4
+ 189 01c4 004090E5 		ldr	r4, [r0, #0]
+ 190 01c8 FEFFFFEB 		bl	xTaskGetTickCount
+ 191 01cc 00C0A0E3 		mov	ip, #0
+ 192 01d0 0020A0E1 		mov	r2, r0
+ 193 01d4 0C10A0E1 		mov	r1, ip
+ 194 01d8 0400A0E1 		mov	r0, r4
+ 195 01dc 0C30A0E1 		mov	r3, ip
+ 196 01e0 00C08DE5 		str	ip, [sp, #0]
+ 197 01e4 FEFFFFEB 		bl	xTimerGenericCommand
+ 198 01e8 04D08DE2 		add	sp, sp, #4
+ 199 01ec 1080BDE8 		ldmfd	sp!, {r4, pc}
+ 201              		.align	2
+ 202              		.global	_ZN5Timer5startEv
+ 204              	_ZN5Timer5startEv:
+ 205              		@ args = 0, pretend = 0, frame = 0
+ 206              		@ frame_needed = 0, uses_anonymous_args = 0
+ 207 01f0 10402DE9 		stmfd	sp!, {r4, lr}
+ 208 01f4 04D04DE2 		sub	sp, sp, #4
+ 209 01f8 004090E5 		ldr	r4, [r0, #0]
+ 210 01fc FEFFFFEB 		bl	xTaskGetTickCount
+ 211 0200 00C0A0E3 		mov	ip, #0
+ 212 0204 0020A0E1 		mov	r2, r0
+ 213 0208 0C10A0E1 		mov	r1, ip
+ 214 020c 0400A0E1 		mov	r0, r4
+ 215 0210 0C30A0E1 		mov	r3, ip
+ 216 0214 00C08DE5 		str	ip, [sp, #0]
+ 217 0218 FEFFFFEB 		bl	xTimerGenericCommand
+ 218 021c 04D08DE2 		add	sp, sp, #4
+ 219 0220 1080BDE8 		ldmfd	sp!, {r4, pc}
+ 221              		.align	2
+ 222              		.global	_ZN5TimerC1EPFvPvEm9TimerType
+ 224              	_ZN5TimerC1EPFvPvEm9TimerType:
+ 225              		@ args = 0, pretend = 0, frame = 0
+ 226              		@ frame_needed = 0, uses_anonymous_args = 0
+ 227 0224 10402DE9 		stmfd	sp!, {r4, lr}
+ 228 0228 04D04DE2 		sub	sp, sp, #4
+ 229 022c 00108DE5 		str	r1, [sp, #0]
+ 230 0230 0040A0E1 		mov	r4, r0
+ 231 0234 0210A0E1 		mov	r1, r2
+ 232 0238 18009FE5 		ldr	r0, .L31
+ 233 023c 002053E2 		subs	r2, r3, #0
+ 234 0240 0120A013 		movne	r2, #1
+ 235 0244 0030A0E3 		mov	r3, #0
+ 236 0248 FEFFFFEB 		bl	xTimerCreate
+ 237 024c 000084E5 		str	r0, [r4, #0]
+ 238 0250 04D08DE2 		add	sp, sp, #4
+ 239 0254 1080BDE8 		ldmfd	sp!, {r4, pc}
+ 240              	.L32:
+ 241              		.align	2
+ 242              	.L31:
+ 243 0258 00000000 		.word	_ZZN5TimerC1EPFvPvEm9TimerTypeE5tName
+ 245              		.align	2
+ 246              		.global	_ZN5TimerC2EPFvPvEm9TimerType
+ 248              	_ZN5TimerC2EPFvPvEm9TimerType:
+ 249              		@ args = 0, pretend = 0, frame = 0
+ 250              		@ frame_needed = 0, uses_anonymous_args = 0
+ 251 025c 10402DE9 		stmfd	sp!, {r4, lr}
+ 252 0260 04D04DE2 		sub	sp, sp, #4
+ 253 0264 00108DE5 		str	r1, [sp, #0]
+ 254 0268 0040A0E1 		mov	r4, r0
+ 255 026c 0210A0E1 		mov	r1, r2
+ 256 0270 18009FE5 		ldr	r0, .L35
+ 257 0274 002053E2 		subs	r2, r3, #0
+ 258 0278 0120A013 		movne	r2, #1
+ 259 027c 0030A0E3 		mov	r3, #0
+ 260 0280 FEFFFFEB 		bl	xTimerCreate
+ 261 0284 000084E5 		str	r0, [r4, #0]
+ 262 0288 04D08DE2 		add	sp, sp, #4
+ 263 028c 1080BDE8 		ldmfd	sp!, {r4, pc}
+ 264              	.L36:
+ 265              		.align	2
+ 266              	.L35:
+ 267 0290 00000000 		.word	_ZZN5TimerC1EPFvPvEm9TimerTypeE5tName
+ 269              		.data
+ 272              	_ZZN5TimerC1EPFvPvEm9TimerTypeE5tName:
+ 273 0000 546D7200 		.ascii	"Tmr\000"
+ 274              		.ident	"GCC: (GNU) 4.3.2"
+DEFINED SYMBOLS
+                            *ABS*:00000000 timer.cpp
+/cygdrive/c/Users/User/AppData/Local/Temp/cctVHDaM.s:6      .text:00000000 _ZN5Timer12changePeriodEm
+/cygdrive/c/Users/User/AppData/Local/Temp/cctVHDaM.s:9      .text:00000000 $a
+/cygdrive/c/Users/User/AppData/Local/Temp/cctVHDaM.s:23     .text:00000028 _ZN5Timer4stopEv
+/cygdrive/c/Users/User/AppData/Local/Temp/cctVHDaM.s:40     .text:00000050 _ZN5TimerD1Ev
+/cygdrive/c/Users/User/AppData/Local/Temp/cctVHDaM.s:57     .text:00000078 _ZN5TimerD2Ev
+/cygdrive/c/Users/User/AppData/Local/Temp/cctVHDaM.s:74     .text:000000a0 _ZN5Timer19changePeriodFromISREm
+/cygdrive/c/Users/User/AppData/Local/Temp/cctVHDaM.s:97     .text:000000dc _ZN5Timer11stopFromISREv
+/cygdrive/c/Users/User/AppData/Local/Temp/cctVHDaM.s:119    .text:00000114 _ZN5Timer12resetFromISREv
+/cygdrive/c/Users/User/AppData/Local/Temp/cctVHDaM.s:145    .text:0000015c _ZN5Timer12startFromISREv
+/cygdrive/c/Users/User/AppData/Local/Temp/cctVHDaM.s:171    .text:000001a4 _ZN5Timer9isRunningEv
+/cygdrive/c/Users/User/AppData/Local/Temp/cctVHDaM.s:184    .text:000001bc _ZN5Timer5resetEv
+/cygdrive/c/Users/User/AppData/Local/Temp/cctVHDaM.s:204    .text:000001f0 _ZN5Timer5startEv
+/cygdrive/c/Users/User/AppData/Local/Temp/cctVHDaM.s:224    .text:00000224 _ZN5TimerC1EPFvPvEm9TimerType
+/cygdrive/c/Users/User/AppData/Local/Temp/cctVHDaM.s:243    .text:00000258 $d
+/cygdrive/c/Users/User/AppData/Local/Temp/cctVHDaM.s:272    .data:00000000 _ZZN5TimerC1EPFvPvEm9TimerTypeE5tName
+/cygdrive/c/Users/User/AppData/Local/Temp/cctVHDaM.s:248    .text:0000025c _ZN5TimerC2EPFvPvEm9TimerType
+/cygdrive/c/Users/User/AppData/Local/Temp/cctVHDaM.s:251    .text:0000025c $a
+/cygdrive/c/Users/User/AppData/Local/Temp/cctVHDaM.s:267    .text:00000290 $d
+
+UNDEFINED SYMBOLS
+xTimerGenericCommand
+vTaskSwitchContext
+xTaskGetTickCountFromISR
+xTimerIsTimerActive
+xTaskGetTickCount
+xTimerCreate

@@ -1,0 +1,42 @@
+   1              		.file	"cppmem.cpp"
+   2              		.text
+   3              		.align	2
+   4              		.global	_ZdaPv
+   6              	_ZdaPv:
+   7              		@ args = 0, pretend = 0, frame = 0
+   8              		@ frame_needed = 0, uses_anonymous_args = 0
+   9              		@ link register save eliminated.
+  10 0000 FEFFFFEA 		b	free
+  12              		.align	2
+  13              		.global	_ZdlPv
+  15              	_ZdlPv:
+  16              		@ args = 0, pretend = 0, frame = 0
+  17              		@ frame_needed = 0, uses_anonymous_args = 0
+  18              		@ link register save eliminated.
+  19 0004 FEFFFFEA 		b	free
+  21              		.align	2
+  22              		.global	_Znam
+  24              	_Znam:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28 0008 FEFFFFEA 		b	malloc
+  30              		.align	2
+  31              		.global	_Znwm
+  33              	_Znwm:
+  34              		@ args = 0, pretend = 0, frame = 0
+  35              		@ frame_needed = 0, uses_anonymous_args = 0
+  36              		@ link register save eliminated.
+  37 000c FEFFFFEA 		b	malloc
+  39              		.ident	"GCC: (GNU) 4.3.2"
+DEFINED SYMBOLS
+                            *ABS*:00000000 cppmem.cpp
+/cygdrive/c/Users/User/AppData/Local/Temp/ccM6UVmA.s:6      .text:00000000 _ZdaPv
+/cygdrive/c/Users/User/AppData/Local/Temp/ccM6UVmA.s:10     .text:00000000 $a
+/cygdrive/c/Users/User/AppData/Local/Temp/ccM6UVmA.s:15     .text:00000004 _ZdlPv
+/cygdrive/c/Users/User/AppData/Local/Temp/ccM6UVmA.s:24     .text:00000008 _Znam
+/cygdrive/c/Users/User/AppData/Local/Temp/ccM6UVmA.s:33     .text:0000000c _Znwm
+
+UNDEFINED SYMBOLS
+free
+malloc

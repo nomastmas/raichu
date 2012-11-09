@@ -1,0 +1,254 @@
+   1              	# 1 "../System/startup/Arm7CStartup.S"
+   1              	/******************************************************************************
+   0              	
+   0              	
+   2              	*                                                                             *
+   3              	* FILE:        Arm7Startup.S                                                  *
+   4              	*                                                                             *
+   5              	* DESCRIPTION: Startup code for setting up the C/C++ environments for the    *
+   6              	*              ARM7.                                                          *
+   7              	*                                                                             *
+   8              	* AUTHOR:      Jean-Sebastien Stoezel                                         *
+   9              	*              js.stoezel@gmail.com                                           *
+  10              	*                                                                             *
+  11              	* Heavily influenced by Rowley's Crosswork                                    *
+  12              	* Visit www.rowley.co.uk - They are good guys                                 *
+  13              	*                                                                             *
+  14              	* Used with Rowley's blessing                                                 *
+  15              	*                                                                             *
+  16              	******************************************************************************/
+  17              	
+  18              	#include "ARM7.h"
+   1              	#ifndef arm7_included
+  19              	
+  20              	#define MAIN_FUNCTION  main
+  21              	
+  22              	/******************************************************************************
+  23              	*                                                                             *
+  24              	* EXTERN INTERFACES                                                           *
+  25              	*                                                                             *
+  26              	******************************************************************************/
+  27              	 
+  28              	   .extern MAIN_FUNCTION
+  29              	
+  30              	/******************************************************************************
+  31              	*                                                                             *
+  32              	* PUBLIC INTERFACES                                                          *
+  33              	*                                                                             *
+  34              	******************************************************************************/
+  35              	
+  36              	   .global Arm7StartupStart
+  37              	   
+  38              	
+  39              	/******************************************************************************
+  40              	*                                                                             *
+  41              	******************************************************************************/
+  42              	   .SECTION    .init, "ax"
+  43              	   .CODE       32
+  44              	   .ALIGN      4
+  45              	   
+  46              	/******************************************************************************
+  47              	* Arm7StartupStart                                                            *
+  48              	******************************************************************************/
+  49              	
+  50              	Arm7StartupStart:
+  51              	  /* Save the current state of the processor */
+  52 0000 00000FE1 	  MRS R0, CPSR
+  53              	  
+  54              	  /* Clear all the bits related to the processor mode. We will set them one
+  55              	     after the other for each mode.
+  56              	  */
+  57 0004 1F00C0E3 	  BIC R0, R0, #ARM7_CPSR_MODE_MASK
+  58              	
+  59              	  /* Setup the stacks for the different modes */ 
+  60              	  
+  61              	  /* Undefined mode */
+  62 0008 1B1080E3 	  ORR R1, R0, #ARM7_CPSR_MODE_UND
+  63 000c 01F02FE1 	  MSR cpsr_cxsf, R1
+  64 0010 2CD19FE5 	  LDR SP, =__stack_und_end__
+  65              	  
+  66              	  /* Abort mode */
+  67 0014 171080E3 	  ORR R1, R0, #ARM7_CPSR_MODE_ABT
+  68 0018 01F02FE1 	  MSR cpsr_cxsf, R1
+  69 001c 24D19FE5 	  LDR SP, =__stack_abt_end__
+  70              	
+  71              	  /* IRQ mode */
+  72 0020 121080E3 	  ORR R1, R0, #ARM7_CPSR_MODE_IRQ
+  73 0024 01F02FE1 	  MSR cpsr_cxsf, R1
+  74 0028 1CD19FE5 	  LDR SP, =__stack_irq_end__
+  75              	
+  76              	  /* FIQ mode */
+  77 002c 111080E3 	  ORR R1, R0, #ARM7_CPSR_MODE_FIQ
+  78 0030 01F02FE1 	  MSR cpsr_cxsf, R1
+  79 0034 14D19FE5 	  LDR SP, =__stack_fiq_end__
+  80              	
+  81              	  /* Supervisor mode */
+  82 0038 131080E3 	  ORR R1, R0, #ARM7_CPSR_MODE_SVC
+  83 003c 01F02FE1 	  MSR cpsr_cxsf, R1
+  84 0040 0CD19FE5 	  LDR SP, =__stack_svc_end__
+  85              	  
+  86              	  /*
+  87              	     Start application in supervisor mode.
+  88              	     WARNING: stack is NOT set for user and system modes
+  89              	  */
+  90              	  
+  91              	  /* RAM initialization */
+  92              	
+  93              	  /* Copy the initialized memory sections into RAM */
+  94 0044 0C019FE5 	  LDR R0, =__data_load_start__
+  95 0048 0C119FE5 	  LDR R1, =__data_start__
+  96 004c 0C219FE5 	  LDR R2, =__data_end__
+  97 0050 2E0000EB 	  BL Arm7StartupMemcpy
+  98              	
+  99 0054 08019FE5 	  LDR R0, =__text_load_start__
+ 100 0058 08119FE5 	  LDR R1, =__text_start__
+ 101 005c 08219FE5 	  LDR R2, =__text_end__
+ 102 0060 2A0000EB 	  BL Arm7StartupMemcpy
+ 103              	
+ 104              	  /* Constructors */
+ 105 0064 04019FE5 	  LDR R0, =__ctors_load_start__
+ 106 0068 04119FE5 	  LDR R1, =__ctors_start__
+ 107 006c 04219FE5 	  LDR R2, =__ctors_end__
+ 108 0070 260000EB 	  BL Arm7StartupMemcpy
+ 109              	
+ 110              	  /* Destructors */
+ 111 0074 00019FE5 	  LDR R0, =__dtors_load_start__
+ 112 0078 00119FE5 	  LDR R1, =__dtors_start__
+ 113 007c 00219FE5 	  LDR R2, =__dtors_end__
+ 114 0080 220000EB 	  BL Arm7StartupMemcpy
+ 115              	
+ 116 0084 FC009FE5 	  LDR R0, =__rodata_load_start__
+ 117 0088 FC109FE5 	  LDR R1, =__rodata_start__
+ 118 008c FC209FE5 	  LDR R2, =__rodata_end__
+ 119 0090 1E0000EB 	  BL Arm7StartupMemcpy
+ 120              	  
+ 121              	  /* Zero the BSS section */
+ 122 0094 F8009FE5 	  LDR R0, =__bss_start__
+ 123 0098 F8109FE5 	  LDR R1, =__bss_end__
+ 124 009c 0020A0E3 	  MOV R2, #0
+ 125 00a0 230000EB 	  BL Arm7StartupMemset
+ 126              	
+ 127              	  /* Initialise the heap */
+ 128 00a4 F0009FE5 	  LDR R0, = __heap_start__
+ 129 00a8 F0109FE5 	  LDR R1, = __heap_end__
+ 130 00ac 001041E0 	  SUB R1, R1, R0
+ 131 00b0 080051E3 	  CMP R1, #8
+ 132 00b4 0020A0A3 	  MOVGE R2, #0
+ 133 00b8 042080A4 	  STRGE R2, [ R0 ], #+4
+ 134 00bc 001080A5 	  STRGE R1, [ R0 ]
+ 135              	
+ 136              	  /* Call the constructors */
+ 137 00c0 AC009FE5 	  LDR R0, =__ctors_start__
+ 138 00c4 AC109FE5 	  LDR R1, =__ctors_end__
+ 139              	  
+ 140              	/******************************************************************************
+ 141              	* Arm7StartupStartCtorLoop                                                    *
+ 142              	******************************************************************************/
+ 143              	
+ 144              	Arm7StartupStartCtorLoop:
+ 145 00c8 010050E1 	  CMP R0, R1
+ 146 00cc 0500000A 	  BEQ Arm7StartupStartCtorEnd
+ 147 00d0 042090E4 	  LDR R2, [ R0 ], #+4
+ 148 00d4 03002DE9 	  STMFD SP!, { R0 - R1 }
+ 149 00d8 0FE0A0E1 	  MOV LR, PC
+ 150 00dc 12FF2FE1 	  BX R2
+ 151 00e0 0300BDE8 	  LDMFD SP!, { R0 - R1 }
+ 152 00e4 F7FFFFEA 	  b Arm7StartupStartCtorLoop
+ 153              	  
+ 154              	/******************************************************************************
+ 155              	* Arm7StartupStartCtorEnd                                                     *
+ 156              	******************************************************************************/
+ 157              	
+ 158              	Arm7StartupStartCtorEnd:
+ 159              	  /* Setup the initial call frame */
+ 160 00e8 04E0A0E3 	  MOV LR, #4
+ 161 00ec 0DC0A0E1 	  MOV R12, SP
+ 162 00f0 00D82DE9 	  STMFD SP!, { R11 - R12, LR - PC }
+ 163 00f4 04B04CE2 	  SUB R11, R12, #0x00000004
+ 164              	
+ 165              	/******************************************************************************
+ 166              	* Arm7StartupCallMain                                                         *
+ 167              	******************************************************************************/
+ 168              	
+ 169              	Arm7StartupCallMain:
+ 170              	  /* Jump to the application entry point */
+ 171 00f8 0000A0E3 	  MOV R0, #0
+ 172 00fc 0010A0E3 	  MOV R1, #0
+ 173 0100 9C209FE5 	  LDR R2, =MAIN_FUNCTION
+ 174 0104 0FE0A0E1 	  MOV LR, PC
+ 175 0108 12FF2FE1 	  BX R2
+ 176              	
+ 177              	/******************************************************************************
+ 178              	* Arm7StartupReturnedFromMain                                                 *
+ 179              	******************************************************************************/
+ 180              	
+ 181              	/* Returned from the application, loop forever. */
+ 182              	Arm7StartupReturnedFromMain:
+ 183 010c FEFFFFEA 	  b Arm7StartupReturnedFromMain
+ 184              	
+ 185              	/******************************************************************************
+ 186              	* Arm7StartupMemcpy                                                           *
+ 187              	******************************************************************************/
+ 188              	
+ 189              	Arm7StartupMemcpy:
+ 190 0110 010050E1 	  CMP R0, R1
+ 191 0114 0EF0A001 	  MOVEQ PC, LR  
+ 192 0118 012052E0 	  SUBS R2, R2, R1
+ 193 011c 0EF0A001 	  MOVEQ PC, LR  
+ 194              	1:
+ 195 0120 0130D0E4 	  LDRB R3, [ R0 ], #+1
+ 196 0124 0130C1E4 	  STRB R3, [ R1 ], #+1
+ 197 0128 012052E2 	  SUBS R2, R2, #1
+ 198 012c FBFFFF1A 	  BNE 1b
+ 199 0130 0EF0A0E1 	  MOV PC, LR
+ 200              	
+ 201              	/******************************************************************************
+ 202              	* Arm7StartupMemset                                                           *
+ 203              	******************************************************************************/
+ 204              	
+ 205              	Arm7StartupMemset:
+ 206 0134 010050E1 	  CMP R0, R1
+ 207 0138 0EF0A001 	  MOVEQ PC, LR
+ 208 013c 0120C0E4 	  STRB R2, [ R0 ], #1
+ 209 0140 FBFFFFEA 	  b Arm7StartupMemset
+ 209      00000000 
+ 209      00000000 
+ 209      00000000 
+ 209      00000000 
+DEFINED SYMBOLS
+../System/startup/Arm7CStartup.S:50     .init:00000000 Arm7StartupStart
+../System/startup/Arm7CStartup.S:43     .init:00000000 $a
+../System/startup/Arm7CStartup.S:189    .init:00000110 Arm7StartupMemcpy
+../System/startup/Arm7CStartup.S:205    .init:00000134 Arm7StartupMemset
+../System/startup/Arm7CStartup.S:144    .init:000000c8 Arm7StartupStartCtorLoop
+../System/startup/Arm7CStartup.S:158    .init:000000e8 Arm7StartupStartCtorEnd
+../System/startup/Arm7CStartup.S:169    .init:000000f8 Arm7StartupCallMain
+../System/startup/Arm7CStartup.S:182    .init:0000010c Arm7StartupReturnedFromMain
+../System/startup/Arm7CStartup.S:209    .init:00000144 $d
+
+UNDEFINED SYMBOLS
+__stack_und_end__
+__stack_abt_end__
+__stack_irq_end__
+__stack_fiq_end__
+__stack_svc_end__
+__data_load_start__
+__data_start__
+__data_end__
+__text_load_start__
+__text_start__
+__text_end__
+__ctors_load_start__
+__ctors_start__
+__ctors_end__
+__dtors_load_start__
+__dtors_start__
+__dtors_end__
+__rodata_load_start__
+__rodata_start__
+__rodata_end__
+__bss_start__
+__bss_end__
+__heap_start__
+__heap_end__
+main

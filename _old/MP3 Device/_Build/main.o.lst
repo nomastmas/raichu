@@ -1,0 +1,284 @@
+   1              		.file	"main.cpp"
+   2              		.section	.rodata.str1.1,"aMS",%progbits,1
+   3              	.LC0:
+   4 0000 55617274 		.ascii	"Uart UI\000"
+   4      20554900 
+   5              	.LC1:
+   6 0008 4D503300 		.ascii	"MP3\000"
+   7              	.LC2:
+   8 000c 73645F63 		.ascii	"sd_card_detect\000"
+   8      6172645F 
+   8      64657465 
+   8      637400
+   9              	.LC3:
+  10 001b 6D70335F 		.ascii	"mp3_controls\000"
+  10      636F6E74 
+  10      726F6C73 
+  10      00
+  11              	.LC4:
+  12 0028 4552524F 		.ascii	"ERROR:  OUT OF MEMORY: Check OS Stack Size or task "
+  12      523A2020 
+  12      4F555420 
+  12      4F46204D 
+  12      454D4F52 
+  13 005b 73746163 		.ascii	"stack size.\012\000"
+  13      6B207369 
+  13      7A652E0A 
+  13      00
+  14              	.LC5:
+  15 0068 0A2D2D20 		.ascii	"\012-- Starting FreeRTOS --\012\000"
+  15      53746172 
+  15      74696E67 
+  15      20467265 
+  15      6552544F 
+  16              	.LC6:
+  17 0082 4552524F 		.ascii	"ERROR: Unexpected OS Exit!\012\000"
+  17      523A2055 
+  17      6E657870 
+  17      65637465 
+  17      64204F53 
+  18              		.text
+  19              		.align	2
+  20              		.global	main
+  22              	main:
+  23              		@ args = 0, pretend = 0, frame = 32
+  24              		@ frame_needed = 0, uses_anonymous_args = 0
+  25 0000 70402DE9 		stmfd	sp!, {r4, r5, r6, lr}
+  26 0004 30D04DE2 		sub	sp, sp, #48
+  27 0008 FEFFFFEB 		bl	cpuSetupHardware
+  28 000c 78019FE5 		ldr	r0, .L5
+  29 0010 FEFFFFEB 		bl	watchdogDelayUs
+  30 0014 8010A0E3 		mov	r1, #128
+  31 0018 960CA0E3 		mov	r0, #38400
+  32 001c FEFFFFEB 		bl	uart0Init
+  33 0020 8010A0E3 		mov	r1, #128
+  34 0024 960CA0E3 		mov	r0, #38400
+  35 0028 FEFFFFEB 		bl	uart1Init
+  36 002c 5C019FE5 		ldr	r0, .L5+4
+  37 0030 FEFFFFEB 		bl	rprintf_devopen
+  38 0034 FEFFFFEB 		bl	cpuPrintMemoryInfo
+  39 0038 54019FE5 		ldr	r0, .L5+8
+  40 003c FEFFFFEB 		bl	rprintf_devopen
+  41 0040 2C408DE2 		add	r4, sp, #44
+  42 0044 40019FE5 		ldr	r0, .L5
+  43 0048 FEFFFFEB 		bl	watchdogDelayUs
+  44 004c 0130A0E3 		mov	r3, #1
+  45 0050 40119FE5 		ldr	r1, .L5+12
+  46 0054 0A20A0E3 		mov	r2, #10
+  47 0058 0400A0E1 		mov	r0, r4
+  48 005c FEFFFFEB 		bl	_ZN5TimerC1EPFvPvEm9TimerType
+  49 0060 0400A0E1 		mov	r0, r4
+  50 0064 FEFFFFEB 		bl	_ZN5Timer5startEv
+  51 0068 0100A0E3 		mov	r0, #1
+  52 006c FEFFFFEB 		bl	xQueueCreateMutex
+  53 0070 1010A0E3 		mov	r1, #16
+  54 0074 28008DE5 		str	r0, [sp, #40]
+  55 0078 0020A0E3 		mov	r2, #0
+  56 007c 0100A0E3 		mov	r0, #1
+  57 0080 FEFFFFEB 		bl	xQueueGenericCreate
+  58 0084 30408DE2 		add	r4, sp, #48
+  59 0088 200024E5 		str	r0, [r4, #-32]!
+  60 008c 0050A0E3 		mov	r5, #0
+  61 0090 08C084E2 		add	ip, r4, #8
+  62 0094 0360A0E3 		mov	r6, #3
+  63 0098 FC009FE5 		ldr	r0, .L5+16
+  64 009c FC109FE5 		ldr	r1, .L5+20
+  65 00a0 062CA0E3 		mov	r2, #1536
+  66 00a4 0430A0E1 		mov	r3, r4
+  67 00a8 40108DE8 		stmia	sp, {r6, ip}	@ phole stm
+  68 00ac 08508DE5 		str	r5, [sp, #8]
+  69 00b0 0C508DE5 		str	r5, [sp, #12]
+  70 00b4 FEFFFFEB 		bl	xTaskGenericCreate
+  71 00b8 010050E3 		cmp	r0, #1
+  72 00bc 2400001A 		bne	.L2
+  73 00c0 0CC084E2 		add	ip, r4, #12
+  74 00c4 D8009FE5 		ldr	r0, .L5+24
+  75 00c8 D8109FE5 		ldr	r1, .L5+28
+  76 00cc 062CA0E3 		mov	r2, #1536
+  77 00d0 0430A0E1 		mov	r3, r4
+  78 00d4 40108DE8 		stmia	sp, {r6, ip}	@ phole stm
+  79 00d8 08508DE5 		str	r5, [sp, #8]
+  80 00dc 0C508DE5 		str	r5, [sp, #12]
+  81 00e0 FEFFFFEB 		bl	xTaskGenericCreate
+  82 00e4 010050E3 		cmp	r0, #1
+  83 00e8 00E0A0E1 		mov	lr, r0
+  84 00ec 1800001A 		bne	.L2
+  85 00f0 14C084E2 		add	ip, r4, #20
+  86 00f4 B0009FE5 		ldr	r0, .L5+32
+  87 00f8 B0109FE5 		ldr	r1, .L5+36
+  88 00fc 012CA0E3 		mov	r2, #256
+  89 0100 0430A0E1 		mov	r3, r4
+  90 0104 00E08DE5 		str	lr, [sp, #0]
+  91 0108 04C08DE5 		str	ip, [sp, #4]
+  92 010c 08508DE5 		str	r5, [sp, #8]
+  93 0110 0C508DE5 		str	r5, [sp, #12]
+  94 0114 FEFFFFEB 		bl	xTaskGenericCreate
+  95 0118 010050E3 		cmp	r0, #1
+  96 011c 00E0A0E1 		mov	lr, r0
+  97 0120 0B00001A 		bne	.L2
+  98 0124 10C084E2 		add	ip, r4, #16
+  99 0128 0430A0E1 		mov	r3, r4
+ 100 012c 80009FE5 		ldr	r0, .L5+40
+ 101 0130 80109FE5 		ldr	r1, .L5+44
+ 102 0134 062CA0E3 		mov	r2, #1536
+ 103 0138 00E08DE5 		str	lr, [sp, #0]
+ 104 013c 04C08DE5 		str	ip, [sp, #4]
+ 105 0140 0C508DE5 		str	r5, [sp, #12]
+ 106 0144 08508DE5 		str	r5, [sp, #8]
+ 107 0148 FEFFFFEB 		bl	xTaskGenericCreate
+ 108 014c 010050E3 		cmp	r0, #1
+ 109 0150 0100000A 		beq	.L3
+ 110              	.L2:
+ 111 0154 60009FE5 		ldr	r0, .L5+48
+ 112 0158 FEFFFFEB 		bl	rprintf
+ 113              	.L3:
+ 114 015c 5C009FE5 		ldr	r0, .L5+52
+ 115 0160 FEFFFFEB 		bl	rprintf
+ 116 0164 FEFFFFEB 		bl	vTaskStartScheduler
+ 117 0168 20009FE5 		ldr	r0, .L5+4
+ 118 016c FEFFFFEB 		bl	rprintf_devopen
+ 119 0170 4C009FE5 		ldr	r0, .L5+56
+ 120 0174 FEFFFFEB 		bl	rprintf
+ 121 0178 2C008DE2 		add	r0, sp, #44
+ 122 017c FEFFFFEB 		bl	_ZN5TimerD1Ev
+ 123 0180 0000A0E3 		mov	r0, #0
+ 124 0184 30D08DE2 		add	sp, sp, #48
+ 125 0188 7080BDE8 		ldmfd	sp!, {r4, r5, r6, pc}
+ 126              	.L6:
+ 127              		.align	2
+ 128              	.L5:
+ 129 018c 40420F00 		.word	1000000
+ 130 0190 00000000 		.word	uart0PutCharPolling
+ 131 0194 00000000 		.word	uart0PutChar
+ 132 0198 00000000 		.word	_Z14FatFsDiskTimerPv
+ 133 019c 00000000 		.word	_Z6uartUIPv
+ 134 01a0 00000000 		.word	.LC0
+ 135 01a4 00000000 		.word	mp3Task
+ 136 01a8 08000000 		.word	.LC1
+ 137 01ac 00000000 		.word	_Z14sd_card_detectPv
+ 138 01b0 0C000000 		.word	.LC2
+ 139 01b4 00000000 		.word	mp3_controls
+ 140 01b8 1B000000 		.word	.LC3
+ 141 01bc 28000000 		.word	.LC4
+ 142 01c0 68000000 		.word	.LC5
+ 143 01c4 82000000 		.word	.LC6
+ 145              		.align	2
+ 146              		.global	_Z14FatFsDiskTimerPv
+ 148              	_Z14FatFsDiskTimerPv:
+ 149              		@ args = 0, pretend = 0, frame = 0
+ 150              		@ frame_needed = 0, uses_anonymous_args = 0
+ 151              		@ link register save eliminated.
+ 152 01c8 FEFFFFEA 		b	disk_timerproc
+ 154              		.section	.rodata.str1.1
+ 155              	.LC7:
+ 156 009e 53756363 		.ascii	"Succesfully\000"
+ 156      65736675 
+ 156      6C6C7900 
+ 157              	.LC8:
+ 158 00aa 4661696C 		.ascii	"Failed\000"
+ 158      656400
+ 159              	.LC9:
+ 160 00b1 2D2D5344 		.ascii	"--SD Card Mounted %s--\012\000"
+ 160      20436172 
+ 160      64204D6F 
+ 160      756E7465 
+ 160      64202573 
+ 161              	.LC10:
+ 162 00c9 2D2D5344 		.ascii	"--SD Card Un-Mounted %s--\012\000"
+ 162      20436172 
+ 162      6420556E 
+ 162      2D4D6F75 
+ 162      6E746564 
+ 163              		.text
+ 164              		.align	2
+ 165              		.global	_Z14sd_card_detectPv
+ 167              	_Z14sd_card_detectPv:
+ 168              		@ args = 0, pretend = 0, frame = 564
+ 169              		@ frame_needed = 0, uses_anonymous_args = 0
+ 170 01cc F0412DE9 		stmfd	sp!, {r4, r5, r6, r7, r8, lr}
+ 171 01d0 94509FE5 		ldr	r5, .L22
+ 172 01d4 94709FE5 		ldr	r7, .L22+4
+ 173 01d8 94609FE5 		ldr	r6, .L22+8
+ 174 01dc 8DDF4DE2 		sub	sp, sp, #564
+ 175 01e0 0040A0E3 		mov	r4, #0
+ 176              	.L16:
+ 177 01e4 003095E5 		ldr	r3, [r5, #0]
+ 178 01e8 010813E3 		tst	r3, #65536
+ 179 01ec 1A00001A 		bne	.L10
+ 180 01f0 000054E3 		cmp	r4, #0
+ 181 01f4 0400A0E1 		mov	r0, r4
+ 182 01f8 0D10A0E1 		mov	r1, sp
+ 183 01fc 1600001A 		bne	.L10
+ 184 0200 FEFFFFEB 		bl	f_mount
+ 185 0204 000050E3 		cmp	r0, #0
+ 186 0208 0710A011 		movne	r1, r7
+ 187 020c 0610A001 		moveq	r1, r6
+ 188 0210 60009FE5 		ldr	r0, .L22+12
+ 189 0214 080000EA 		b	.L20
+ 190              	.L21:
+ 191 0218 0000A0E3 		mov	r0, #0
+ 192 021c 000054E1 		cmp	r4, r0
+ 193 0220 0010A0E1 		mov	r1, r0
+ 194 0224 0500000A 		beq	.L13
+ 195 0228 FEFFFFEB 		bl	f_mount
+ 196 022c 000050E3 		cmp	r0, #0
+ 197 0230 44009FE5 		ldr	r0, .L22+16
+ 198 0234 0710A011 		movne	r1, r7
+ 199 0238 0610A001 		moveq	r1, r6
+ 200              	.L20:
+ 201 023c FEFFFFEB 		bl	rprintf
+ 202              	.L13:
+ 203 0240 003095E5 		ldr	r3, [r5, #0]
+ 204 0244 2338A0E1 		mov	r3, r3, lsr #16
+ 205 0248 013023E2 		eor	r3, r3, #1
+ 206 024c 6400A0E3 		mov	r0, #100
+ 207 0250 014003E2 		and	r4, r3, #1
+ 208 0254 FEFFFFEB 		bl	vTaskDelay
+ 209 0258 E1FFFFEA 		b	.L16
+ 210              	.L10:
+ 211 025c 003095E5 		ldr	r3, [r5, #0]
+ 212 0260 010813E3 		tst	r3, #65536
+ 213 0264 F5FFFF0A 		beq	.L13
+ 214 0268 EAFFFFEA 		b	.L21
+ 215              	.L23:
+ 216              		.align	2
+ 217              	.L22:
+ 218 026c 008002E0 		.word	-536707072
+ 219 0270 AA000000 		.word	.LC8
+ 220 0274 9E000000 		.word	.LC7
+ 221 0278 B1000000 		.word	.LC9
+ 222 027c C9000000 		.word	.LC10
+ 224              		.ident	"GCC: (GNU) 4.3.2"
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.cpp
+/cygdrive/c/Users/User/AppData/Local/Temp/cc4BBcuT.s:22     .text:00000000 main
+/cygdrive/c/Users/User/AppData/Local/Temp/cc4BBcuT.s:25     .text:00000000 $a
+/cygdrive/c/Users/User/AppData/Local/Temp/cc4BBcuT.s:129    .text:0000018c $d
+/cygdrive/c/Users/User/AppData/Local/Temp/cc4BBcuT.s:148    .text:000001c8 _Z14FatFsDiskTimerPv
+/cygdrive/c/Users/User/AppData/Local/Temp/cc4BBcuT.s:167    .text:000001cc _Z14sd_card_detectPv
+/cygdrive/c/Users/User/AppData/Local/Temp/cc4BBcuT.s:152    .text:000001c8 $a
+/cygdrive/c/Users/User/AppData/Local/Temp/cc4BBcuT.s:218    .text:0000026c $d
+
+UNDEFINED SYMBOLS
+cpuSetupHardware
+watchdogDelayUs
+uart0Init
+uart1Init
+rprintf_devopen
+cpuPrintMemoryInfo
+_ZN5TimerC1EPFvPvEm9TimerType
+_ZN5Timer5startEv
+xQueueCreateMutex
+xQueueGenericCreate
+xTaskGenericCreate
+rprintf
+vTaskStartScheduler
+_ZN5TimerD1Ev
+uart0PutCharPolling
+uart0PutChar
+_Z6uartUIPv
+mp3Task
+mp3_controls
+disk_timerproc
+f_mount
+vTaskDelay

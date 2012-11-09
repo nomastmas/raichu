@@ -1,0 +1,153 @@
+   1              		.file	"exceptionHandlers.c"
+   2              		.section	.rodata.str1.1,"aMS",%progbits,1
+   3              	.LC0:
+   4 0000 25732120 		.ascii	"%s!  Program Counter Address: 0x%08X\012\000"
+   4      2050726F 
+   4      6772616D 
+   4      20436F75 
+   4      6E746572 
+   5              	.LC1:
+   6 0026 4F70656E 		.ascii	"Open your project's *.lst file to locate PC Value t"
+   6      20796F75 
+   6      72207072 
+   6      6F6A6563 
+   6      74277320 
+   7 0059 6F206465 		.ascii	"o debug\012\000"
+   7      6275670A 
+   7      00
+   8              		.text
+   9              		.align	2
+  10              		.global	printExceptionInfo
+  12              	printExceptionInfo:
+  13              		@ args = 0, pretend = 0, frame = 0
+  14              		@ frame_needed = 0, uses_anonymous_args = 0
+  15 0000 30402DE9 		stmfd	sp!, {r4, r5, lr}
+  16 0004 0150A0E1 		mov	r5, r1
+  17 0008 0040A0E1 		mov	r4, r0
+  18 000c 1C009FE5 		ldr	r0, .L4
+  19 0010 FEFFFFEB 		bl	rprintf_devopen
+  20 0014 18009FE5 		ldr	r0, .L4+4
+  21 0018 0410A0E1 		mov	r1, r4
+  22 001c 0520A0E1 		mov	r2, r5
+  23 0020 FEFFFFEB 		bl	rprintf
+  24 0024 0C009FE5 		ldr	r0, .L4+8
+  25 0028 FEFFFFEB 		bl	rprintf
+  26              	.L2:
+  27 002c FEFFFFEA 		b	.L2
+  28              	.L5:
+  29              		.align	2
+  30              	.L4:
+  31 0030 00000000 		.word	uart0PutCharPolling
+  32 0034 00000000 		.word	.LC0
+  33 0038 26000000 		.word	.LC1
+  35              		.section	.rodata.str1.1
+  36              	.LC2:
+  37 0062 46495120 		.ascii	"FIQ Interrupt Exception\000"
+  37      496E7465 
+  37      72727570 
+  37      74204578 
+  37      63657074 
+  38              		.text
+  39              		.align	2
+  40              		.global	Exception_FIQHandler
+  42              	Exception_FIQHandler:
+  43              		@ args = 0, pretend = 0, frame = 0
+  44              		@ frame_needed = 0, uses_anonymous_args = 0
+  45 003c 04E02DE5 		str	lr, [sp, #-4]!
+  46 0040 08009FE5 		ldr	r0, .L8
+  47 0044 04104EE2 		sub	r1, lr, #4
+  48 0048 04E09DE4 		ldr	lr, [sp], #4
+  49 004c FEFFFFEA 		b	printExceptionInfo
+  50              	.L9:
+  51              		.align	2
+  52              	.L8:
+  53 0050 62000000 		.word	.LC2
+  55              		.section	.rodata.str1.1
+  56              	.LC3:
+  57 007a 556E6465 		.ascii	"Undefined Data Access Exception\000"
+  57      66696E65 
+  57      64204461 
+  57      74612041 
+  57      63636573 
+  58              		.text
+  59              		.align	2
+  60              		.global	Exception_DataAbort
+  62              	Exception_DataAbort:
+  63              		@ args = 0, pretend = 0, frame = 0
+  64              		@ frame_needed = 0, uses_anonymous_args = 0
+  65 0054 04E02DE5 		str	lr, [sp, #-4]!
+  66 0058 08009FE5 		ldr	r0, .L12
+  67 005c 08104EE2 		sub	r1, lr, #8
+  68 0060 04E09DE4 		ldr	lr, [sp], #4
+  69 0064 FEFFFFEA 		b	printExceptionInfo
+  70              	.L13:
+  71              		.align	2
+  72              	.L12:
+  73 0068 7A000000 		.word	.LC3
+  75              		.section	.rodata.str1.1
+  76              	.LC4:
+  77 009a 556E6465 		.ascii	"Undefined Instruction Exception\000"
+  77      66696E65 
+  77      6420496E 
+  77      73747275 
+  77      6374696F 
+  78              		.text
+  79              		.align	2
+  80              		.global	Exception_PrefetchAbort
+  82              	Exception_PrefetchAbort:
+  83              		@ args = 0, pretend = 0, frame = 0
+  84              		@ frame_needed = 0, uses_anonymous_args = 0
+  85 006c 04E02DE5 		str	lr, [sp, #-4]!
+  86 0070 08009FE5 		ldr	r0, .L16
+  87 0074 04104EE2 		sub	r1, lr, #4
+  88 0078 04E09DE4 		ldr	lr, [sp], #4
+  89 007c FEFFFFEA 		b	printExceptionInfo
+  90              	.L17:
+  91              		.align	2
+  92              	.L16:
+  93 0080 9A000000 		.word	.LC4
+  95              		.section	.rodata.str1.1
+  96              	.LC5:
+  97 00ba 556E6465 		.ascii	"Undefined Address Exception\000"
+  97      66696E65 
+  97      64204164 
+  97      64726573 
+  97      73204578 
+  98              		.text
+  99              		.align	2
+ 100              		.global	Exception_UndefinedAddress
+ 102              	Exception_UndefinedAddress:
+ 103              		@ args = 0, pretend = 0, frame = 0
+ 104              		@ frame_needed = 0, uses_anonymous_args = 0
+ 105 0084 04E02DE5 		str	lr, [sp, #-4]!
+ 106 0088 08009FE5 		ldr	r0, .L20
+ 107 008c 04104EE2 		sub	r1, lr, #4
+ 108 0090 04E09DE4 		ldr	lr, [sp], #4
+ 109 0094 FEFFFFEA 		b	printExceptionInfo
+ 110              	.L21:
+ 111              		.align	2
+ 112              	.L20:
+ 113 0098 BA000000 		.word	.LC5
+ 115              		.ident	"GCC: (GNU) 4.3.2"
+DEFINED SYMBOLS
+                            *ABS*:00000000 exceptionHandlers.c
+/cygdrive/c/Users/User/AppData/Local/Temp/ccVLQqGj.s:12     .text:00000000 printExceptionInfo
+/cygdrive/c/Users/User/AppData/Local/Temp/ccVLQqGj.s:15     .text:00000000 $a
+/cygdrive/c/Users/User/AppData/Local/Temp/ccVLQqGj.s:31     .text:00000030 $d
+/cygdrive/c/Users/User/AppData/Local/Temp/ccVLQqGj.s:42     .text:0000003c Exception_FIQHandler
+/cygdrive/c/Users/User/AppData/Local/Temp/ccVLQqGj.s:45     .text:0000003c $a
+/cygdrive/c/Users/User/AppData/Local/Temp/ccVLQqGj.s:53     .text:00000050 $d
+/cygdrive/c/Users/User/AppData/Local/Temp/ccVLQqGj.s:62     .text:00000054 Exception_DataAbort
+/cygdrive/c/Users/User/AppData/Local/Temp/ccVLQqGj.s:65     .text:00000054 $a
+/cygdrive/c/Users/User/AppData/Local/Temp/ccVLQqGj.s:73     .text:00000068 $d
+/cygdrive/c/Users/User/AppData/Local/Temp/ccVLQqGj.s:82     .text:0000006c Exception_PrefetchAbort
+/cygdrive/c/Users/User/AppData/Local/Temp/ccVLQqGj.s:85     .text:0000006c $a
+/cygdrive/c/Users/User/AppData/Local/Temp/ccVLQqGj.s:93     .text:00000080 $d
+/cygdrive/c/Users/User/AppData/Local/Temp/ccVLQqGj.s:102    .text:00000084 Exception_UndefinedAddress
+/cygdrive/c/Users/User/AppData/Local/Temp/ccVLQqGj.s:105    .text:00000084 $a
+/cygdrive/c/Users/User/AppData/Local/Temp/ccVLQqGj.s:113    .text:00000098 $d
+
+UNDEFINED SYMBOLS
+rprintf_devopen
+rprintf
+uart0PutCharPolling

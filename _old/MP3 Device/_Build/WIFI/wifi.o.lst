@@ -1,0 +1,855 @@
+   1              		.file	"wifi.cpp"
+   2              		.text
+   3              		.align	2
+   4              		.global	_Z23wifiReceiveExpectedDataPci
+   6              	_Z23wifiReceiveExpectedDataPci:
+   7              		@ args = 0, pretend = 0, frame = 0
+   8              		@ frame_needed = 0, uses_anonymous_args = 0
+   9 0000 30402DE9 		stmfd	sp!, {r4, r5, lr}
+  10 0004 0040A0E1 		mov	r4, r0
+  11 0008 0150A0E1 		mov	r5, r1
+  12 000c 010000EA 		b	.L2
+  13              	.L4:
+  14 0010 000055E3 		cmp	r5, #0
+  15 0014 3080BDB8 		ldmltfd	sp!, {r4, r5, pc}
+  16              	.L2:
+  17 0018 0400A0E1 		mov	r0, r4
+  18 001c FA1FA0E3 		mov	r1, #1000
+  19 0020 FEFFFFEB 		bl	uart1GetChar
+  20 0024 000050E3 		cmp	r0, #0
+  21 0028 014084E2 		add	r4, r4, #1
+  22 002c F7FFFF1A 		bne	.L4
+  23 0030 3080BDE8 		ldmfd	sp!, {r4, r5, pc}
+  25              		.align	2
+  26              		.global	_Z14wifiSendStringPKc
+  28              	_Z14wifiSendStringPKc:
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31 0034 30402DE9 		stmfd	sp!, {r4, r5, lr}
+  32 0038 0050A0E1 		mov	r5, r0
+  33 003c 0040A0E3 		mov	r4, #0
+  34 0040 000000EA 		b	.L7
+  35              	.L8:
+  36 0044 FEFFFFEB 		bl	uart1PutChar
+  37              	.L7:
+  38 0048 0430D5E7 		ldrb	r3, [r5, r4]	@ zero_extendqisi2
+  39 004c 000053E2 		subs	r0, r3, #0
+  40 0050 0010E0E3 		mvn	r1, #0
+  41 0054 014084E2 		add	r4, r4, #1
+  42 0058 F9FFFF1A 		bne	.L8
+  43 005c 3080BDE8 		ldmfd	sp!, {r4, r5, pc}
+  45              		.section	.text._ZN12SongNameTypeaSEPc,"axG",%progbits,_ZN12SongNameTypeaSEPc,comdat
+  46              		.align	2
+  47              		.weak	_ZN12SongNameTypeaSEPc
+  49              	_ZN12SongNameTypeaSEPc:
+  50              		@ args = 0, pretend = 0, frame = 0
+  51              		@ frame_needed = 0, uses_anonymous_args = 0
+  52 0000 30402DE9 		stmfd	sp!, {r4, r5, lr}
+  53 0004 1820A0E3 		mov	r2, #24
+  54 0008 0150A0E1 		mov	r5, r1
+  55 000c 0010A0E3 		mov	r1, #0
+  56 0010 0040A0E1 		mov	r4, r0
+  57 0014 FEFFFFEB 		bl	memset
+  58 0018 0400A0E1 		mov	r0, r4
+  59 001c 0510A0E1 		mov	r1, r5
+  60 0020 1620A0E3 		mov	r2, #22
+  61 0024 3040BDE8 		ldmfd	sp!, {r4, r5, lr}
+  62 0028 FEFFFFEA 		b	strncpy
+  64              		.section	.text._ZN6VECTORI12SongNameTypeE9push_backERKS0_,"axG",%progbits,_ZN6VECTORI12SongNameTyp
+  65              		.align	2
+  66              		.weak	_ZN6VECTORI12SongNameTypeE9push_backERKS0_
+  68              	_ZN6VECTORI12SongNameTypeE9push_backERKS0_:
+  69              		@ args = 0, pretend = 0, frame = 0
+  70              		@ frame_needed = 0, uses_anonymous_args = 0
+  71 0000 0C0090E9 		ldmib	r0, {r2, r3}	@ phole ldm
+  72 0004 020053E1 		cmp	r3, r2
+  73 0008 70402DE9 		stmfd	sp!, {r4, r5, r6, lr}
+  74 000c 0040A0E1 		mov	r4, r0
+  75 0010 0160A0E1 		mov	r6, r1
+  76 0014 0800003A 		bcc	.L13
+  77 0018 003090E5 		ldr	r3, [r0, #0]
+  78 001c 035092E0 		adds	r5, r2, r3
+  79 0020 0500002A 		bcs	.L13
+  80 0024 1830A0E3 		mov	r3, #24
+  81 0028 930501E0 		mul	r1, r3, r5
+  82 002c 0C0090E5 		ldr	r0, [r0, #12]
+  83 0030 FEFFFFEB 		bl	realloc
+  84 0034 045084E5 		str	r5, [r4, #4]
+  85 0038 0C0084E5 		str	r0, [r4, #12]
+  86              	.L13:
+  87 003c 081084E2 		add	r1, r4, #8
+  88 0040 060091E8 		ldmia	r1, {r1, r2}	@ phole ldm
+  89 0044 1830A0E3 		mov	r3, #24
+  90 0048 932120E0 		mla	r0, r3, r1, r2
+  91 004c 060050E1 		cmp	r0, r6
+  92 0050 0610A011 		movne	r1, r6
+  93 0054 FEFFFF1B 		blne	_ZN12SongNameTypeaSEPc
+  94              	.L14:
+  95 0058 083094E5 		ldr	r3, [r4, #8]
+  96 005c 013083E2 		add	r3, r3, #1
+  97 0060 083084E5 		str	r3, [r4, #8]
+  98 0064 7080BDE8 		ldmfd	sp!, {r4, r5, r6, pc}
+ 100              		.section	.rodata.str1.1,"aMS",%progbits,1
+ 101              	.LC0:
+ 102 0000 2300     		.ascii	"#\000"
+ 103              	.LC1:
+ 104 0002 25730A00 		.ascii	"%s\012\000"
+ 105              		.text
+ 106              		.align	2
+ 107              		.global	_Z23parsePlayListFromServerPc
+ 109              	_Z23parsePlayListFromServerPc:
+ 110              		@ args = 0, pretend = 0, frame = 64
+ 111              		@ frame_needed = 0, uses_anonymous_args = 0
+ 112 0060 70402DE9 		stmfd	sp!, {r4, r5, r6, lr}
+ 113 0064 0040A0E3 		mov	r4, #0
+ 114 0068 40D04DE2 		sub	sp, sp, #64
+ 115 006c 0050A0E1 		mov	r5, r0
+ 116 0070 0410A0E1 		mov	r1, r4
+ 117 0074 1820A0E3 		mov	r2, #24
+ 118 0078 10008DE2 		add	r0, sp, #16
+ 119 007c 0C408DE5 		str	r4, [sp, #12]
+ 120 0080 FEFFFFEB 		bl	memset
+ 121 0084 0500A0E1 		mov	r0, r5
+ 122 0088 0430A0E3 		mov	r3, #4
+ 123 008c 6C109FE5 		ldr	r1, .L21
+ 124 0090 04408DE5 		str	r4, [sp, #4]
+ 125 0094 08408DE5 		str	r4, [sp, #8]
+ 126 0098 00308DE5 		str	r3, [sp, #0]
+ 127 009c FEFFFFEB 		bl	strtok
+ 128 00a0 0D60A0E1 		mov	r6, sp
+ 129 00a4 0040A0E1 		mov	r4, r0
+ 130 00a8 28508DE2 		add	r5, sp, #40
+ 131 00ac 0A0000EA 		b	.L17
+ 132              	.L18:
+ 133 00b0 FEFFFFEB 		bl	_ZN12SongNameTypeaSEPc
+ 134 00b4 0D00A0E1 		mov	r0, sp
+ 135 00b8 0510A0E1 		mov	r1, r5
+ 136 00bc FEFFFFEB 		bl	_ZN6VECTORI12SongNameTypeE9push_backERKS0_
+ 137 00c0 0410A0E1 		mov	r1, r4
+ 138 00c4 38009FE5 		ldr	r0, .L21+4
+ 139 00c8 FEFFFFEB 		bl	rprintf
+ 140 00cc 0000A0E3 		mov	r0, #0
+ 141 00d0 28109FE5 		ldr	r1, .L21
+ 142 00d4 FEFFFFEB 		bl	strtok
+ 143 00d8 0040A0E1 		mov	r4, r0
+ 144              	.L17:
+ 145 00dc 000054E3 		cmp	r4, #0
+ 146 00e0 0410A0E1 		mov	r1, r4
+ 147 00e4 0500A0E1 		mov	r0, r5
+ 148 00e8 F0FFFF1A 		bne	.L18
+ 149 00ec 0C009DE5 		ldr	r0, [sp, #12]
+ 150 00f0 000050E3 		cmp	r0, #0
+ 151 00f4 FEFFFF1B 		blne	_ZdaPv
+ 152              	.L20:
+ 153 00f8 40D08DE2 		add	sp, sp, #64
+ 154 00fc 7080BDE8 		ldmfd	sp!, {r4, r5, r6, pc}
+ 155              	.L22:
+ 156              		.align	2
+ 157              	.L21:
+ 158 0100 00000000 		.word	.LC0
+ 159 0104 02000000 		.word	.LC1
+ 161              		.section	.rodata.str1.1
+ 162              	.LC2:
+ 163 0006 436F6E6E 		.ascii	"Connection Status Opened!\012\000"
+ 163      65637469 
+ 163      6F6E2053 
+ 163      74617475 
+ 163      73204F70 
+ 164              	.LC3:
+ 165 0021 2A4F5045 		.ascii	"*OPEN*\000"
+ 165      4E2A00
+ 166              		.text
+ 167              		.align	2
+ 168              		.global	_Z20wifiConnectionStatusv
+ 170              	_Z20wifiConnectionStatusv:
+ 171              		@ args = 0, pretend = 0, frame = 256
+ 172              		@ frame_needed = 0, uses_anonymous_args = 0
+ 173 0108 10402DE9 		stmfd	sp!, {r4, lr}
+ 174 010c 01DC4DE2 		sub	sp, sp, #256
+ 175 0110 0D40A0E1 		mov	r4, sp
+ 176 0114 040000EA 		b	.L24
+ 177              	.L27:
+ 178 0118 48009FE5 		ldr	r0, .L28
+ 179 011c FEFFFFEB 		bl	rprintf
+ 180 0120 0100A0E3 		mov	r0, #1
+ 181 0124 01DC8DE2 		add	sp, sp, #256
+ 182 0128 1080BDE8 		ldmfd	sp!, {r4, pc}
+ 183              	.L24:
+ 184 012c 012CA0E3 		mov	r2, #256
+ 185 0130 0010A0E3 		mov	r1, #0
+ 186 0134 0D00A0E1 		mov	r0, sp
+ 187 0138 FEFFFFEB 		bl	memset
+ 188 013c 28009FE5 		ldr	r0, .L28+4
+ 189 0140 FEFFFFEB 		bl	_Z14wifiSendStringPKc
+ 190 0144 0D00A0E1 		mov	r0, sp
+ 191 0148 011CA0E3 		mov	r1, #256
+ 192 014c FEFFFFEB 		bl	_Z23wifiReceiveExpectedDataPci
+ 193 0150 0D00A0E1 		mov	r0, sp
+ 194 0154 14109FE5 		ldr	r1, .L28+8
+ 195 0158 FEFFFFEB 		bl	strstr
+ 196 015c 000050E3 		cmp	r0, #0
+ 197 0160 F1FFFF0A 		beq	.L24
+ 198 0164 EBFFFFEA 		b	.L27
+ 199              	.L29:
+ 200              		.align	2
+ 201              	.L28:
+ 202 0168 06000000 		.word	.LC2
+ 203 016c 00000000 		.word	_ZL16wifiStatusOpCode
+ 204 0170 21000000 		.word	.LC3
+ 206              		.section	.rodata.str1.1
+ 207              	.LC4:
+ 208 0028 53657276 		.ascii	"Server Acknowledged!\012\000"
+ 208      65722041 
+ 208      636B6E6F 
+ 208      776C6564 
+ 208      67656421 
+ 209              	.LC5:
+ 210 003e 6F6B00   		.ascii	"ok\000"
+ 211              		.text
+ 212              		.align	2
+ 213              		.global	_Z21wifiReceiveFromServerv
+ 215              	_Z21wifiReceiveFromServerv:
+ 216              		@ args = 0, pretend = 0, frame = 256
+ 217              		@ frame_needed = 0, uses_anonymous_args = 0
+ 218 0174 10402DE9 		stmfd	sp!, {r4, lr}
+ 219 0178 01DC4DE2 		sub	sp, sp, #256
+ 220 017c 0D40A0E1 		mov	r4, sp
+ 221 0180 040000EA 		b	.L31
+ 222              	.L34:
+ 223 0184 40009FE5 		ldr	r0, .L35
+ 224 0188 FEFFFFEB 		bl	rprintf
+ 225 018c 0100A0E3 		mov	r0, #1
+ 226 0190 01DC8DE2 		add	sp, sp, #256
+ 227 0194 1080BDE8 		ldmfd	sp!, {r4, pc}
+ 228              	.L31:
+ 229 0198 012CA0E3 		mov	r2, #256
+ 230 019c 0010A0E3 		mov	r1, #0
+ 231 01a0 0D00A0E1 		mov	r0, sp
+ 232 01a4 FEFFFFEB 		bl	memset
+ 233 01a8 0D00A0E1 		mov	r0, sp
+ 234 01ac 011CA0E3 		mov	r1, #256
+ 235 01b0 FEFFFFEB 		bl	_Z23wifiReceiveExpectedDataPci
+ 236 01b4 0D00A0E1 		mov	r0, sp
+ 237 01b8 10109FE5 		ldr	r1, .L35+4
+ 238 01bc FEFFFFEB 		bl	strstr
+ 239 01c0 000050E3 		cmp	r0, #0
+ 240 01c4 F3FFFF0A 		beq	.L31
+ 241 01c8 EDFFFFEA 		b	.L34
+ 242              	.L36:
+ 243              		.align	2
+ 244              	.L35:
+ 245 01cc 28000000 		.word	.LC4
+ 246 01d0 3E000000 		.word	.LC5
+ 248              		.section	.rodata.str1.1
+ 249              	.LC6:
+ 250 0041 53656E74 		.ascii	"Sent Device ID Succesfully!\012\000"
+ 250      20446576 
+ 250      69636520 
+ 250      49442053 
+ 250      75636365 
+ 251              		.text
+ 252              		.align	2
+ 253              		.global	_Z24wifiSendDeviceIDToServerv
+ 255              	_Z24wifiSendDeviceIDToServerv:
+ 256              		@ args = 0, pretend = 0, frame = 256
+ 257              		@ frame_needed = 0, uses_anonymous_args = 0
+ 258 01d4 10402DE9 		stmfd	sp!, {r4, lr}
+ 259 01d8 54009FE5 		ldr	r0, .L42
+ 260 01dc 01DC4DE2 		sub	sp, sp, #256
+ 261 01e0 FEFFFFEB 		bl	_Z14wifiSendStringPKc
+ 262 01e4 0D40A0E1 		mov	r4, sp
+ 263 01e8 040000EA 		b	.L38
+ 264              	.L41:
+ 265 01ec 44009FE5 		ldr	r0, .L42+4
+ 266 01f0 FEFFFFEB 		bl	rprintf
+ 267 01f4 0100A0E3 		mov	r0, #1
+ 268 01f8 01DC8DE2 		add	sp, sp, #256
+ 269 01fc 1080BDE8 		ldmfd	sp!, {r4, pc}
+ 270              	.L38:
+ 271 0200 012CA0E3 		mov	r2, #256
+ 272 0204 0010A0E3 		mov	r1, #0
+ 273 0208 0D00A0E1 		mov	r0, sp
+ 274 020c FEFFFFEB 		bl	memset
+ 275 0210 0D00A0E1 		mov	r0, sp
+ 276 0214 011CA0E3 		mov	r1, #256
+ 277 0218 FEFFFFEB 		bl	_Z23wifiReceiveExpectedDataPci
+ 278 021c 0D00A0E1 		mov	r0, sp
+ 279 0220 14109FE5 		ldr	r1, .L42+8
+ 280 0224 FEFFFFEB 		bl	strstr
+ 281 0228 000050E3 		cmp	r0, #0
+ 282 022c F3FFFF0A 		beq	.L38
+ 283 0230 EDFFFFEA 		b	.L41
+ 284              	.L43:
+ 285              		.align	2
+ 286              	.L42:
+ 287 0234 08000000 		.word	_ZL14deviceIDBuffer
+ 288 0238 41000000 		.word	.LC6
+ 289 023c 3E000000 		.word	.LC5
+ 291              		.section	.rodata.str1.1
+ 292              	.LC7:
+ 293 005e 436F6E6E 		.ascii	"Connection opened!\012\000"
+ 293      65637469 
+ 293      6F6E206F 
+ 293      70656E65 
+ 293      64210A00 
+ 294              		.text
+ 295              		.align	2
+ 296              		.global	_Z21wifiOpenTCPConnectionv
+ 298              	_Z21wifiOpenTCPConnectionv:
+ 299              		@ args = 0, pretend = 0, frame = 256
+ 300              		@ frame_needed = 0, uses_anonymous_args = 0
+ 301 0240 10402DE9 		stmfd	sp!, {r4, lr}
+ 302 0244 01DC4DE2 		sub	sp, sp, #256
+ 303 0248 0D40A0E1 		mov	r4, sp
+ 304 024c 040000EA 		b	.L45
+ 305              	.L48:
+ 306 0250 5C009FE5 		ldr	r0, .L49
+ 307 0254 FEFFFFEB 		bl	rprintf
+ 308 0258 0100A0E3 		mov	r0, #1
+ 309 025c 01DC8DE2 		add	sp, sp, #256
+ 310 0260 1080BDE8 		ldmfd	sp!, {r4, pc}
+ 311              	.L45:
+ 312 0264 012CA0E3 		mov	r2, #256
+ 313 0268 0010A0E3 		mov	r1, #0
+ 314 026c 0D00A0E1 		mov	r0, sp
+ 315 0270 FEFFFFEB 		bl	memset
+ 316 0274 3C009FE5 		ldr	r0, .L49+4
+ 317 0278 FEFFFFEB 		bl	_Z14wifiSendStringPKc
+ 318 027c 38009FE5 		ldr	r0, .L49+8
+ 319 0280 FEFFFFEB 		bl	_Z14wifiSendStringPKc
+ 320 0284 0D00A0E1 		mov	r0, sp
+ 321 0288 011CA0E3 		mov	r1, #256
+ 322 028c FEFFFFEB 		bl	_Z23wifiReceiveExpectedDataPci
+ 323 0290 0D10A0E1 		mov	r1, sp
+ 324 0294 24009FE5 		ldr	r0, .L49+12
+ 325 0298 FEFFFFEB 		bl	rprintf
+ 326 029c 0D00A0E1 		mov	r0, sp
+ 327 02a0 1C109FE5 		ldr	r1, .L49+16
+ 328 02a4 FEFFFFEB 		bl	strstr
+ 329 02a8 000050E3 		cmp	r0, #0
+ 330 02ac ECFFFF0A 		beq	.L45
+ 331 02b0 E6FFFFEA 		b	.L48
+ 332              	.L50:
+ 333              		.align	2
+ 334              	.L49:
+ 335 02b4 5E000000 		.word	.LC7
+ 336 02b8 31000000 		.word	_ZL15serverIPAddress
+ 337 02bc 2F000000 		.word	_ZL11enterOpCode
+ 338 02c0 02000000 		.word	.LC1
+ 339 02c4 21000000 		.word	.LC3
+ 341              		.section	.rodata.str1.1
+ 342              	.LC8:
+ 343 0072 4A6F696E 		.ascii	"Joined Wireless Network!\012\000"
+ 343      65642057 
+ 343      6972656C 
+ 343      65737320 
+ 343      4E657477 
+ 344              	.LC9:
+ 345 008c 4173736F 		.ascii	"Associated!\000"
+ 345      63696174 
+ 345      65642100 
+ 346              		.text
+ 347              		.align	2
+ 348              		.global	_Z23wifiJoinWirelessNetworkv
+ 350              	_Z23wifiJoinWirelessNetworkv:
+ 351              		@ args = 0, pretend = 0, frame = 256
+ 352              		@ frame_needed = 0, uses_anonymous_args = 0
+ 353 02c8 10402DE9 		stmfd	sp!, {r4, lr}
+ 354 02cc 01DC4DE2 		sub	sp, sp, #256
+ 355 02d0 0D40A0E1 		mov	r4, sp
+ 356 02d4 040000EA 		b	.L52
+ 357              	.L55:
+ 358 02d8 5C009FE5 		ldr	r0, .L56
+ 359 02dc FEFFFFEB 		bl	rprintf
+ 360 02e0 0100A0E3 		mov	r0, #1
+ 361 02e4 01DC8DE2 		add	sp, sp, #256
+ 362 02e8 1080BDE8 		ldmfd	sp!, {r4, pc}
+ 363              	.L52:
+ 364 02ec 012CA0E3 		mov	r2, #256
+ 365 02f0 0010A0E3 		mov	r1, #0
+ 366 02f4 0D00A0E1 		mov	r0, sp
+ 367 02f8 FEFFFFEB 		bl	memset
+ 368 02fc 3C009FE5 		ldr	r0, .L56+4
+ 369 0300 FEFFFFEB 		bl	_Z14wifiSendStringPKc
+ 370 0304 38009FE5 		ldr	r0, .L56+8
+ 371 0308 FEFFFFEB 		bl	_Z14wifiSendStringPKc
+ 372 030c 0D00A0E1 		mov	r0, sp
+ 373 0310 011CA0E3 		mov	r1, #256
+ 374 0314 FEFFFFEB 		bl	_Z23wifiReceiveExpectedDataPci
+ 375 0318 0D10A0E1 		mov	r1, sp
+ 376 031c 24009FE5 		ldr	r0, .L56+12
+ 377 0320 FEFFFFEB 		bl	rprintf
+ 378 0324 0D00A0E1 		mov	r0, sp
+ 379 0328 1C109FE5 		ldr	r1, .L56+16
+ 380 032c FEFFFFEB 		bl	strstr
+ 381 0330 000050E3 		cmp	r0, #0
+ 382 0334 ECFFFF0A 		beq	.L52
+ 383 0338 E6FFFFEA 		b	.L55
+ 384              	.L57:
+ 385              		.align	2
+ 386              	.L56:
+ 387 033c 72000000 		.word	.LC8
+ 388 0340 4B000000 		.word	_ZL8wifiSSID
+ 389 0344 2F000000 		.word	_ZL11enterOpCode
+ 390 0348 02000000 		.word	.LC1
+ 391 034c 8C000000 		.word	.LC9
+ 393              		.section	.rodata.str1.1
+ 394              	.LC10:
+ 395 0098 414F4B00 		.ascii	"AOK\000"
+ 396              		.text
+ 397              		.align	2
+ 398              		.global	_Z17wifiSetWlanPhrasev
+ 400              	_Z17wifiSetWlanPhrasev:
+ 401              		@ args = 0, pretend = 0, frame = 128
+ 402              		@ frame_needed = 0, uses_anonymous_args = 0
+ 403 0350 10402DE9 		stmfd	sp!, {r4, lr}
+ 404 0354 80D04DE2 		sub	sp, sp, #128
+ 405 0358 0D40A0E1 		mov	r4, sp
+ 406              	.L59:
+ 407 035c 8020A0E3 		mov	r2, #128
+ 408 0360 0010A0E3 		mov	r1, #0
+ 409 0364 0D00A0E1 		mov	r0, sp
+ 410 0368 FEFFFFEB 		bl	memset
+ 411 036c 40009FE5 		ldr	r0, .L62
+ 412 0370 FEFFFFEB 		bl	_Z14wifiSendStringPKc
+ 413 0374 3C009FE5 		ldr	r0, .L62+4
+ 414 0378 FEFFFFEB 		bl	_Z14wifiSendStringPKc
+ 415 037c 0D00A0E1 		mov	r0, sp
+ 416 0380 8010A0E3 		mov	r1, #128
+ 417 0384 FEFFFFEB 		bl	_Z23wifiReceiveExpectedDataPci
+ 418 0388 0D10A0E1 		mov	r1, sp
+ 419 038c 28009FE5 		ldr	r0, .L62+8
+ 420 0390 FEFFFFEB 		bl	rprintf
+ 421 0394 0D00A0E1 		mov	r0, sp
+ 422 0398 20109FE5 		ldr	r1, .L62+12
+ 423 039c FEFFFFEB 		bl	strstr
+ 424 03a0 000050E3 		cmp	r0, #0
+ 425 03a4 ECFFFF0A 		beq	.L59
+ 426 03a8 0100A0E3 		mov	r0, #1
+ 427 03ac 80D08DE2 		add	sp, sp, #128
+ 428 03b0 1080BDE8 		ldmfd	sp!, {r4, pc}
+ 429              	.L63:
+ 430              		.align	2
+ 431              	.L62:
+ 432 03b4 58000000 		.word	_ZL13setWlanPhrase
+ 433 03b8 2F000000 		.word	_ZL11enterOpCode
+ 434 03bc 02000000 		.word	.LC1
+ 435 03c0 98000000 		.word	.LC10
+ 437              		.section	.rodata.str1.1
+ 438              	.LC11:
+ 439 009c 45584954 		.ascii	"EXIT\000"
+ 439      00
+ 440              		.text
+ 441              		.align	2
+ 442              		.global	_Z19wifiExitCommandModev
+ 444              	_Z19wifiExitCommandModev:
+ 445              		@ args = 0, pretend = 0, frame = 128
+ 446              		@ frame_needed = 0, uses_anonymous_args = 0
+ 447 03c4 10402DE9 		stmfd	sp!, {r4, lr}
+ 448 03c8 80D04DE2 		sub	sp, sp, #128
+ 449 03cc 0D40A0E1 		mov	r4, sp
+ 450              	.L65:
+ 451 03d0 8020A0E3 		mov	r2, #128
+ 452 03d4 0010A0E3 		mov	r1, #0
+ 453 03d8 0D00A0E1 		mov	r0, sp
+ 454 03dc FEFFFFEB 		bl	memset
+ 455 03e0 40009FE5 		ldr	r0, .L68
+ 456 03e4 FEFFFFEB 		bl	_Z14wifiSendStringPKc
+ 457 03e8 3C009FE5 		ldr	r0, .L68+4
+ 458 03ec FEFFFFEB 		bl	_Z14wifiSendStringPKc
+ 459 03f0 0D00A0E1 		mov	r0, sp
+ 460 03f4 8010A0E3 		mov	r1, #128
+ 461 03f8 FEFFFFEB 		bl	_Z23wifiReceiveExpectedDataPci
+ 462 03fc 0D10A0E1 		mov	r1, sp
+ 463 0400 28009FE5 		ldr	r0, .L68+8
+ 464 0404 FEFFFFEB 		bl	rprintf
+ 465 0408 0D00A0E1 		mov	r0, sp
+ 466 040c 20109FE5 		ldr	r1, .L68+12
+ 467 0410 FEFFFFEB 		bl	strstr
+ 468 0414 000050E3 		cmp	r0, #0
+ 469 0418 ECFFFF0A 		beq	.L65
+ 470 041c 0100A0E3 		mov	r0, #1
+ 471 0420 80D08DE2 		add	sp, sp, #128
+ 472 0424 1080BDE8 		ldmfd	sp!, {r4, pc}
+ 473              	.L69:
+ 474              		.align	2
+ 475              	.L68:
+ 476 0428 75000000 		.word	_ZL10exitOpCode
+ 477 042c 2F000000 		.word	_ZL11enterOpCode
+ 478 0430 02000000 		.word	.LC1
+ 479 0434 9C000000 		.word	.LC11
+ 481              		.section	.rodata.str1.1
+ 482              	.LC12:
+ 483 00a1 434D4400 		.ascii	"CMD\000"
+ 484              		.text
+ 485              		.align	2
+ 486              		.global	_Z20wifiEnterCommandModev
+ 488              	_Z20wifiEnterCommandModev:
+ 489              		@ args = 0, pretend = 0, frame = 128
+ 490              		@ frame_needed = 0, uses_anonymous_args = 0
+ 491 0438 30402DE9 		stmfd	sp!, {r4, r5, lr}
+ 492 043c 8050A0E3 		mov	r5, #128
+ 493 0440 80D04DE2 		sub	sp, sp, #128
+ 494 0444 0520A0E1 		mov	r2, r5
+ 495 0448 0010A0E3 		mov	r1, #0
+ 496 044c 0D00A0E1 		mov	r0, sp
+ 497 0450 FEFFFFEB 		bl	memset
+ 498 0454 38009FE5 		ldr	r0, .L72
+ 499 0458 FEFFFFEB 		bl	_Z14wifiSendStringPKc
+ 500 045c 0D00A0E1 		mov	r0, sp
+ 501 0460 0510A0E1 		mov	r1, r5
+ 502 0464 FEFFFFEB 		bl	_Z23wifiReceiveExpectedDataPci
+ 503 0468 0D10A0E1 		mov	r1, sp
+ 504 046c 24009FE5 		ldr	r0, .L72+4
+ 505 0470 FEFFFFEB 		bl	rprintf
+ 506 0474 0D00A0E1 		mov	r0, sp
+ 507 0478 1C109FE5 		ldr	r1, .L72+8
+ 508 047c FEFFFFEB 		bl	strstr
+ 509 0480 0D40A0E1 		mov	r4, sp
+ 510 0484 000050E2 		subs	r0, r0, #0
+ 511 0488 0100A013 		movne	r0, #1
+ 512 048c 80D08DE2 		add	sp, sp, #128
+ 513 0490 3080BDE8 		ldmfd	sp!, {r4, r5, pc}
+ 514              	.L73:
+ 515              		.align	2
+ 516              	.L72:
+ 517 0494 7A000000 		.word	_ZL13commandOpCode
+ 518 0498 02000000 		.word	.LC1
+ 519 049c A1000000 		.word	.LC12
+ 521              		.section	.rodata.str1.1
+ 522              	.LC13:
+ 523 00a5 456E7465 		.ascii	"Entered Command Mode!\012\000"
+ 523      72656420 
+ 523      436F6D6D 
+ 523      616E6420 
+ 523      4D6F6465 
+ 524              	.LC14:
+ 525 00bc 4661696C 		.ascii	"Fail to Entered Command Mode!\012\000"
+ 525      20746F20 
+ 525      456E7465 
+ 525      72656420 
+ 525      436F6D6D 
+ 526              	.LC15:
+ 527 00db 45786974 		.ascii	"Exit Command Mode!\012\000"
+ 527      20436F6D 
+ 527      6D616E64 
+ 527      204D6F64 
+ 527      65210A00 
+ 528              	.LC16:
+ 529 00ef 4661696C 		.ascii	"Fail to Exit Command Mode!\012\000"
+ 529      20746F20 
+ 529      45786974 
+ 529      20436F6D 
+ 529      6D616E64 
+ 530              		.text
+ 531              		.align	2
+ 532              		.global	_Z9wifiBeginv
+ 534              	_Z9wifiBeginv:
+ 535              		@ args = 0, pretend = 0, frame = 0
+ 536              		@ frame_needed = 0, uses_anonymous_args = 0
+ 537 04a0 04E02DE5 		str	lr, [sp, #-4]!
+ 538 04a4 FEFFFFEB 		bl	_Z20wifiEnterCommandModev
+ 539 04a8 000050E3 		cmp	r0, #0
+ 540 04ac 34009F15 		ldrne	r0, .L80
+ 541 04b0 0900001A 		bne	.L79
+ 542 04b4 30009FE5 		ldr	r0, .L80+4
+ 543 04b8 FEFFFFEB 		bl	rprintf
+ 544 04bc FEFFFFEB 		bl	_Z19wifiExitCommandModev
+ 545 04c0 000050E3 		cmp	r0, #0
+ 546 04c4 24009F05 		ldreq	r0, .L80+8
+ 547 04c8 0300000A 		beq	.L79
+ 548 04cc 20009FE5 		ldr	r0, .L80+12
+ 549 04d0 FEFFFFEB 		bl	rprintf
+ 550 04d4 FEFFFFEB 		bl	_Z20wifiEnterCommandModev
+ 551 04d8 000000EA 		b	.L76
+ 552              	.L79:
+ 553 04dc FEFFFFEB 		bl	rprintf
+ 554              	.L76:
+ 555 04e0 0100A0E3 		mov	r0, #1
+ 556 04e4 04F09DE4 		ldr	pc, [sp], #4
+ 557              	.L81:
+ 558              		.align	2
+ 559              	.L80:
+ 560 04e8 A5000000 		.word	.LC13
+ 561 04ec BC000000 		.word	.LC14
+ 562 04f0 EF000000 		.word	.LC16
+ 563 04f4 DB000000 		.word	.LC15
+ 565              		.section	.rodata.str1.1
+ 566              	.LC17:
+ 567 010b 436F6E6E 		.ascii	"Connection Closed!\012\000"
+ 567      65637469 
+ 567      6F6E2043 
+ 567      6C6F7365 
+ 567      64210A00 
+ 568              	.LC18:
+ 569 011f 2A434C4F 		.ascii	"*CLOS*\000"
+ 569      532A00
+ 570              		.text
+ 571              		.align	2
+ 572              		.global	_Z22wifiCloseTCPConnectionv
+ 574              	_Z22wifiCloseTCPConnectionv:
+ 575              		@ args = 0, pretend = 0, frame = 256
+ 576              		@ frame_needed = 0, uses_anonymous_args = 0
+ 577 04f8 10402DE9 		stmfd	sp!, {r4, lr}
+ 578 04fc 7D0FA0E3 		mov	r0, #500
+ 579 0500 01DC4DE2 		sub	sp, sp, #256
+ 580 0504 FEFFFFEB 		bl	vTaskDelay
+ 581 0508 0D40A0E1 		mov	r4, sp
+ 582 050c 040000EA 		b	.L83
+ 583              	.L86:
+ 584 0510 60009FE5 		ldr	r0, .L87
+ 585 0514 FEFFFFEB 		bl	rprintf
+ 586 0518 0100A0E3 		mov	r0, #1
+ 587 051c 01DC8DE2 		add	sp, sp, #256
+ 588 0520 1080BDE8 		ldmfd	sp!, {r4, pc}
+ 589              	.L83:
+ 590 0524 012CA0E3 		mov	r2, #256
+ 591 0528 0010A0E3 		mov	r1, #0
+ 592 052c 0D00A0E1 		mov	r0, sp
+ 593 0530 FEFFFFEB 		bl	memset
+ 594 0534 FEFFFFEB 		bl	_Z9wifiBeginv
+ 595 0538 3C009FE5 		ldr	r0, .L87+4
+ 596 053c FEFFFFEB 		bl	_Z14wifiSendStringPKc
+ 597 0540 38009FE5 		ldr	r0, .L87+8
+ 598 0544 FEFFFFEB 		bl	_Z14wifiSendStringPKc
+ 599 0548 0D00A0E1 		mov	r0, sp
+ 600 054c 011CA0E3 		mov	r1, #256
+ 601 0550 FEFFFFEB 		bl	_Z23wifiReceiveExpectedDataPci
+ 602 0554 0D10A0E1 		mov	r1, sp
+ 603 0558 24009FE5 		ldr	r0, .L87+12
+ 604 055c FEFFFFEB 		bl	rprintf
+ 605 0560 0D00A0E1 		mov	r0, sp
+ 606 0564 1C109FE5 		ldr	r1, .L87+16
+ 607 0568 FEFFFFEB 		bl	strstr
+ 608 056c 000050E3 		cmp	r0, #0
+ 609 0570 EBFFFF0A 		beq	.L83
+ 610 0574 E5FFFFEA 		b	.L86
+ 611              	.L88:
+ 612              		.align	2
+ 613              	.L87:
+ 614 0578 0B010000 		.word	.LC17
+ 615 057c 29000000 		.word	_ZL21closeConnectionopCode
+ 616 0580 2F000000 		.word	_ZL11enterOpCode
+ 617 0584 02000000 		.word	.LC1
+ 618 0588 1F010000 		.word	.LC18
+ 620              		.section	.rodata.str1.1
+ 621              	.LC20:
+ 622 0126 2D2D4572 		.ascii	"--Error:Invalid directory: |%s|\012\000"
+ 622      726F723A 
+ 622      496E7661 
+ 622      6C696420 
+ 622      64697265 
+ 623              	.LC21:
+ 624 0147 2D2D5365 		.ascii	"--Sent PlayList to Server--\012\000"
+ 624      6E742050 
+ 624      6C61794C 
+ 624      69737420 
+ 624      746F2053 
+ 625              	.LC22:
+ 626 0164 2E4D5033 		.ascii	".MP3\000"
+ 626      00
+ 627              	.LC19:
+ 628 0169 303A00   		.ascii	"0:\000"
+ 629              		.text
+ 630              		.align	2
+ 631              		.global	_Z24wifiSentPlayListToServerv
+ 633              	_Z24wifiSentPlayListToServerv:
+ 634              		@ args = 0, pretend = 0, frame = 392
+ 635              		@ frame_needed = 0, uses_anonymous_args = 0
+ 636 058c F0472DE9 		stmfd	sp!, {r4, r5, r6, r7, r8, r9, sl, lr}
+ 637 0590 62DF4DE2 		sub	sp, sp, #392
+ 638 0594 0040A0E3 		mov	r4, #0
+ 639 0598 6400A0E3 		mov	r0, #100
+ 640 059c 615F8DE2 		add	r5, sp, #388
+ 641 05a0 FEFFFFEB 		bl	vTaskDelay
+ 642 05a4 015085E2 		add	r5, r5, #1
+ 643 05a8 0410A0E1 		mov	r1, r4
+ 644 05ac 1820A0E3 		mov	r2, #24
+ 645 05b0 110E8DE2 		add	r0, sp, #272
+ 646 05b4 0C418DE5 		str	r4, [sp, #268]
+ 647 05b8 FEFFFFEB 		bl	memset
+ 648 05bc 0430A0E3 		mov	r3, #4
+ 649 05c0 DC109FE5 		ldr	r1, .L98
+ 650 05c4 0320A0E3 		mov	r2, #3
+ 651 05c8 0500A0E1 		mov	r0, r5
+ 652 05cc 00318DE5 		str	r3, [sp, #256]
+ 653 05d0 04418DE5 		str	r4, [sp, #260]
+ 654 05d4 08418DE5 		str	r4, [sp, #264]
+ 655 05d8 FEFFFFEB 		bl	memcpy
+ 656 05dc 4A0F8DE2 		add	r0, sp, #296
+ 657 05e0 0510A0E1 		mov	r1, r5
+ 658 05e4 FEFFFFEB 		bl	f_opendir
+ 659 05e8 040050E1 		cmp	r0, r4
+ 660 05ec 0510A011 		movne	r1, r5
+ 661 05f0 B0009F15 		ldrne	r0, .L98+4
+ 662 05f4 FEFFFF1B 		blne	rprintf
+ 663              	.L90:
+ 664 05f8 AC009FE5 		ldr	r0, .L98+8
+ 665 05fc FEFFFFEB 		bl	rprintf
+ 666 0600 A8009FE5 		ldr	r0, .L98+12
+ 667 0604 FEFFFFEB 		bl	_Z14wifiSendStringPKc
+ 668 0608 536F8DE2 		add	r6, sp, #332
+ 669 060c 01ACA0E3 		mov	sl, #256
+ 670 0610 0D90A0E1 		mov	r9, sp
+ 671 0614 4A8F8DE2 		add	r8, sp, #296
+ 672 0618 095086E2 		add	r5, r6, #9
+ 673 061c 5B4F8DE2 		add	r4, sp, #364
+ 674 0620 0A708DE0 		add	r7, sp, sl
+ 675              	.L97:
+ 676 0624 0610A0E1 		mov	r1, r6
+ 677 0628 0800A0E1 		mov	r0, r8
+ 678 062c 64918DE5 		str	r9, [sp, #356]
+ 679 0630 68A18DE5 		str	sl, [sp, #360]
+ 680 0634 FEFFFFEB 		bl	f_readdir
+ 681 0638 FF0010E3 		tst	r0, #255
+ 682 063c 70109FE5 		ldr	r1, .L98+16
+ 683 0640 0500A0E1 		mov	r0, r5
+ 684 0644 1000001A 		bne	.L91
+ 685 0648 5531DDE5 		ldrb	r3, [sp, #341]	@ zero_extendqisi2
+ 686 064c 000053E3 		cmp	r3, #0
+ 687 0650 0D00000A 		beq	.L91
+ 688 0654 FEFFFFEB 		bl	strstr
+ 689 0658 000050E3 		cmp	r0, #0
+ 690 065c F0FFFF0A 		beq	.L97
+ 691 0660 0400A0E1 		mov	r0, r4
+ 692 0664 0510A0E1 		mov	r1, r5
+ 693 0668 FEFFFFEB 		bl	_ZN12SongNameTypeaSEPc
+ 694 066c 0700A0E1 		mov	r0, r7
+ 695 0670 0410A0E1 		mov	r1, r4
+ 696 0674 FEFFFFEB 		bl	_ZN6VECTORI12SongNameTypeE9push_backERKS0_
+ 697 0678 0400A0E1 		mov	r0, r4
+ 698 067c FEFFFFEB 		bl	_Z14wifiSendStringPKc
+ 699 0680 30009FE5 		ldr	r0, .L98+20
+ 700 0684 FEFFFFEB 		bl	_Z14wifiSendStringPKc
+ 701 0688 E5FFFFEA 		b	.L97
+ 702              	.L91:
+ 703 068c 0C019DE5 		ldr	r0, [sp, #268]
+ 704 0690 000050E3 		cmp	r0, #0
+ 705 0694 FEFFFF1B 		blne	_ZdaPv
+ 706              	.L93:
+ 707 0698 0100A0E3 		mov	r0, #1
+ 708 069c 62DF8DE2 		add	sp, sp, #392
+ 709 06a0 F087BDE8 		ldmfd	sp!, {r4, r5, r6, r7, r8, r9, sl, pc}
+ 710              	.L99:
+ 711              		.align	2
+ 712              	.L98:
+ 713 06a4 69010000 		.word	.LC19
+ 714 06a8 26010000 		.word	.LC20
+ 715 06ac 47010000 		.word	.LC21
+ 716 06b0 1E000000 		.word	_ZL7MP3List
+ 717 06b4 64010000 		.word	.LC22
+ 718 06b8 27000000 		.word	_ZL17songNameDelimeter
+ 720              		.section	.rodata
+ 723              	_ZL16wifiStatusOpCode:
+ 724 0000 73686F77 		.ascii	"show io\000"
+ 724      20696F00 
+ 727              	_ZL14deviceIDBuffer:
+ 728 0008 44657669 		.ascii	"DeviceId=raichu_mp3_1\000"
+ 728      63654964 
+ 728      3D726169 
+ 728      6368755F 
+ 728      6D70335F 
+ 731              	_ZL7MP3List:
+ 732 001e 4D50334C 		.ascii	"MP3List:\000"
+ 732      6973743A 
+ 732      00
+ 735              	_ZL17songNameDelimeter:
+ 736 0027 2300     		.ascii	"#\000"
+ 739              	_ZL21closeConnectionopCode:
+ 740 0029 636C6F73 		.ascii	"close\000"
+ 740      6500
+ 743              	_ZL11enterOpCode:
+ 744 002f 0D00     		.ascii	"\015\000"
+ 747              	_ZL15serverIPAddress:
+ 748 0031 6F70656E 		.ascii	"open 130.65.157.219 33333\000"
+ 748      20313330 
+ 748      2E36352E 
+ 748      3135372E 
+ 748      32313920 
+ 751              	_ZL8wifiSSID:
+ 752 004b 6A6F696E 		.ascii	"join NETGEAR\000"
+ 752      204E4554 
+ 752      47454152 
+ 752      00
+ 755              	_ZL13setWlanPhrase:
+ 756 0058 73657420 		.ascii	"set wlan phrase 123abc456def\000"
+ 756      776C616E 
+ 756      20706872 
+ 756      61736520 
+ 756      31323361 
+ 759              	_ZL10exitOpCode:
+ 760 0075 65786974 		.ascii	"exit\000"
+ 760      00
+ 763              	_ZL13commandOpCode:
+ 764 007a 24242400 		.ascii	"$$$\000"
+ 765              		.ident	"GCC: (GNU) 4.3.2"
+DEFINED SYMBOLS
+                            *ABS*:00000000 wifi.cpp
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:6      .text:00000000 _Z23wifiReceiveExpectedDataPci
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:9      .text:00000000 $a
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:28     .text:00000034 _Z14wifiSendStringPKc
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:49     .text._ZN12SongNameTypeaSEPc:00000000 _ZN12SongNameTypeaSEPc
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:52     .text._ZN12SongNameTypeaSEPc:00000000 $a
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:68     .text._ZN6VECTORI12SongNameTypeE9push_backERKS0_:00000000 _ZN6VECTORI12SongNameTypeE9push_backERKS0_
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:71     .text._ZN6VECTORI12SongNameTypeE9push_backERKS0_:00000000 $a
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:109    .text:00000060 _Z23parsePlayListFromServerPc
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:158    .text:00000100 $d
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:170    .text:00000108 _Z20wifiConnectionStatusv
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:173    .text:00000108 $a
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:202    .text:00000168 $d
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:723    .rodata:00000000 _ZL16wifiStatusOpCode
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:215    .text:00000174 _Z21wifiReceiveFromServerv
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:218    .text:00000174 $a
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:245    .text:000001cc $d
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:255    .text:000001d4 _Z24wifiSendDeviceIDToServerv
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:258    .text:000001d4 $a
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:287    .text:00000234 $d
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:727    .rodata:00000008 _ZL14deviceIDBuffer
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:298    .text:00000240 _Z21wifiOpenTCPConnectionv
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:301    .text:00000240 $a
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:335    .text:000002b4 $d
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:747    .rodata:00000031 _ZL15serverIPAddress
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:743    .rodata:0000002f _ZL11enterOpCode
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:350    .text:000002c8 _Z23wifiJoinWirelessNetworkv
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:353    .text:000002c8 $a
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:387    .text:0000033c $d
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:751    .rodata:0000004b _ZL8wifiSSID
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:400    .text:00000350 _Z17wifiSetWlanPhrasev
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:403    .text:00000350 $a
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:432    .text:000003b4 $d
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:755    .rodata:00000058 _ZL13setWlanPhrase
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:444    .text:000003c4 _Z19wifiExitCommandModev
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:447    .text:000003c4 $a
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:476    .text:00000428 $d
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:759    .rodata:00000075 _ZL10exitOpCode
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:488    .text:00000438 _Z20wifiEnterCommandModev
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:491    .text:00000438 $a
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:517    .text:00000494 $d
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:763    .rodata:0000007a _ZL13commandOpCode
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:534    .text:000004a0 _Z9wifiBeginv
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:537    .text:000004a0 $a
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:560    .text:000004e8 $d
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:574    .text:000004f8 _Z22wifiCloseTCPConnectionv
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:577    .text:000004f8 $a
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:614    .text:00000578 $d
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:739    .rodata:00000029 _ZL21closeConnectionopCode
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:633    .text:0000058c _Z24wifiSentPlayListToServerv
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:636    .text:0000058c $a
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:713    .text:000006a4 $d
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:731    .rodata:0000001e _ZL7MP3List
+/cygdrive/c/Users/User/AppData/Local/Temp/ccDvjEBg.s:735    .rodata:00000027 _ZL17songNameDelimeter
+
+UNDEFINED SYMBOLS
+uart1GetChar
+uart1PutChar
+memset
+strncpy
+realloc
+strtok
+rprintf
+_ZdaPv
+strstr
+vTaskDelay
+memcpy
+f_opendir
+f_readdir
