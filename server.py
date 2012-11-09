@@ -44,6 +44,11 @@ class raichu_server:
 		elif server_platform == "Darwin":
 			self.host = socket.gethostbyname(socket.gethostname())
 
+		# all devices connected
+		device_list = []
+		# key value of client to device
+		connection_list = {}
+
 	def start(self):
 
 		self.server_sock = socket.socket (socket.AF_INET, socket.SOCK_STREAM)
@@ -80,17 +85,25 @@ class raichu_server:
 	def close(self):
 		self.server_sock.close()
 
+	def handle_device(self, client_sock):
+		print "device connect"
+		pass
+
+	def handle_client(self, client_sock):
+		print "client connect"
+		pass
+
 	def handle_connection(self, client_sock):
-		print client_sock.getpeername()
 		in_pkt = client_sock.recv (self.buf_size)
 		conn_info = json.loads (in_pkt)
 
 		if conn_info["type"] == "device":
-			print "got device"
+			self.handle_device (client_sock)
 		elif conn_info["type"] == "client":
-			print "got client"
+			self.handle_client (client_sock)
 		else:
 			print "not sure what I got" 
+
 		client_sock.send ("ok")
 		#log connection
 			#keep client_sock alive
@@ -98,8 +111,12 @@ class raichu_server:
 		#device connected, keep alive
 			#client specifies what device to connect to
 			#all date client sends is passed to device
+		#t.sleep(5)
 
-		client_sock.close()
+		# client_sock shouldn't be closed here, depends on if it's
+		# a device or client
+		#client_sock.close()
+		
 		pass
 #end function def
 
