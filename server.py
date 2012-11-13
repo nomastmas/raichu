@@ -48,11 +48,51 @@ class raichu_server:
 
 		# all devices connected
 		self.device_list = {}
+		# all clients connected
+		self.client_list = {}
 		# key value of client to device
 		self.connection_list = {}
 
 	def start(self):
+		listen_worker = threading.Thread(target=self.start_master_listener)
+		listen_worker.daemon = True
+		listen_worker.start()
 
+		# command prompt
+		while 1:
+			# delimits string by space and returns a list
+			cmd = raw_input(">").split()
+
+			if cmd == []:
+				pass
+			elif cmd[0] == "list":
+				if len(cmd) == 1:
+					print "list usage:"
+					print "\tdevices"
+					print "\tclients"
+					print "\tconns"
+				elif cmd[1] == "devices":
+					for device in self.device_list:
+						print device
+				elif cmd[1] == "clients":
+					for client in self.client_list:
+						print client
+				elif cmd[1] == "conns":
+					pass
+			elif cmd[0] == "close" or cmd[0] == "exit":
+				self.close()
+				break
+			else:
+				pass
+
+	def close(self):
+		#for worker in worker_list:
+		#	if worker.isAlive():
+
+		self.server_sock.close()
+
+
+	def start_master_listener(self):
 		self.server_sock = socket.socket (socket.AF_INET, socket.SOCK_STREAM)
 		self.buf_size 	 = 1024
 
@@ -77,19 +117,15 @@ class raichu_server:
 				print "========================================="
 				#self.handle_connection(client_sock)
 				#thread.start_new_thread(handle_connection, client_sock)
-				in_worker = threading.Thread(target=self.handle_connection, args=(client_sock,))
-				in_worker.start()
+				conn_worker = threading.Thread(target=self.handle_connection, args=(client_sock,))
+				conn_worker.daemon = True
+				conn_worker.start()
 
 		except socket.error,e:
 			print_error(e)
 		finally:
 			if self.server_sock:
 				self.server_sock.close()
-
-	def close(self):
-		self.server_sock.close()
-
-	#def start_master_listener(self):
 
 	def handle_device(self, client_sock, conn_info):
 		print "device connected"
@@ -101,6 +137,8 @@ class raichu_server:
 		conn_info["status"]					= 0
 
 		self.device_list[conn_info['name']] = conn_info
+
+		#pp.pprint(self.device_list)
 
 		# wait for connection
 		# thread sleep?

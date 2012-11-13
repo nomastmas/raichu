@@ -18,10 +18,12 @@ def boot_up(s):
 	print s.getpeername()
 	s.send (json.dumps (device_info))
 	server_response = s.recv(1024)
-	print server_response
+	if server_response != "":
+		print server_response
 
 if __name__ == "__main__":
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+	
 	s.setblocking (1)
 	host = sys.argv[1]
 	port = sys.argv[2]
@@ -37,6 +39,8 @@ if __name__ == "__main__":
 		boot_up (s)
 		t.sleep(1)
 
+		print device_info["name"] + " start up"
+
 		try:
 			while True:
 				data = s.recv(1024)
@@ -51,7 +55,7 @@ if __name__ == "__main__":
 		except socket.error, e:
 			print_error(e)
 			
-		print "shutdown"
+		print device_info["name"] + " shutdown"
 	except socket.error, e:
 		print_error(e)
 	finally:
