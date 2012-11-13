@@ -12,6 +12,12 @@ if __name__ == "__main__":
 	host = sys.argv[1]
 	port = sys.argv[2]
 
+	device_info = {
+		'type'		  : 'client_sim',
+		'name'		  : 'client_' + dt.datetime.fromtimestamp(int(t.time())).strftime('%H%M%S'),
+		'bootup-time' : get_timestamp(),
+	}
+
 	try:
 		s.connect ((host, int(port)))
 		print s.getpeername()

@@ -29,8 +29,7 @@ if __name__ == "__main__":
 	# may need to add on more info later on
 	device_info = {
 		'type'		  : 'device',
-		'name' 	  	  : 'dummy',
-		'name'		  : 'george' + dt.datetime.fromtimestamp(int(t.time())).strftime('%H%M%S'),
+		'name'		  : 'device_' + dt.datetime.fromtimestamp(int(t.time())).strftime('%H%M%S'),
 		'bootup-time' : get_timestamp(),
 	}
 
@@ -41,7 +40,14 @@ if __name__ == "__main__":
 		try:
 			while True:
 				data = s.recv(1024)
-				print data
+				if data != "":
+					# socket is alive
+					print data
+				elif data == "ping":
+					s.send("alive")
+				else:
+					# socket is no longer alive
+					break
 		except socket.error, e:
 			print_error(e)
 			

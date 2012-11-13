@@ -9,14 +9,16 @@ import fcntl
 import struct
 
 import sys
-from threading import Thread
+import threading
 from threading import Lock
+from threading import Condition
 import thread
 import signal
 import datetime as dt
 import time as t
 
 import simplejson as json
+import pprint as pp
 #import MySQLdb as db
 
 def get_ip_address(ifname):
@@ -45,9 +47,9 @@ class raichu_server:
 			self.host = socket.gethostbyname(socket.gethostname())
 
 		# all devices connected
-		device_list = []
+		self.device_list = {}
 		# key value of client to device
-		connection_list = {}
+		self.connection_list = {}
 
 	def start(self):
 
@@ -73,8 +75,10 @@ class raichu_server:
 				print "==========<%s>==========" % timestamp
 				print "%s %s connected" %  (addr[0], addr[1])
 				print "========================================="
-				self.handle_connection(client_sock)
+				#self.handle_connection(client_sock)
 				#thread.start_new_thread(handle_connection, client_sock)
+				in_worker = threading.Thread(target=self.handle_connection, args=(client_sock,))
+				in_worker.start()
 
 		except socket.error,e:
 			print_error(e)
@@ -85,20 +89,47 @@ class raichu_server:
 	def close(self):
 		self.server_sock.close()
 
-	def handle_device(self, client_sock):
-		print "device connect"
-		pass
+	#def start_master_listener(self):
+
+	def handle_device(self, client_sock, conn_info):
+		print "device connected"
+		device_info 						= client_sock.getpeername()
+		conn_info["address"]				= device_info
+		conn_info["ip"] 					= device_info[0]
+		conn_info["port"] 					= device_info[1]
+		conn_info["socket"] 				= client_sock
+		conn_info["status"]					= 0
+
+		self.device_list[conn_info['name']] = conn_info
+
+		# wait for connection
+		# thread sleep?
+
+	def handle_client_sim(self, client_sock):
+		print "simulated client connected"
+
+		# lock
+		# find a random free device
+		# assign to client_sim
+		# push to connection_list
+		# unlock
+		
 
 	def handle_client(self, client_sock):
-		print "client connect"
+		print "client connected"
+
 		pass
 
 	def handle_connection(self, client_sock):
 		in_pkt = client_sock.recv (self.buf_size)
 		conn_info = json.loads (in_pkt)
 
+		print threading.currentThread().getName()
+
 		if conn_info["type"] == "device":
-			self.handle_device (client_sock)
+			self.handle_device (client_sock, conn_info)
+		elif conn_info["type"] == "client_sim":
+			self.handle_client_sim (client_sock)
 		elif conn_info["type"] == "client":
 			self.handle_client (client_sock)
 		else:
