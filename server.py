@@ -175,10 +175,20 @@ class raichu_server:
 				print "recv_buffer len: " + str(len(recv_buffer))
 				cmd = recv_buffer.split()
 				if cmd[0] == "list":
+
 					out_data = json.dumps(self.device_list.keys())
-					print "sending device_list"
-					print out_data
-					client_sock.send(out_data)
+					if len(out_data) != 2:
+						print "sending device_list"
+						print out_data
+						client_sock.send(out_data)
+					else:
+						# send 0 to denote no devices online
+						client_sock.send("0")
+				elif cmd[0] == "assign":
+					device_name = self.device_list.keys()[int(cmd[1])]
+					self.connection_list[conn_info['name']] = device_name
+					client_sock.send("ok")
+					print "assigned " + conn_info['name'] + " to " + device_name
 		#elif recv_data[0] == "assign":
 		#	device_request = recv_data[1]
 		#	if device_request in device_list:
@@ -201,6 +211,7 @@ class raichu_server:
 		conn_info = {}
 		try:
 			in_pkt = client_sock.recv(self.buf_size)
+			print "in_pkt: " + in_pkt
 			conn_info = json.loads(in_pkt)
 			print "conn_info: " + str(conn_info)
 			#print "conn_info type: " + str(type(conn_info))

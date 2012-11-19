@@ -17,13 +17,20 @@ def raichu_send(out_sock, out_data):
 	total_sent = 0
 	while total_sent < len(out_data):
 		try:
-			sent = out_sock.send(out_sock[total_sent:])
-			print "sent: " + out_sock[total_sent:]
+			print "sent: " + out_data[total_sent:]
+			sent = out_sock.send(out_data[total_sent:])
 			if sent == 0:
 				raise RuntimeError("socket connection broken")
 			total_sent += sent
 		except socket.error, e:
 			print_error(e)
+
+def raichu_recv(in_sock, buf_size):
+	in_data = in_sock.recv(int(buf_size))
+	if in_data == '':
+		raise RuntimeError("socket connection broken")
+	else:
+		return in_data
 
 if __name__ == "__main__":
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -38,28 +45,36 @@ if __name__ == "__main__":
 
 	try:
 		s.connect ((host, int(port)))
-		print s.getpeername()
 		out_data = json.dumps(device_info)
-		print out_data
-		ret = s.send (out_data)
-		if ret == 0:
-			raise RuntimeError("socket connection broken")
+		print "out_data: " + out_data
+		#ret = s.send (out_data)
+		#if ret == 0:
+		#	raise RuntimeError("socket connection broken")
 		
-		#raichu_send(s, out_data)
+		raichu_send(s, out_data)
 		print device_info["name"] + " start up"
 
 		t.sleep(1)
-		ret = s.send("list")
-		if ret == 0:
-			raise RuntimeError("socket connection broken")
-		buf = s.recv(1024)
+		raichu_send(s, "list")
+		buf = raichu_recv(s, 1024)
 		print "buffer: " + buf
 
+		if len(buf) == 1:
+			if int(buf) == 0:
+				print "no devices online"
+				pass
+
+		# hard code assign first device to client
+		# design randomized algorithm later
+		raichu_send(s, "assign 1")
+		buf = raichu_recv(s, 1024)
+		print "buffer: " + buf
 
 		#server_response = s.recv(1024)
 		#print server_response
-
-		t.sleep(1)
+		while True:
+			buf = s.recv(1024)#
+			t.sleep(0.1)
 
 	except socket.error, e:
 		print_error(e)
