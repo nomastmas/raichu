@@ -5,6 +5,7 @@ import sys
 import datetime as dt
 import time as t
 import simplejson as json
+import random
 
 
 def print_error(error):
@@ -14,16 +15,16 @@ def get_timestamp():
 	return dt.datetime.fromtimestamp(int(t.time())).strftime('%Y-%m-%d %H:%M:%S')
 
 def boot_up(s):
-	s.connect ((host, int(port)))
-	print s.getpeername()
-	s.send (json.dumps (device_info))
-	server_response = s.recv(1024)
-	if server_response != "":
-		print server_response
+	try:
+		s.connect ((host, int(port)))
+		s.send (json.dumps (device_info))
+	except socket.error, e:
+		print_error(e)
+		s.close()
 
 if __name__ == "__main__":
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-	
+
 	s.setblocking (1)
 	host = sys.argv[1]
 	port = sys.argv[2]
@@ -31,8 +32,9 @@ if __name__ == "__main__":
 	# may need to add on more info later on
 	device_info = {
 		'type'		  : 'device',
-		'name'		  : 'device_' + dt.datetime.fromtimestamp(int(t.time())).strftime('%H%M%S'),
+		'name'		  : 'device_' + dt.datetime.fromtimestamp(int(t.time())).strftime('%H%M%S') + str(int(random.random()*100)),
 		'bootup-time' : get_timestamp(),
+		'commands'	  : "be_dumb, hello",
 	}
 
 	try:
@@ -40,7 +42,7 @@ if __name__ == "__main__":
 		t.sleep(1)
 
 		print device_info["name"] + " start up"
-
+		print json.dumps(device_info)
 		try:
 			while True:
 				data = s.recv(1024)
@@ -48,10 +50,11 @@ if __name__ == "__main__":
 					# socket is alive
 					print data
 				elif data == "ping":
+					print "recv ping"
 					s.send("alive")
-				else:
-					# socket is no longer alive
-					break
+				#else:
+				#	# socket is no longer alive
+				#	break
 		except socket.error, e:
 			print_error(e)
 			

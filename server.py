@@ -67,7 +67,6 @@ class raichu_server:
 				pass
 			elif cmd[0] == "list":
 				if len(cmd) == 1:
-					print "list usage:"
 					print "\tdevices"
 					print "\tclients"
 					print "\tconns"
@@ -79,6 +78,18 @@ class raichu_server:
 						print client
 				elif cmd[1] == "conns":
 					pass
+			elif cmd[0] == "send":
+				if cmd[1] in self.device_list:
+					try:
+						out_sock = self.device_list[cmd.pop(1)]["socket"]
+						# delete first word index
+						cmd.pop(0)
+						out_str = ' '.join(cmd)
+						out_sock.send(out_str)
+					except socket.error, e:
+						print_error(e)
+				else:
+					print "error: device " + cmd[1] + " not found"
 			elif cmd[0] == "close" or cmd[0] == "exit":
 				self.close()
 				break
@@ -138,14 +149,32 @@ class raichu_server:
 
 		self.device_list[conn_info['name']] = conn_info
 
-		#pp.pprint(self.device_list)
-
 		# wait for connection
 		# thread sleep?
 
-	def handle_client_sim(self, client_sock):
+	def handle_client_sim(self, client_sock, conn_info):
 		print "simulated client connected"
+		device_info 						= client_sock.getpeername()
+		conn_info["address"]				= device_info
+		conn_info["ip"] 					= device_info[0]
+		conn_info["port"] 					= device_info[1]
+		conn_info["socket"] 				= client_sock
+		# set default for server to relay data
+		conn_info["relay"]					= 1
 
+		self.client_list[conn_info['name']] = conn_info
+
+		recv_data = s.recv(self.buf_size)
+		recv_data = recv_data.split()
+		if recv_data[0] == "list":
+			s.send(json.dumps(device_list))
+		#elif recv_data[0] == "assign":
+		#	device_request = recv_data[1]
+		#	if device_request in device_list:
+		#		# assign device to client
+		#		connection_list[conn_info['address']] = device_list[device_request]['socket']
+		#else:
+		#	device_socket = connection_list[]
 		# lock
 		# find a random free device
 		# assign to client_sim
@@ -156,6 +185,8 @@ class raichu_server:
 	def handle_client(self, client_sock):
 		print "client connected"
 
+		
+
 		pass
 
 	def handle_connection(self, client_sock):
@@ -163,17 +194,16 @@ class raichu_server:
 		conn_info = json.loads (in_pkt)
 
 		print threading.currentThread().getName()
-
 		if conn_info["type"] == "device":
 			self.handle_device (client_sock, conn_info)
 		elif conn_info["type"] == "client_sim":
-			self.handle_client_sim (client_sock)
+			self.handle_client_sim (client_sock, conn_info)
 		elif conn_info["type"] == "client":
 			self.handle_client (client_sock)
 		else:
 			print "not sure what I got" 
 
-		client_sock.send ("ok")
+		
 		#log connection
 			#keep client_sock alive
 		#need to specify if device or client
@@ -186,6 +216,15 @@ class raichu_server:
 		# a device or client
 		#client_sock.close()
 		
+		pass
+
+	def check_device_status(self):
+		pass
+
+	def find_free_device(self):
+		pass
+
+	def relay_data(self, data):
 		pass
 #end function def
 
