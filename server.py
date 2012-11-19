@@ -61,7 +61,7 @@ class raichu_server:
 		# command prompt
 		while 1:
 			# delimits string by space and returns a list
-			cmd = raw_input(">").split()
+			cmd = raw_input("> ").split()
 
 			if cmd == []:
 				pass
@@ -126,8 +126,7 @@ class raichu_server:
 				print "==========<%s>==========" % timestamp
 				print "%s %s connected" %  (addr[0], addr[1])
 				print "========================================="
-				#self.handle_connection(client_sock)
-				#thread.start_new_thread(handle_connection, client_sock)
+
 				conn_worker = threading.Thread(target=self.handle_connection, args=(client_sock,))
 				conn_worker.daemon = True
 				conn_worker.start()
@@ -163,11 +162,23 @@ class raichu_server:
 		conn_info["relay"]					= 1
 
 		self.client_list[conn_info['name']] = conn_info
+		while True:
+			try:
+				recv_buffer = client_sock.recv(self.buf_size)
+				if recv_buffer == '':
+					raise RuntimeError("socket connection broken")
+			except socket.error, e:
+				print_error(e)
 
-		recv_data = s.recv(self.buf_size)
-		recv_data = recv_data.split()
-		if recv_data[0] == "list":
-			s.send(json.dumps(device_list))
+			if len(recv_buffer) > 0:
+				print "recv_buffer: " + recv_buffer
+				print "recv_buffer len: " + str(len(recv_buffer))
+				cmd = recv_buffer.split()
+				if cmd[0] == "list":
+					out_data = json.dumps(self.device_list.keys())
+					print "sending device_list"
+					print out_data
+					client_sock.send(out_data)
 		#elif recv_data[0] == "assign":
 		#	device_request = recv_data[1]
 		#	if device_request in device_list:
@@ -184,16 +195,20 @@ class raichu_server:
 
 	def handle_client(self, client_sock):
 		print "client connected"
-
-		
-
 		pass
 
 	def handle_connection(self, client_sock):
-		in_pkt = client_sock.recv (self.buf_size)
-		conn_info = json.loads (in_pkt)
+		conn_info = {}
+		try:
+			in_pkt = client_sock.recv(self.buf_size)
+			conn_info = json.loads(in_pkt)
+			print "conn_info: " + str(conn_info)
+			#print "conn_info type: " + str(type(conn_info))
+		except json.decoder.JSONDecodeError, e:
+			print e
+		except socket.error, e:
+			print_error(e)
 
-		print threading.currentThread().getName()
 		if conn_info["type"] == "device":
 			self.handle_device (client_sock, conn_info)
 		elif conn_info["type"] == "client_sim":
