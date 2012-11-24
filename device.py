@@ -57,6 +57,9 @@ if __name__ == "__main__":
 				elif data == "ping":
 					print "recv ping"
 					s.send("alive")
+				elif data == '':
+					# socket is dead
+					break
 
 				t.sleep(0.1)
 				#else:

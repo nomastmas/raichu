@@ -62,7 +62,9 @@ if __name__ == "__main__":
 
 		# hard code assign first device to client
 		# design randomized algorithm later
-		raichu_send(s, "assign 1")
+		devices = json.loads(buf)
+		#raichu_send(s, "assign 1")
+		raichu_send(s, "assign " + devices[0])
 		buf = raichu_recv(s, 1024)
 		print "buffer: " + buf
 

@@ -52,6 +52,8 @@ class raichu_server:
 		self.client_list = {}
 		# key value of client to device
 		self.connection_list = {}
+		# available devices (this is constantly updated)
+		self.avail_devices = []
 
 	def start(self):
 		listen_worker = threading.Thread(target=self.start_master_listener)
@@ -70,6 +72,7 @@ class raichu_server:
 					print "\tdevices"
 					print "\tclients"
 					print "\tconns"
+					print "\tavail_devices"
 				elif cmd[1] == "devices":
 					for device in self.device_list:
 						print device
@@ -79,6 +82,16 @@ class raichu_server:
 				elif cmd[1] == "conns":
 					for client in self.connection_list:
 						print client + " -> " + self.connection_list[client]
+				elif cmd[1] == "avail":
+					for device in self.avail_devices:
+						print device
+				elif cmd[1] == "detail":
+					if cmd[2] == "device":
+						for device in self.device_list:
+							pp.pprint(self.device_list[device])
+					elif cmd[2] == "client":
+						for client in self.client_list:
+							pp.pprint(self.client_list[client])
 			elif cmd[0] == "send":
 				if cmd[1] in self.device_list:
 					try:
@@ -102,7 +115,6 @@ class raichu_server:
 		#	if worker.isAlive():
 
 		self.server_sock.close()
-
 
 	def start_master_listener(self):
 		self.server_sock = socket.socket (socket.AF_INET, socket.SOCK_STREAM)
@@ -147,8 +159,12 @@ class raichu_server:
 		conn_info["port"] 					= device_info[1]
 		conn_info["socket"] 				= client_sock
 		conn_info["status"]					= 0
+		# 0 means free device
+		# 1 means taken
+		# 2 means it's mucked up
 
 		self.device_list[conn_info['name']] = conn_info
+		self.avail_devices.append(conn_info['name'])
 
 		# wait for connection
 		# thread sleep?
@@ -178,13 +194,13 @@ class raichu_server:
 				print_error(e)
 
 			if len(recv_buffer) > 0:
-				print "recv_buffer: " + recv_buffer
-				print "recv_buffer len: " + str(len(recv_buffer))
+			#	print "recv_buffer: " + recv_buffer
+			#	print "recv_buffer len: " + str(len(recv_buffer))
 				
 				cmd = recv_buffer.split()
 				if cmd[0] == "list":
-
-					out_data = json.dumps(self.device_list.keys())
+					#out_data = json.dumps(self.device_list.keys())
+					out_data = json.dumps(self.get_avail_devices())
 					if len(out_data) != 2:
 						print "sending device_list"
 						print out_data
@@ -193,10 +209,17 @@ class raichu_server:
 						# send 0 to denote no devices online
 						client_sock.send("0")
 				elif cmd[0] == "assign":
-					device_name = self.device_list.keys()[int(cmd[1])]
-					self.connection_list[conn_info['name']] = device_name
-					client_sock.send("device " + device_name + " assigned")
-					print "assigned " + conn_info['name'] + " to " + device_name
+					#TODO wow this logic is way wrong, need to get current list of devices
+					#device_name = self.device_list.keys()[int(cmd[1])]
+					if cmd[1] in self.avail_devices:
+						device_name = cmd[1]
+						self.connection_list[conn_info['name']] = device_name
+						self.device_list[device_name]["status"] = 1
+						self.avail_devices.remove(device_name)
+						client_sock.send("device " + device_name + " assigned")
+						print "assigned " + conn_info['name'] + " to " + device_name
+					else:
+						raise RuntimeError("device does not exist")
 
 
 		#elif recv_data[0] == "assign":
@@ -257,11 +280,18 @@ class raichu_server:
 	def check_device_status(self):
 		pass
 
-	def find_free_device(self):
-		pass
-
 	def relay_data(self, data):
 		pass
+
+	def get_avail_devices(self):
+		#TODO improve efficiency, clearing and rebuilding each call is not efficienct
+		#self.avail_devices = []
+		for device in self.device_list:
+			if self.device_list[device]["status"] == 0 and device not in self.device_list:
+				self.avail_devices.append(device)
+			else:
+				pass
+		return self.avail_devices
 #end function def
 
 # main
