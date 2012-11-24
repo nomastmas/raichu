@@ -68,11 +68,16 @@ if __name__ == "__main__":
 		buf = raichu_recv(s, 1024)
 		print "buffer: " + buf
 
+		t.sleep(1)
+		for i in range(0, 10):
+			raichu_send(s, "relay blah blah blah")
+			t.sleep(0.5)
+
 		#server_response = s.recv(1024)
 		#print server_response
-		while True:
-			buf = s.recv(1024)#
-			t.sleep(0.1)
+		#while True:
+		#	buf = s.recv(1024)
+		#	t.sleep(0.1)
 
 	except socket.error, e:
 		print_error(e)

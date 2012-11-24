@@ -72,7 +72,7 @@ class raichu_server:
 					print "\tdevices"
 					print "\tclients"
 					print "\tconns"
-					print "\tavail_devices"
+					print "\tavail"
 				elif cmd[1] == "devices":
 					for device in self.device_list:
 						print device
@@ -86,10 +86,10 @@ class raichu_server:
 					for device in self.avail_devices:
 						print device
 				elif cmd[1] == "detail":
-					if cmd[2] == "device":
+					if cmd[2] == "devices":
 						for device in self.device_list:
 							pp.pprint(self.device_list[device])
-					elif cmd[2] == "client":
+					elif cmd[2] == "clients":
 						for client in self.client_list:
 							pp.pprint(self.client_list[client])
 			elif cmd[0] == "send":
@@ -98,8 +98,8 @@ class raichu_server:
 						out_sock = self.device_list[cmd.pop(1)]["socket"]
 						# delete first word index
 						cmd.pop(0)
-						out_str = ' '.join(cmd)
-						out_sock.send(out_str)
+						out_data = ' '.join(cmd)
+						out_sock.send(out_data)
 					except socket.error, e:
 						print_error(e)
 				else:
@@ -169,22 +169,22 @@ class raichu_server:
 		# wait for connection
 		# thread sleep?
 
-	def handle_client_sim(self, client_sock, conn_info):
+	def handle_client_sim(self, client_sock, client_info):
 		print "simulated client connected"
 		device_info 						= client_sock.getpeername()
-		conn_info["address"]				= device_info
-		conn_info["ip"] 					= device_info[0]
-		conn_info["port"] 					= device_info[1]
-		conn_info["socket"] 				= client_sock
+		client_info["address"]				= device_info
+		client_info["ip"] 					= device_info[0]
+		client_info["port"] 					= device_info[1]
+		client_info["socket"] 				= client_sock
 		# set default for server to relay data
-		conn_info["relay"]					= 1
+		client_info["relay"]					= 1
 
 		# mode designates what server does with client's stream
 		# 0 == interpret commands and execute
 		# 1 == relay data to device
 		mode = 0
 
-		self.client_list[conn_info['name']] = conn_info
+		self.client_list[client_info['name']] = client_info
 		while True:
 			try:
 				recv_buffer = client_sock.recv(self.buf_size)
@@ -194,7 +194,7 @@ class raichu_server:
 				print_error(e)
 
 			if len(recv_buffer) > 0:
-			#	print "recv_buffer: " + recv_buffer
+				print "recv: " + recv_buffer
 			#	print "recv_buffer len: " + str(len(recv_buffer))
 				
 				cmd = recv_buffer.split()
@@ -213,13 +213,20 @@ class raichu_server:
 					#device_name = self.device_list.keys()[int(cmd[1])]
 					if cmd[1] in self.avail_devices:
 						device_name = cmd[1]
-						self.connection_list[conn_info['name']] = device_name
+						self.connection_list[client_info['name']] = device_name
 						self.device_list[device_name]["status"] = 1
 						self.avail_devices.remove(device_name)
 						client_sock.send("device " + device_name + " assigned")
-						print "assigned " + conn_info['name'] + " to " + device_name
+						print "assigned " + client_info['name'] + " to " + device_name
 					else:
 						raise RuntimeError("device does not exist")
+				elif cmd[0] == "relay":
+					device_name = self.connection_list[client_info['name']]
+					out_sock = self.device_list[device_name]["socket"]
+					cmd.pop(0)
+					out_data = ' '.join(cmd)
+					out_sock.send(out_data)
+
 
 
 		#elif recv_data[0] == "assign":

@@ -53,7 +53,7 @@ if __name__ == "__main__":
 				data = s.recv(1024)
 				if data != "":
 					# socket is alive
-					print data
+					print device_info["name"] + ">> " + data
 				elif data == "ping":
 					print "recv ping"
 					s.send("alive")
