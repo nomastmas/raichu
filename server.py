@@ -77,7 +77,8 @@ class raichu_server:
 					for client in self.client_list:
 						print client
 				elif cmd[1] == "conns":
-					pass
+					for client in self.connection_list:
+						print client + " -> " + self.connection_list[client]
 			elif cmd[0] == "send":
 				if cmd[1] in self.device_list:
 					try:
@@ -109,11 +110,12 @@ class raichu_server:
 
 		try:
 			self.server_sock.bind ((self.host, self.port))
+			self.server_sock.listen(5)
 		except socket.error, e:
 			print_error(e)
 			sys.exit(1)
 
-		self.server_sock.listen(5)
+		
 
 		print "----------RAICHU SYSTEM ONLINE----------"
 		print "%s %s" % (self.host, self.port)
@@ -161,6 +163,11 @@ class raichu_server:
 		# set default for server to relay data
 		conn_info["relay"]					= 1
 
+		# mode designates what server does with client's stream
+		# 0 == interpret commands and execute
+		# 1 == relay data to device
+		mode = 0
+
 		self.client_list[conn_info['name']] = conn_info
 		while True:
 			try:
@@ -173,6 +180,7 @@ class raichu_server:
 			if len(recv_buffer) > 0:
 				print "recv_buffer: " + recv_buffer
 				print "recv_buffer len: " + str(len(recv_buffer))
+				
 				cmd = recv_buffer.split()
 				if cmd[0] == "list":
 
@@ -187,8 +195,10 @@ class raichu_server:
 				elif cmd[0] == "assign":
 					device_name = self.device_list.keys()[int(cmd[1])]
 					self.connection_list[conn_info['name']] = device_name
-					client_sock.send("ok")
+					client_sock.send("device " + device_name + " assigned")
 					print "assigned " + conn_info['name'] + " to " + device_name
+
+
 		#elif recv_data[0] == "assign":
 		#	device_request = recv_data[1]
 		#	if device_request in device_list:

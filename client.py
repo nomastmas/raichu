@@ -46,10 +46,6 @@ if __name__ == "__main__":
 	try:
 		s.connect ((host, int(port)))
 		out_data = json.dumps(device_info)
-		print "out_data: " + out_data
-		#ret = s.send (out_data)
-		#if ret == 0:
-		#	raise RuntimeError("socket connection broken")
 		
 		raichu_send(s, out_data)
 		print device_info["name"] + " start up"

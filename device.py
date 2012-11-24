@@ -25,6 +25,11 @@ def boot_up(s):
 if __name__ == "__main__":
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
+	if len(sys.argv) < 2:
+		print "error: not enough arguments"
+		print "usage: ./device <ip_addr> <port>"
+		sys.exit(1)
+
 	s.setblocking (1)
 	host = sys.argv[1]
 	port = sys.argv[2]
@@ -52,6 +57,8 @@ if __name__ == "__main__":
 				elif data == "ping":
 					print "recv ping"
 					s.send("alive")
+
+				t.sleep(0.1)
 				#else:
 				#	# socket is no longer alive
 				#	break
