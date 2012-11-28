@@ -21,6 +21,7 @@ def boot_up(s):
 	except socket.error, e:
 		print_error(e)
 		s.close()
+		sys.exit(1)
 
 if __name__ == "__main__":
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -58,7 +59,7 @@ if __name__ == "__main__":
 					print "recv ping"
 					s.send("alive")
 				elif data == '':
-					# socket is dead
+					print device_info["name"] + " disconnect"
 					break
 
 				t.sleep(0.1)

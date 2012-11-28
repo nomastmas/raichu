@@ -21,7 +21,10 @@ try:
 		)
 		print "proc #" + str(i+1) + " running"
 
-	x = raw_input("kill all?")
+	print "waiting for children to die..."
+	for i in range(0, count):
+		p[1].wait()
+	#x = raw_input("kill all?")
 
 except KeyboardInterrupt:
 	for i in range(0, count):

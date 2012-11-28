@@ -52,8 +52,6 @@ class raichu_server:
 		self.client_list = {}
 		# key value of client to device
 		self.connection_list = {}
-		# available devices (this is constantly updated)
-		self.avail_devices = []
 
 	def start(self):
 		listen_worker = threading.Thread(target=self.start_master_listener)
@@ -163,7 +161,6 @@ class raichu_server:
 		# 2 means it's mucked up
 
 		self.device_list[conn_info['name']] = conn_info
-		self.avail_devices.append(conn_info['name'])
 
 		# wait for connection
 		# thread sleep?
@@ -176,7 +173,7 @@ class raichu_server:
 		client_info["port"] 				= device_info[1]
 		client_info["socket"] 				= client_sock
 		# set default for server to relay data
-		client_info["relay"]					= 1
+		client_info["relay"]				= 1
 
 		# mode designates what server does with client's stream
 		# 0 == interpret commands and execute
@@ -215,13 +212,11 @@ class raichu_server:
 						# send 0 to denote no devices online
 						client_sock.send("0")
 				elif cmd[0] == "assign":
-					#TODO revise: could just say
-					#if self.device_list[cmd[1]]['status'] == 0:
-					if cmd[1] in self.avail_devices:
+					if self.device_list[cmd[1]]['status'] == 0:
+						# assign client to device
 						device_name = cmd[1]
 						self.connection_list[client_info['name']] = device_name
 						self.device_list[device_name]["status"] = 1
-						self.avail_devices.remove(device_name)
 						client_sock.send("device " + device_name + " assigned")
 						print "assigned " + client_info['name'] + " to " + device_name
 					else:
@@ -305,13 +300,12 @@ class raichu_server:
 
 	def get_avail_devices(self):
 		#TODO remove avail_devices, just use device_list for getting device updates
+		avail_devices = []
 		for device in self.device_list:
 			# if the device is free and not already existing in list, append
-			if self.device_list[device]["status"] == 0 and device not in self.device_list:
-				self.avail_devices.append(device)
-			else:
-				pass
-		return self.avail_devices
+			if self.device_list[device]["status"] == 0:
+				avail_devices.append(device)
+		return avail_devices
 #end function def
 
 # main
