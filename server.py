@@ -83,8 +83,9 @@ class raichu_server:
 					for client in self.connection_list:
 						print client + " -> " + self.connection_list[client]
 				elif cmd[1] == "avail":
-					for device in self.avail_devices:
-						print device
+					for device in self.device_list:
+						if self.device_list[device]['status'] == 0:
+							print device
 				elif cmd[1] == "detail":
 					if cmd[2] == "devices":
 						for device in self.device_list:
@@ -126,8 +127,6 @@ class raichu_server:
 		except socket.error, e:
 			print_error(e)
 			sys.exit(1)
-
-		
 
 		print "----------RAICHU SYSTEM ONLINE----------"
 		print "%s %s" % (self.host, self.port)
@@ -174,7 +173,7 @@ class raichu_server:
 		device_info 						= client_sock.getpeername()
 		client_info["address"]				= device_info
 		client_info["ip"] 					= device_info[0]
-		client_info["port"] 					= device_info[1]
+		client_info["port"] 				= device_info[1]
 		client_info["socket"] 				= client_sock
 		# set default for server to relay data
 		client_info["relay"]					= 1
@@ -189,17 +188,24 @@ class raichu_server:
 			try:
 				recv_buffer = client_sock.recv(self.buf_size)
 				if recv_buffer == '':
-					raise RuntimeError("socket connection broken")
+					raise RuntimeError(client_info['name'] + " disconnected")
 			except socket.error, e:
 				print_error(e)
+			except RuntimeError as e:
+				print e
+				# cleanup of d/c client
+				del self.client_list[client_info['name']]
+				self.device_list[ self.connection_list[ client_info['name'] ] ]['status'] = 0
+				del self.connection_list[client_info['name']]
+
+				sys.exit(1)
 
 			if len(recv_buffer) > 0:
+				# debug
 				print "recv: " + recv_buffer
-			#	print "recv_buffer len: " + str(len(recv_buffer))
 				
 				cmd = recv_buffer.split()
 				if cmd[0] == "list":
-					#out_data = json.dumps(self.device_list.keys())
 					out_data = json.dumps(self.get_avail_devices())
 					if len(out_data) != 2:
 						print "sending device_list"
@@ -209,8 +215,8 @@ class raichu_server:
 						# send 0 to denote no devices online
 						client_sock.send("0")
 				elif cmd[0] == "assign":
-					#TODO wow this logic is way wrong, need to get current list of devices
-					#device_name = self.device_list.keys()[int(cmd[1])]
+					#TODO revise: could just say
+					#if self.device_list[cmd[1]]['status'] == 0:
 					if cmd[1] in self.avail_devices:
 						device_name = cmd[1]
 						self.connection_list[client_info['name']] = device_name
@@ -225,7 +231,11 @@ class raichu_server:
 					out_sock = self.device_list[device_name]["socket"]
 					cmd.pop(0)
 					out_data = ' '.join(cmd)
-					out_sock.send(out_data)
+					ret = out_sock.send(out_data)
+					if ret != 0:
+						print client_info['name'] + ">>>" + device_name + ": " + out_data
+					else:
+						raise RuntimeError("socket connection broken")
 
 
 
@@ -290,10 +300,13 @@ class raichu_server:
 	def relay_data(self, data):
 		pass
 
+	def get_avail_clients(self):
+		return self.client_list
+
 	def get_avail_devices(self):
-		#TODO improve efficiency, clearing and rebuilding each call is not efficienct
-		#self.avail_devices = []
+		#TODO remove avail_devices, just use device_list for getting device updates
 		for device in self.device_list:
+			# if the device is free and not already existing in list, append
 			if self.device_list[device]["status"] == 0 and device not in self.device_list:
 				self.avail_devices.append(device)
 			else:

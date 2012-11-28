@@ -26,7 +26,7 @@ try:
 except KeyboardInterrupt:
 	for i in range(0, count):
 		p[i].kill()
-		print "proc #" + str(i) + " killed"
+		print "proc #" + str(i+1) + " killed"
 	sys.exit(0)
 
 
