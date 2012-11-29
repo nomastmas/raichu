@@ -53,6 +53,9 @@ class raichu_server:
 		# key value of client to device
 		self.connection_list = {}
 
+		# database handle
+		self.db_conn = None
+
 	def start(self):
 		listen_worker = threading.Thread(target=self.start_master_listener)
 		listen_worker.daemon = True
@@ -85,7 +88,10 @@ class raichu_server:
 						if self.device_list[device]['status'] == 0:
 							print device
 				elif cmd[1] == "detail":
-					if cmd[2] == "devices":
+					if len(cmd) < 3:
+						print "usage: list detail clients|devices"
+						pass
+					elif cmd[2] == "devices":
 						for device in self.device_list:
 							pp.pprint(self.device_list[device])
 					elif cmd[2] == "clients":
@@ -306,6 +312,21 @@ class raichu_server:
 			if self.device_list[device]["status"] == 0:
 				avail_devices.append(device)
 		return avail_devices
+
+	def connect_db(self):
+		# point host elsewhere if db not on same machine
+		host     = 'localhost'
+		user     = 'server'
+		passwd   = 'raichuserver'
+		database = 'raichu'
+
+		try:
+			self.db_conn = db.connect(host, user, passwd, database)
+		except db.Error, e:
+			print_error(e)
+			if self.db_conn:
+				self.db_conn.close()
+
 #end function def
 
 # main
