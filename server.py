@@ -19,7 +19,7 @@ import time as t
 
 import simplejson as json
 import pprint as pp
-#import MySQLdb as db
+import MySQLdb as db
 
 def get_ip_address(ifname):
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -57,6 +57,7 @@ class raichu_server:
 		self.db_conn = None
 
 	def start(self):
+		self.db_connect()
 		listen_worker = threading.Thread(target=self.start_master_listener)
 		listen_worker.daemon = True
 		listen_worker.start()
@@ -313,7 +314,7 @@ class raichu_server:
 				avail_devices.append(device)
 		return avail_devices
 
-	def connect_db(self):
+	def db_connect(self):
 		# point host elsewhere if db not on same machine
 		host     = 'localhost'
 		user     = 'server'
@@ -322,10 +323,25 @@ class raichu_server:
 
 		try:
 			self.db_conn = db.connect(host, user, passwd, database)
+			print "connected to " + database + " database"
 		except db.Error, e:
 			print_error(e)
 			if self.db_conn:
 				self.db_conn.close()
+
+	def db_insert(self, type, type_name):
+		pass
+
+	def db_update(self, type, type_name):
+		pass
+
+	def db_delete(self, type, type_name):
+		pass
+
+	def db_close(self):
+		if self.db_conn:
+			self.db_conn.close()
+			print "connection to database closed"
 
 #end function def
 
@@ -340,5 +356,6 @@ if __name__ == "__main__":
 		s.close()
 		print ""
 		print "== server shutdown =="
+		s.db_close()
 		sys.exit(0)
 
