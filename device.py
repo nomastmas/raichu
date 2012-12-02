@@ -69,9 +69,13 @@ if __name__ == "__main__":
 		except socket.error, e:
 			print_error(e)
 			
-		print device_info["name"] + " shutdown"
+		
 	except socket.error, e:
 		print_error(e)
+	except KeyboardInterrupt:
+		pass
 	finally:
 		if s:
 			s.close()
+		print device_info["name"] + " shutdown"
+		sys.exit(0)

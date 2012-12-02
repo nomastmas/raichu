@@ -38,7 +38,7 @@ if __name__ == "__main__":
 	port = sys.argv[2]
 
 	device_info = {
-		'type'		  : 'client_sim',
+		'type'		  : 'client',
 		'name'		  : 'client_' + dt.datetime.fromtimestamp(int(t.time())).strftime('%H%M%S'),
 		'bootup_time' : get_timestamp(),
 	}

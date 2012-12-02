@@ -35,6 +35,8 @@ def print_error(error):
 def get_timestamp():
 	return dt.datetime.fromtimestamp(int(t.time())).strftime('%Y-%m-%d %H:%M:%S')
 
+#TODO better log function
+
 class raichu_server:
 
 	def __init__(self, port=30000):
@@ -174,43 +176,45 @@ class raichu_server:
 		# wait for connection
 		# thread sleep?
 
-	def handle_client_sim(self, client_sock, client_info):
-		print "simulated client connected"
+	def handle_client(self, client_sock, conn_info):
+		print "client connected"
 		device_info 						= client_sock.getpeername()
-		client_info["address"]				= device_info
-		client_info["ip"] 					= device_info[0]
-		client_info["port"] 				= device_info[1]
-		client_info["socket"] 				= client_sock
-		client_info["connect_time"]			= get_timestamp()
+		conn_info["address"]				= device_info
+		conn_info["ip"] 					= device_info[0]
+		conn_info["port"] 				    = device_info[1]
+		conn_info["socket"] 				= client_sock
+		conn_info["connect_time"]			= get_timestamp()
 		# set default for server to relay data
-		client_info["relay"]				= 1
-		client_info["master"]				= 0
+		conn_info["relay"]				= 1
+		conn_info["master"]				= 0
+
+		self.client_list[conn_info['name']] = conn_info
+		self.db_insert(conn_info)
 
 		# mode designates what server does with client's stream
 		# 0 == interpret commands and execute
 		# 1 == relay data to device
 		mode = 0
 
-		self.client_list[client_info['name']] = client_info
 		while True:
 			try:
 				recv_buffer = client_sock.recv(self.buf_size)
 				if recv_buffer == '':
-					raise RuntimeError(client_info['name'] + " disconnected")
+					raise RuntimeError(conn_info['name'] + " disconnected")
 			except socket.error, e:
 				print_error(e)
 			except RuntimeError as e:
 				print e
 				# cleanup of d/c client
-				del self.client_list[client_info['name']]
-				self.device_list[ self.connection_list[ client_info['name'] ] ]['slave'] = 0
-				del self.connection_list[client_info['name']]
+				del self.client_list[conn_info['name']]
+				self.device_list[ self.connection_list[ conn_info['name'] ] ]['slave'] = 0
+				del self.connection_list[conn_info['name']]
 
 				sys.exit(1)
 
 			if len(recv_buffer) > 0:
 				# debug
-				print "recv: " + recv_buffer
+				print conn_info['name'] + ">>>raichu_server: " + recv_buffer
 				
 				cmd = recv_buffer.split()
 				if cmd[0] == "list":
@@ -226,20 +230,20 @@ class raichu_server:
 					if self.device_list[cmd[1]]['slave'] == 0:
 						# assign client to device
 						device_name = cmd[1]
-						self.connection_list[client_info['name']] = device_name
+						self.connection_list[conn_info['name']] = device_name
 						self.device_list[device_name]["slave"] = 1
 						client_sock.send("device " + device_name + " assigned")
-						print "assigned " + client_info['name'] + " to " + device_name
+						print "assigned " + conn_info['name'] + " to " + device_name
 					else:
 						raise RuntimeError("device does not exist")
 				elif cmd[0] == "relay":
-					device_name = self.connection_list[client_info['name']]
+					device_name = self.connection_list[conn_info['name']]
 					out_sock = self.device_list[device_name]["socket"]
 					cmd.pop(0)
 					out_data = ' '.join(cmd)
 					ret = out_sock.send(out_data)
 					if ret != 0:
-						print client_info['name'] + ">>>" + device_name + ": " + out_data
+						print "raichu_server(" + conn_info['name'] + ")>>>" + device_name + ": " + out_data
 					else:
 						raise RuntimeError("socket connection broken")
 
@@ -257,11 +261,6 @@ class raichu_server:
 		# assign to client_sim
 		# push to connection_list
 		# unlock
-		
-
-	def handle_client(self, client_sock):
-		print "client connected"
-		pass
 
 	def handle_connection(self, client_sock):
 		conn_info = {}
@@ -278,10 +277,8 @@ class raichu_server:
 
 		if conn_info["type"] == "device":
 			self.handle_device (client_sock, conn_info)
-		elif conn_info["type"] == "client_sim":
-			self.handle_client_sim (client_sock, conn_info)
 		elif conn_info["type"] == "client":
-			self.handle_client (client_sock)
+			self.handle_client (client_sock, conn_info)
 		else:
 			print "not sure what I got" 
 
@@ -321,8 +318,8 @@ class raichu_server:
 	def db_connect(self):
 		# point host elsewhere if db not on same machine
 		host     = 'localhost'
-		user     = 'raichu_server'
-		passwd   = 'scumbagyun'
+		user     = 'root'
+		passwd   = 'admin'
 		database = 'raichu'
 
 		try:
@@ -339,17 +336,20 @@ class raichu_server:
 				cur = self.db_conn.cursor()
 
 				if conn_info["type"] == "device":
-					query = 'insert into device (name, type, ip, port, connect_time, bootup_time, slave) values ("%s","%s","%s","%s","%s","%s","%s")'\
+					query = 'insert into device (name, type, ip, port, connect_time, bootup_time) values ("%s","%s","%s","%s","%s","%s")'\
+				      		% (conn_info['name'], conn_info['type'],
+				      		conn_info['ip'], conn_info['port'], 
+				      		conn_info['connect_time'], conn_info['bootup_time'])	
+				elif conn_info["type"] == "client":
+					query = 'insert into client (name, type, ip, port, connect_time, bootup_time, relay) values ("%s","%s","%s","%s","%s","%s","%s")'\
 				      		% (conn_info['name'], conn_info['type'],
 				      		conn_info['ip'], conn_info['port'], 
 				      		conn_info['connect_time'], conn_info['bootup_time'], 
-				      		conn_info['slave'])	
-				    #query = 'insert into device (name, type, ip, port, connect_time, bootup_time, slave) values ('
-				elif conn_info["type"] == "client":
-					pass
+				      		conn_info['relay'])
 
-				print query
+				#print query
 				cur.execute(query)
+				print "insert into db success"
 		except db.Error, e:
 			print_error(e)
 		pass
