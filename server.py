@@ -36,6 +36,8 @@ def get_timestamp():
 	return dt.datetime.fromtimestamp(int(t.time())).strftime('%Y-%m-%d %H:%M:%S')
 
 #TODO better log function
+#TODO device needs to send data too some times (think MP3 player)
+#TODO client needs to be able to receive data
 
 class raichu_server:
 
@@ -157,21 +159,42 @@ class raichu_server:
 			if self.server_sock:
 				self.server_sock.close()
 
-	def handle_device(self, client_sock, conn_info):
+	def handle_device(self, device_sock, conn_info):
 		print "device connected"
-		device_info 						= client_sock.getpeername()
+		device_info 						= device_sock.getpeername()
 		conn_info["address"]				= device_info
 		conn_info["ip"] 					= device_info[0]
 		conn_info["port"] 					= device_info[1]
-		conn_info["socket"] 				= client_sock
+		conn_info["socket"] 				= device_sock
 		conn_info["connect_time"]			= get_timestamp()
 		conn_info["slave"]					= 0
 		# 0 means free device
 		# 1 means slave
 		# 2 means it's mucked up
 
+
+
 		self.device_list[conn_info['name']] = conn_info
 		self.db_insert(conn_info)
+
+		while True:
+			#consider spinning out recv as separate thread
+			try:
+				recv_buffer = device_sock.recv(self.buf_size)
+				if recv_buffer == '':
+					raise RuntimeError(conn_info['name'] + " disconnected")
+			except socket.error, e:
+				print_error(e)
+			except RuntimeError as e:
+				print e
+				# cleanup of d/c client from server cache
+				del self.device_list[conn_info['name']]
+				self.db_remove(conn_info)
+				sys.exit(1)
+
+			if len(recv_buffer) > 0:
+				# debug
+				print conn_info['name'] + ">>>raichu_server: " + recv_buffer
 
 		# wait for connection
 		# thread sleep?
@@ -197,6 +220,7 @@ class raichu_server:
 		mode = 0
 
 		while True:
+			#consider spinning out recv as separate thread
 			try:
 				recv_buffer = client_sock.recv(self.buf_size)
 				if recv_buffer == '':
@@ -205,10 +229,11 @@ class raichu_server:
 				print_error(e)
 			except RuntimeError as e:
 				print e
-				# cleanup of d/c client
+				# cleanup of d/c client from server cache
 				del self.client_list[conn_info['name']]
 				self.device_list[ self.connection_list[ conn_info['name'] ] ]['slave'] = 0
 				del self.connection_list[conn_info['name']]
+				self.db_remove(conn_info)
 
 				sys.exit(1)
 
@@ -315,6 +340,8 @@ class raichu_server:
 				avail_devices.append(device)
 		return avail_devices
 
+
+
 	def db_connect(self):
 		# point host elsewhere if db not on same machine
 		host     = 'localhost'
@@ -348,11 +375,29 @@ class raichu_server:
 				      		conn_info['relay'])
 
 				#print query
+				#TODO batch SQL queries, implement common queue?
 				cur.execute(query)
-				print "insert into db success"
+				print "insert %s into db success" % conn_info['name']
 		except db.Error, e:
 			print_error(e)
 		pass
+
+	def db_remove(self, conn_info):
+		try:
+			with self.db_conn:
+				cur = self.db_conn.cursor()
+
+				if conn_info["type"] == "device":	
+				    query = 'update device set online=0, slave=0 where name="%s"' % conn_info['name']
+				elif conn_info["type"] == "client":
+					query = 'update client set online=0, master=0 where name="%s"' % conn_info['name']
+
+				#print query
+				#TODO batch SQL queries, implement common queue?
+				cur.execute(query)
+				print "delete %s from db success" % conn_info['name']
+		except db.Error, e:
+			print_error(e)
 
 	def db_update(self, conn_info):
 		pass

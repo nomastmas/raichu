@@ -79,6 +79,8 @@ if __name__ == "__main__":
 
 	except socket.error, e:
 		print_error(e)
+	except KeyboardInterrupt:
+		pass
 	finally:
 		if s:
 			s.close()
