@@ -37,9 +37,9 @@ def get_timestamp():
 
 class raichu_server:
 
-	def __init__(self, port=3333):
+	def __init__(self, port=30000):
 
-		self.port = port
+		self.port = int(port)
 		server_platform = platform.system()
 		if server_platform == "Linux":
 			self.host = get_ip_address("eth0")
@@ -86,7 +86,7 @@ class raichu_server:
 						print client + " -> " + self.connection_list[client]
 				elif cmd[1] == "avail":
 					for device in self.device_list:
-						if self.device_list[device]['status'] == 0:
+						if self.device_list[device]['slave'] == 0:
 							print device
 				elif cmd[1] == "detail":
 					if len(cmd) < 3:
@@ -162,12 +162,14 @@ class raichu_server:
 		conn_info["ip"] 					= device_info[0]
 		conn_info["port"] 					= device_info[1]
 		conn_info["socket"] 				= client_sock
-		conn_info["status"]					= 0
+		conn_info["connect_time"]			= get_timestamp()
+		conn_info["slave"]					= 0
 		# 0 means free device
-		# 1 means taken
+		# 1 means slave
 		# 2 means it's mucked up
 
 		self.device_list[conn_info['name']] = conn_info
+		self.db_insert(conn_info)
 
 		# wait for connection
 		# thread sleep?
@@ -179,8 +181,10 @@ class raichu_server:
 		client_info["ip"] 					= device_info[0]
 		client_info["port"] 				= device_info[1]
 		client_info["socket"] 				= client_sock
+		client_info["connect_time"]			= get_timestamp()
 		# set default for server to relay data
 		client_info["relay"]				= 1
+		client_info["master"]				= 0
 
 		# mode designates what server does with client's stream
 		# 0 == interpret commands and execute
@@ -199,7 +203,7 @@ class raichu_server:
 				print e
 				# cleanup of d/c client
 				del self.client_list[client_info['name']]
-				self.device_list[ self.connection_list[ client_info['name'] ] ]['status'] = 0
+				self.device_list[ self.connection_list[ client_info['name'] ] ]['slave'] = 0
 				del self.connection_list[client_info['name']]
 
 				sys.exit(1)
@@ -219,11 +223,11 @@ class raichu_server:
 						# send 0 to denote no devices online
 						client_sock.send("0")
 				elif cmd[0] == "assign":
-					if self.device_list[cmd[1]]['status'] == 0:
+					if self.device_list[cmd[1]]['slave'] == 0:
 						# assign client to device
 						device_name = cmd[1]
 						self.connection_list[client_info['name']] = device_name
-						self.device_list[device_name]["status"] = 1
+						self.device_list[device_name]["slave"] = 1
 						client_sock.send("device " + device_name + " assigned")
 						print "assigned " + client_info['name'] + " to " + device_name
 					else:
@@ -296,7 +300,7 @@ class raichu_server:
 		
 		pass
 
-	def check_device_status(self):
+	def check_device_slave(self):
 		pass
 
 	def relay_data(self, data):
@@ -310,15 +314,15 @@ class raichu_server:
 		avail_devices = []
 		for device in self.device_list:
 			# if the device is free and not already existing in list, append
-			if self.device_list[device]["status"] == 0:
+			if self.device_list[device]["slave"] == 0:
 				avail_devices.append(device)
 		return avail_devices
 
 	def db_connect(self):
 		# point host elsewhere if db not on same machine
 		host     = 'localhost'
-		user     = 'server'
-		passwd   = 'raichuserver'
+		user     = 'raichu_server'
+		passwd   = 'scumbagyun'
 		database = 'raichu'
 
 		try:
@@ -329,13 +333,28 @@ class raichu_server:
 			if self.db_conn:
 				self.db_conn.close()
 
-	def db_insert(self, type, type_name):
+	def db_insert(self, conn_info):
+		try:
+			with self.db_conn:
+				cur = self.db_conn.cursor()
+
+				if conn_info["type"] == "device":
+					query = 'insert into device (name, type, ip, port, connect_time, bootup_time, slave) values ("%s","%s","%s","%s","%s","%s","%s")'\
+				      		% (conn_info['name'], conn_info['type'],
+				      		conn_info['ip'], conn_info['port'], 
+				      		conn_info['connect_time'], conn_info['bootup_time'], 
+				      		conn_info['slave'])	
+				    #query = 'insert into device (name, type, ip, port, connect_time, bootup_time, slave) values ('
+				elif conn_info["type"] == "client":
+					pass
+
+				print query
+				cur.execute(query)
+		except db.Error, e:
+			print_error(e)
 		pass
 
-	def db_update(self, type, type_name):
-		pass
-
-	def db_delete(self, type, type_name):
+	def db_update(self, conn_info):
 		pass
 
 	def db_close(self):
@@ -347,8 +366,11 @@ class raichu_server:
 
 # main
 if __name__ == "__main__":
-	#port = sys.argv[1]
-	s = raichu_server()
+	if len(sys.argv) > 1:
+		port = sys.argv[1]
+		s = raichu_server(port)
+	else:
+		s = raichu_server()
 
 	try:
 		s.start()

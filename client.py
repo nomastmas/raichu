@@ -40,7 +40,7 @@ if __name__ == "__main__":
 	device_info = {
 		'type'		  : 'client_sim',
 		'name'		  : 'client_' + dt.datetime.fromtimestamp(int(t.time())).strftime('%H%M%S'),
-		'bootup-time' : get_timestamp(),
+		'bootup_time' : get_timestamp(),
 	}
 
 	try:
