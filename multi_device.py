@@ -34,7 +34,6 @@ except KeyboardInterrupt:
 	for i in range(0, count):
 		p[i].kill()
 		print "proc #" + str(i+1) + " killed"
-		p[i].wait()
 	sys.exit(0)
 
 

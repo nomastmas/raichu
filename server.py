@@ -38,6 +38,8 @@ def get_timestamp():
 #TODO better log function
 #TODO device needs to send data too some times (think MP3 player)
 #TODO client needs to be able to receive data
+#TODO implement locks on execute_sql_batch
+#TODO disconnect clients and devices at shutdown
 
 class raichu_server:
 
@@ -56,6 +58,8 @@ class raichu_server:
 		self.client_list = {}
 		# key value of client to device
 		self.connection_list = {}
+		# query list to batch execute
+		self.query_list = []
 
 		# database handle
 		self.db_conn = None
@@ -65,6 +69,10 @@ class raichu_server:
 		listen_worker = threading.Thread(target=self.start_master_listener)
 		listen_worker.daemon = True
 		listen_worker.start()
+
+		query_worker = threading.Thread(target=self.execute_query_batch)
+		query_worker.daemon = True
+		query_worker.start()
 
 		# command prompt
 		while 1:
@@ -188,7 +196,9 @@ class raichu_server:
 			except RuntimeError as e:
 				print e
 				# cleanup of d/c client from server cache
-				del self.device_list[conn_info['name']]
+				if self.device_list[conn_info['name']]:
+					# a legitimate disconnect will also result in socket d/c
+					del self.device_list[conn_info['name']]
 				self.db_remove(conn_info)
 				sys.exit(1)
 
@@ -230,7 +240,8 @@ class raichu_server:
 			except RuntimeError as e:
 				print e
 				# cleanup of d/c client from server cache
-				del self.client_list[conn_info['name']]
+				if self.client_list[conn_info['name']]:
+					del self.client_list[conn_info['name']]
 				self.device_list[ self.connection_list[ conn_info['name'] ] ]['slave'] = 0
 				del self.connection_list[conn_info['name']]
 				self.db_remove(conn_info)
@@ -291,9 +302,9 @@ class raichu_server:
 		conn_info = {}
 		try:
 			in_pkt = client_sock.recv(self.buf_size)
-			print "in_pkt: " + in_pkt
+			#print "in_pkt: " + in_pkt
 			conn_info = json.loads(in_pkt)
-			print "conn_info: " + str(conn_info)
+			#print "conn_info: " + str(conn_info)
 			#print "conn_info type: " + str(type(conn_info))
 		except json.decoder.JSONDecodeError, e:
 			print e
@@ -351,53 +362,46 @@ class raichu_server:
 
 		try:
 			self.db_conn = db.connect(host, user, passwd, database)
-			print "connected to " + database + " database"
+			#print "connected to " + database + " database"
 		except db.Error, e:
 			print_error(e)
 			if self.db_conn:
 				self.db_conn.close()
+			sys.exit(1)
 
 	def db_insert(self, conn_info):
-		try:
-			with self.db_conn:
-				cur = self.db_conn.cursor()
+		if conn_info["type"] == "device":
+			query = 'insert into device (name, type, ip, port, connect_time, bootup_time) values ("%s","%s","%s","%s","%s","%s")'\
+		      		% (conn_info['name'], conn_info['type'],
+		      		conn_info['ip'], conn_info['port'], 
+		      		conn_info['connect_time'], conn_info['bootup_time'])	
+		elif conn_info["type"] == "client":
+			query = 'insert into client (name, type, ip, port, connect_time, bootup_time, relay) values ("%s","%s","%s","%s","%s","%s","%s")'\
+		      		% (conn_info['name'], conn_info['type'],
+		      		conn_info['ip'], conn_info['port'], 
+		      		conn_info['connect_time'], conn_info['bootup_time'], 
+		      		conn_info['relay'])
 
-				if conn_info["type"] == "device":
-					query = 'insert into device (name, type, ip, port, connect_time, bootup_time) values ("%s","%s","%s","%s","%s","%s")'\
-				      		% (conn_info['name'], conn_info['type'],
-				      		conn_info['ip'], conn_info['port'], 
-				      		conn_info['connect_time'], conn_info['bootup_time'])	
-				elif conn_info["type"] == "client":
-					query = 'insert into client (name, type, ip, port, connect_time, bootup_time, relay) values ("%s","%s","%s","%s","%s","%s","%s")'\
-				      		% (conn_info['name'], conn_info['type'],
-				      		conn_info['ip'], conn_info['port'], 
-				      		conn_info['connect_time'], conn_info['bootup_time'], 
-				      		conn_info['relay'])
-
-				#print query
-				#TODO batch SQL queries, implement common queue?
-				cur.execute(query)
-				print "insert %s into db success" % conn_info['name']
-		except db.Error, e:
-			print_error(e)
+		#print query
+		#TODO batch SQL queries, implement common queue?
+		#cur.execute(query)
+		#print "insert %s into db success" % conn_info['name']
+		self.query_list.append(query)
+		print "append insert query"
 		pass
 
 	def db_remove(self, conn_info):
-		try:
-			with self.db_conn:
-				cur = self.db_conn.cursor()
+		if conn_info["type"] == "device":	
+		    query = 'update device set online=0, slave=0 where name="%s"' % conn_info['name']
+		elif conn_info["type"] == "client":
+			query = 'update client set online=0, master=0 where name="%s"' % conn_info['name']
 
-				if conn_info["type"] == "device":	
-				    query = 'update device set online=0, slave=0 where name="%s"' % conn_info['name']
-				elif conn_info["type"] == "client":
-					query = 'update client set online=0, master=0 where name="%s"' % conn_info['name']
-
-				#print query
-				#TODO batch SQL queries, implement common queue?
-				cur.execute(query)
-				print "delete %s from db success" % conn_info['name']
-		except db.Error, e:
-			print_error(e)
+		#print query
+		#TODO batch SQL queries, implement common queue?
+		#cur.execute(query)
+		#print "delete %s from db success" % conn_info['name']
+		self.query_list.append(query)
+		print "append delete query"
 
 	def db_update(self, conn_info):
 		pass
@@ -406,6 +410,25 @@ class raichu_server:
 		if self.db_conn:
 			self.db_conn.close()
 			print "connection to database closed"
+
+	def execute_query_batch(self):
+		while True:
+			if len(self.query_list) > 0:
+				try:
+					# in the event the db handle dies, reconnect
+					if not self.db_conn:
+						self.db_connect()
+						print "db reconnection"
+					with self.db_conn:
+						cur = self.db_conn.cursor()
+						query = self.query_list.pop()
+						cur.execute(query)
+						print "executed query"
+				except db.Error, e:
+					print_error(e)
+			#TODO fine tune this sleep interval
+			t.sleep(1)
+		pass
 
 #end function def
 
