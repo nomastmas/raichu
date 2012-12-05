@@ -58,6 +58,8 @@ class raichu_server:
 		self.client_list = {}
 		# key value of client to device
 		self.connection_list = {}
+		# a hash of lists of clients and their assigned devices
+		self.assign_list = {}
 		# query list to batch execute
 		self.query_list = []
 
@@ -152,6 +154,8 @@ class raichu_server:
 		try:
 			while True:
 				client_sock, addr = self.server_sock.accept()
+				# delete later
+				client_sock.send("ok. CAN I HAVE YO NUMBA?")
 				timestamp = get_timestamp()
 				print "==========<%s>==========" % timestamp
 				print "%s %s connected" %  (addr[0], addr[1])
@@ -167,6 +171,41 @@ class raichu_server:
 			if self.server_sock:
 				self.server_sock.close()
 
+	def handle_connection(self, client_sock):
+
+		conn_info = {}
+		try:
+			in_pkt = client_sock.recv(self.buf_size)
+			#print "in_pkt: " + in_pkt
+			conn_info = json.loads(in_pkt)
+			#print "conn_info: " + str(conn_info)
+			#print "conn_info type: " + str(type(conn_info))
+		except json.decoder.JSONDecodeError, e:
+			print e
+		except socket.error, e:
+			print_error(e)
+
+		if conn_info["type"] == "device":
+			self.handle_device (client_sock, conn_info)
+		elif conn_info["type"] == "client":
+			self.handle_client (client_sock, conn_info)
+		else:
+			print "not sure what I got" 
+
+		
+		#log connection
+			#keep client_sock alive
+		#need to specify if device or client
+		#device connected, keep alive
+			#client specifies what device to connect to
+			#all date client sends is passed to device
+		#t.sleep(5)
+
+		# client_sock shouldn't be closed here, depends on if it's
+		# a device or client
+		#client_sock.close()
+		
+		pass
 	def handle_device(self, device_sock, conn_info):
 		print "device connected"
 		device_info 						= device_sock.getpeername()
@@ -263,6 +302,15 @@ class raichu_server:
 						# send 0 to denote no devices online
 						client_sock.send("0")
 				elif cmd[0] == "assign":
+					# push to assign_list['client']
+					# update database so that to reflect
+					pass
+				elif cmd[0] == "release":
+					# remove from assign_list
+					# update database
+					pass
+				elif cmd[0] == "connect":
+					# need to redo some logic here
 					if self.device_list[cmd[1]]['slave'] == 0:
 						# assign client to device
 						device_name = cmd[1]
@@ -298,40 +346,7 @@ class raichu_server:
 		# push to connection_list
 		# unlock
 
-	def handle_connection(self, client_sock):
-		conn_info = {}
-		try:
-			in_pkt = client_sock.recv(self.buf_size)
-			#print "in_pkt: " + in_pkt
-			conn_info = json.loads(in_pkt)
-			#print "conn_info: " + str(conn_info)
-			#print "conn_info type: " + str(type(conn_info))
-		except json.decoder.JSONDecodeError, e:
-			print e
-		except socket.error, e:
-			print_error(e)
 
-		if conn_info["type"] == "device":
-			self.handle_device (client_sock, conn_info)
-		elif conn_info["type"] == "client":
-			self.handle_client (client_sock, conn_info)
-		else:
-			print "not sure what I got" 
-
-		
-		#log connection
-			#keep client_sock alive
-		#need to specify if device or client
-		#device connected, keep alive
-			#client specifies what device to connect to
-			#all date client sends is passed to device
-		#t.sleep(5)
-
-		# client_sock shouldn't be closed here, depends on if it's
-		# a device or client
-		#client_sock.close()
-		
-		pass
 
 	def check_device_slave(self):
 		pass
@@ -382,10 +397,6 @@ class raichu_server:
 		      		conn_info['connect_time'], conn_info['bootup_time'], 
 		      		conn_info['relay'])
 
-		#print query
-		#TODO batch SQL queries, implement common queue?
-		#cur.execute(query)
-		#print "insert %s into db success" % conn_info['name']
 		self.query_list.append(query)
 		print "append insert query"
 		pass
@@ -395,11 +406,7 @@ class raichu_server:
 		    query = 'update device set online=0, slave=0 where name="%s"' % conn_info['name']
 		elif conn_info["type"] == "client":
 			query = 'update client set online=0, master=0 where name="%s"' % conn_info['name']
-
-		#print query
-		#TODO batch SQL queries, implement common queue?
-		#cur.execute(query)
-		#print "delete %s from db success" % conn_info['name']
+		
 		self.query_list.append(query)
 		print "append delete query"
 
