@@ -38,9 +38,9 @@ if __name__ == "__main__":
 	port = sys.argv[2]
 
 	device_info = {
-		'type'		  : 'client_sim',
+		'type'		  : 'client',
 		'name'		  : 'client_' + dt.datetime.fromtimestamp(int(t.time())).strftime('%H%M%S'),
-		'bootup-time' : get_timestamp(),
+		'bootup_time' : get_timestamp(),
 	}
 
 	try:
@@ -64,7 +64,7 @@ if __name__ == "__main__":
 		# design randomized algorithm later
 		devices = json.loads(buf)
 		#raichu_send(s, "assign 1")
-		raichu_send(s, "assign " + devices[0])
+		raichu_send(s, "connect " + devices[0])
 		buf = raichu_recv(s, 1024)
 		print "buffer: " + buf
 
@@ -79,6 +79,8 @@ if __name__ == "__main__":
 
 	except socket.error, e:
 		print_error(e)
+	except KeyboardInterrupt:
+		pass
 	finally:
 		if s:
 			s.close()
