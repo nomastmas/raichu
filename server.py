@@ -137,10 +137,10 @@ class raichu_server:
 		self.server_sock.close()
 
 	def start_master_listener(self):
-		self.server_sock = socket.socket (socket.AF_INET, socket.SOCK_STREAM)
-		self.buf_size 	 = 1024
-
 		try:
+			self.server_sock = socket.socket (socket.AF_INET, socket.SOCK_STREAM)
+			self.server_sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+			self.buf_size 	 = 1024
 			self.server_sock.bind ((self.host, self.port))
 			self.server_sock.listen(5)
 		except socket.error, e:
@@ -154,8 +154,6 @@ class raichu_server:
 		try:
 			while True:
 				client_sock, addr = self.server_sock.accept()
-				# delete later
-				client_sock.send("ok. CAN I HAVE YO NUMBA?")
 				timestamp = get_timestamp()
 				print "==========<%s>==========" % timestamp
 				print "%s %s connected" %  (addr[0], addr[1])
@@ -172,12 +170,33 @@ class raichu_server:
 				self.server_sock.close()
 
 	def handle_connection(self, client_sock):
+		#while True:
+		#	try:
+		#		buf = client_sock.recv(self.buf_size)
+		#		if buf == '':
+		#			client_sock.close(0)
+		#			sys.exit(1)
+		#			break
+		#		print ">>>>>>>>>>" + buf
+		#		client_sock.send("#####" + buf + " @@@@@")
+		#	except socket.error, e:
+		#		print_error(e)
+		#		client_sock.close(0)
+		#		sys.exit(1)
+		#		break
+
 
 		conn_info = {}
 		try:
-			in_pkt = client_sock.recv(self.buf_size)
-			#print "in_pkt: " + in_pkt
-			conn_info = json.loads(in_pkt)
+			in_data = client_sock.recv(self.buf_size)
+			print "in_data: " + in_data
+			if in_data == "*HELLO*":
+				# compensate for wifly devices
+				in_data = client_sock.recv(self.buf_size)
+				print "in_data: " + in_data
+				in_data = client_sock.recv(self.buf_size)
+				print "in_data: " + in_data
+			conn_info = json.loads(in_data)
 			#print "conn_info: " + str(conn_info)
 			#print "conn_info type: " + str(type(conn_info))
 		except json.decoder.JSONDecodeError, e:
@@ -296,6 +315,7 @@ class raichu_server:
 					out_data = json.dumps(self.get_avail_devices())
 					if len(out_data) != 2:
 						print "sending device_list"
+						out_data = "{\"deviceListFromServer\":" + out_data + "}"
 						print out_data
 						client_sock.send(out_data)
 					else:
@@ -308,6 +328,10 @@ class raichu_server:
 				elif cmd[0] == "release":
 					# remove from assign_list
 					# update database
+					device_name = cmd[1]
+					del self.connection_list[conn_info['name']]
+					self.device_list[device_name]["slave"] = 0
+					print "released " + device_name + " from " + conn_info['name'] 
 					pass
 				elif cmd[0] == "connect":
 					# need to redo some logic here
