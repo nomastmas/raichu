@@ -1,0 +1,79 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="raichumobile2.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800" 
+    d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+ 
+        <!--Panorama control-->
+        <controls:Panorama Title="RAICHU Mobile">
+            <controls:Panorama.Background>
+                <ImageBrush ImageSource="PanoramaBackground.png"/>
+            </controls:Panorama.Background>
+            <!--Use 'Orientation="Horizontal"' to enable a panel that lays out horizontally-->
+   
+        <!--Use 'Orientation="Horizontal"' to enable a panel that lays out horizontally-->
+        <controls:PanoramaItem Header="My Devices">
+            <!--Double line list with image placeholder and text wrapping-->
+            <ListBox Name="myDeviceListBox" Margin="0,0,-12,0" ItemsSource="{Binding Items}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,17">
+                            <!--Replace rectangle with image-->
+                            <Rectangle Height="100" Width="100" Fill="#FFE5001b" Margin="12,0,9,0"/>
+                            <StackPanel Width="311">
+                                <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                                <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </controls:PanoramaItem>
+            <controls:PanoramaItem Header="All Devices">
+                <!--Double line list with image placeholder and text wrapping-->
+                <ListBox Name="allDevicesListBox" Margin="0,0,-12,0" SelectionChanged="allDevicesListBox_SelectionChanged">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,17">
+                                <!--Replace rectangle with image-->
+                                <Rectangle Height="100" Width="100" Fill="#FFE5001b" Margin="12,0,9,0"/>
+                                <StackPanel Width="311">
+                                    <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" DataContext="{Binding}" FontSize="36" />
+                                    <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </controls:PanoramaItem>
+            <controls:PanoramaItem Header="Settings">
+                <!--Double line list with text wrapping-->
+                <Grid Height="507" HorizontalAlignment="Left" Margin="0,0,0,0" Name="grid1" VerticalAlignment="Top" Width="480" >
+                    <TextBox x:Name="ServerAddressTextBox" Height="72" HorizontalAlignment="Left" Margin="-2,81,0,0"  Text="130.65.157.121" VerticalAlignment="Top" Width="460" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="10,53,0,0" Name="textBlock1" Text="RAICHU Server" VerticalAlignment="Top" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="12,157,0,0" Name="textBlock2" Text="Server Port" VerticalAlignment="Top" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="8,13,0,0" Name="connectionStatusTextBLock" Text="Connection Status: " VerticalAlignment="Top" />
+                    <TextBox Height="72" HorizontalAlignment="Left" Margin="0,189,0,0" Name="ServerPortNumberTextBox" Text="30000" VerticalAlignment="Top" Width="460" />
+                    <Button Content="Reconnect" Height="72" HorizontalAlignment="Left" Margin="8,389,0,0" Name="button1" VerticalAlignment="Top" Width="424" Click="button1_Click" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="8,269,0,0" Name="textBlock3" Text="Device Name" VerticalAlignment="Top" />
+                    <TextBox Height="72" HorizontalAlignment="Left" Margin="4,301,0,0" Name="deviceNameTextBox" Text="WP7 Device" VerticalAlignment="Top" Width="460" />
+                    <TextBox x:Name="txtOutput" Background="Black" BorderBrush="Green" AcceptsReturn="False" Foreground="LightGray" FontFamily="Courier New" IsHitTestVisible="False" FontSize="{StaticResource PhoneFontSizeSmall}" TextWrapping="Wrap" Margin="24,128,68,164" />
+                </Grid>
+            </controls:PanoramaItem>
+        </controls:Panorama>
+    </Grid>
+</phone:PhoneApplicationPage>
