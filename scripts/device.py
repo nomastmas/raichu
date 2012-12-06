@@ -39,7 +39,7 @@ if __name__ == "__main__":
 	device_info = {
 		'type'		  : 'device',
 		'name'		  : 'device_' + dt.datetime.fromtimestamp(int(t.time())).strftime('%H%M%S') + str(int(random.random()*100)),
-		'bootup-time' : get_timestamp(),
+		'bootup_time' : get_timestamp(),
 		'commands'	  : "be_dumb, hello",
 	}
 
@@ -69,9 +69,13 @@ if __name__ == "__main__":
 		except socket.error, e:
 			print_error(e)
 			
-		print device_info["name"] + " shutdown"
+		
 	except socket.error, e:
 		print_error(e)
+	except KeyboardInterrupt:
+		pass
 	finally:
 		if s:
 			s.close()
+		print device_info["name"] + " shutdown"
+		sys.exit(0)
