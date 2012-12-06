@@ -17,6 +17,8 @@ def get_timestamp():
 def boot_up(s):
 	try:
 		s.connect ((host, int(port)))
+		s.send ("*HELLO*")
+		t.sleep(1)
 		s.send (json.dumps (device_info))
 	except socket.error, e:
 		print_error(e)

@@ -124,6 +124,16 @@ class raichu_server:
 						print_error(e)
 				else:
 					print "error: device " + cmd[1] + " not found"
+			elif cmd[0] == "release":
+				if cmd[1] in self.device_list:
+					try:
+						sock = self.device_list[cmd[1]]["socket"]
+						sock.close()
+						del self.device_list[cmd[1]]
+						print cmd[1] + " disconnected"
+					except socket.error, e:
+						print_error(e)
+
 			elif cmd[0] == "close" or cmd[0] == "exit":
 				self.close()
 				break
@@ -189,13 +199,14 @@ class raichu_server:
 		conn_info = {}
 		try:
 			in_data = client_sock.recv(self.buf_size)
-			print "in_data: " + in_data
+			print ">>>>> " + in_data
 			if in_data == "*HELLO*":
 				# compensate for wifly devices
+				# receiving device data
 				in_data = client_sock.recv(self.buf_size)
-				print "in_data: " + in_data
-				in_data = client_sock.recv(self.buf_size)
-				print "in_data: " + in_data
+				client_sock.send("ok")
+				print "<<<<< " + "ok"
+				print ">>>>> " + in_data
 			conn_info = json.loads(in_data)
 			#print "conn_info: " + str(conn_info)
 			#print "conn_info type: " + str(type(conn_info))
@@ -237,8 +248,6 @@ class raichu_server:
 		# 0 means free device
 		# 1 means slave
 		# 2 means it's mucked up
-
-
 
 		self.device_list[conn_info['name']] = conn_info
 		self.db_insert(conn_info)
@@ -291,6 +300,7 @@ class raichu_server:
 			#consider spinning out recv as separate thread
 			try:
 				recv_buffer = client_sock.recv(self.buf_size)
+				print "<<<<< " + recv_buffer
 				if recv_buffer == '':
 					raise RuntimeError(conn_info['name'] + " disconnected")
 			except socket.error, e:
@@ -316,8 +326,8 @@ class raichu_server:
 					if len(out_data) != 2:
 						print "sending device_list"
 						out_data = "{\"deviceListFromServer\":" + out_data + "}"
-						print out_data
 						client_sock.send(out_data)
+						print ">>>>> " + out_data
 					else:
 						# send 0 to denote no devices online
 						client_sock.send("0")
@@ -354,6 +364,9 @@ class raichu_server:
 						print "raichu_server(" + conn_info['name'] + ")>>>" + device_name + ": " + out_data
 					else:
 						raise RuntimeError("socket connection broken")
+				elif cmd[0] == "release":
+					pass
+
 
 
 
@@ -422,7 +435,7 @@ class raichu_server:
 		      		conn_info['relay'])
 
 		self.query_list.append(query)
-		print "append insert query"
+		#print "append insert query"
 		pass
 
 	def db_remove(self, conn_info):
@@ -432,7 +445,7 @@ class raichu_server:
 			query = 'update client set online=0, master=0 where name="%s"' % conn_info['name']
 		
 		self.query_list.append(query)
-		print "append delete query"
+		#print "append delete query"
 
 	def db_update(self, conn_info):
 		pass
@@ -454,7 +467,7 @@ class raichu_server:
 						cur = self.db_conn.cursor()
 						query = self.query_list.pop()
 						cur.execute(query)
-						print "executed query"
+						#print "executed query"
 				except db.Error, e:
 					print_error(e)
 			#TODO fine tune this sleep interval
