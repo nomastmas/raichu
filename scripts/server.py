@@ -270,11 +270,12 @@ class raichu_server:
 				sys.exit(1)
 
 			if len(recv_buffer) > 0:
-				# debug
-				print conn_info['name'] + ">>>raichu_server: " + recv_buffer
-				device_sock.send(recv_buffer)
-				#print ">>>>> " + recv_buffer
-
+				try:
+					print conn_info['name'] + ">>>raichu_server: " + recv_buffer
+					self.client_list[self.device_list[conn_info["name"]]["client"]]["socket"].send(recv_buffer)
+					print "raichu_server(" + conn_info["name"] + ")>>>" + self.device_list[conn_info["name"]]["client"]
+				except socket.error, e:
+					print_error(e)
 		# wait for connection
 		# thread sleep?
 
@@ -359,6 +360,7 @@ class raichu_server:
 							device_name = cmd[1]
 							self.connection_list[conn_info['name']] = device_name
 							self.device_list[device_name]["slave"] = 1
+							self.device_list[device_name]["client"] = conn_info['name']
 							client_sock.send("ok")
 							print "connected " + conn_info['name'] + " to " + device_name
 						else:
@@ -376,7 +378,8 @@ class raichu_server:
 					try:
 						ret = out_sock.send(out_data)
 						print "raichu_server(" + conn_info['name'] + ")>>>" + device_name + ": " + out_data
-						client_sock.send("ok")
+						# device response is sent through device thread
+						#client_sock.send(out_data)
 					except socket.error,e:
 						print_error(e)
 				elif cmd[0] == "release":
