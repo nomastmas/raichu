@@ -100,7 +100,7 @@ namespace raichumobile2.ViewModels
             private void disconnectButton_Tap(object sender, GestureEventArgs e)
             {
                 client.Close();
-                client.Receive();
+                //client.Receive();
                 this.NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
             }
 

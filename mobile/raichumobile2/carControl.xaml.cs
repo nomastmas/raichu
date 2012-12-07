@@ -95,7 +95,7 @@ namespace raichumobile2
                 Dispatcher.BeginInvoke(() =>
                 turnValue.Text = this.accelReading.Y.ToString());
 
-                client.Send("relay #" + accelReading.Z.ToString() + "," + accelReading.Y.ToString() + "#");
+                client.Send("relay #" + accelReading.Z.ToString() + "," + accelReading.Y.ToString());
                 client.Receive();
             }
 

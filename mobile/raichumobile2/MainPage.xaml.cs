@@ -220,8 +220,10 @@ namespace raichumobile2
                 connectionStatusTextBLock.Text = "Connection Status: Online";
 
                 result = client.Send(output);
+                result = client.Receive();
                 Log(result, false);
                 result = client.Send("list");
+                
                 result = client.Receive();
                 if (result != "0")
                 {
