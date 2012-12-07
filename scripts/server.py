@@ -4,6 +4,7 @@
 # this denotes the class definition of the raichu server
 
 import platform
+import subprocess
 import socket
 import fcntl
 import struct
@@ -20,6 +21,16 @@ import time as t
 import simplejson as json
 import pprint as pp
 import MySQLdb as db
+
+### getting mac os 'en0' address
+commands = {
+    'Darwin': {'ipv4': "ifconfig  | grep -E 'inet.[0-9]' | grep -v '127.0.0.1' | grep -v '10.211.55.2' | grep -v '10.37.129.2' | awk '{ print $2}'"},
+    #'Linux': {'ipv4': "/sbin/ifconfig  | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}'", 'ipv6': "/sbin/ifconfig  | grep 'inet6 addr:'| grep 'Global' | grep -v 'fe80' | awk '{print $3}'"}
+}
+def ip_addresses(version):
+    proc = subprocess.Popen(commands[platform.system()][version], shell=True,stdout=subprocess.PIPE)
+    return proc.communicate()[0].replace('\n', '')
+###
 
 def get_ip_address(ifname):
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -50,7 +61,8 @@ class raichu_server:
 		if server_platform == "Linux":
 			self.host = get_ip_address("eth0")
 		elif server_platform == "Darwin":
-			self.host = socket.gethostbyname(socket.gethostname())
+			#self.host = socket.gethostbyname(socket.gethostname())
+			self.host = ip_addresses('ipv4')
 
 		# all devices connected
 		self.device_list = {}
@@ -129,11 +141,19 @@ class raichu_server:
 					try:
 						sock = self.device_list[cmd[1]]["socket"]
 						sock.close()
-						del self.device_list[cmd[1]]
 						print cmd[1] + " disconnected"
+						del self.device_list[cmd[1]]
 					except socket.error, e:
 						print_error(e)
-
+			elif cmd[0] == "restart":
+				for device in self.device_list:
+					try:
+						sock = self.device_list[device]["socket"]
+						sock.close()
+						print self.device_list[device]["name"] + " disconnected"
+					except socket.error, e:
+						print_error(e)
+				self.device_list = []
 			elif cmd[0] == "close" or cmd[0] == "exit":
 				self.close()
 				break
