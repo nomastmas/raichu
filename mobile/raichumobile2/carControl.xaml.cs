@@ -61,6 +61,7 @@ namespace raichumobile2
 
 
         }
+       
         public void serverConnect()
         {
             // Clear the log 

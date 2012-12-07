@@ -78,7 +78,7 @@ namespace raichumobile2
                 result = client.Send("list");
                 result = client.Receive();
                 //Log(result, false); 
-                if (result == "ConnectionReset")
+                if (result == "ConnectionReset" || result == "Operation Timeout")
                 { }
                 else if (result != "0" )
                 {
