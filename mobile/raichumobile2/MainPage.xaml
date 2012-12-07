@@ -19,31 +19,14 @@
     <Grid x:Name="LayoutRoot" Background="Transparent">
  
         <!--Panorama control-->
-        <controls:Panorama Title="RAICHU Mobile">
+        <controls:Panorama Title="RAICHU Mobile" FontWeight="Bold" FontSize="28" FontFamily="Calibri">
             <controls:Panorama.Background>
                 <ImageBrush ImageSource="PanoramaBackground.png"/>
             </controls:Panorama.Background>
             <!--Use 'Orientation="Horizontal"' to enable a panel that lays out horizontally-->
    
         <!--Use 'Orientation="Horizontal"' to enable a panel that lays out horizontally-->
-        <controls:PanoramaItem Header="My Devices">
-            <!--Double line list with image placeholder and text wrapping-->
-            <ListBox Name="myDeviceListBox" Margin="0,0,-12,0" ItemsSource="{Binding Items}">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal" Margin="0,0,0,17">
-                            <!--Replace rectangle with image-->
-                            <Rectangle Height="100" Width="100" Fill="#FFE5001b" Margin="12,0,9,0"/>
-                            <StackPanel Width="311">
-                                <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                                <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-                            </StackPanel>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-        </controls:PanoramaItem>
-            <controls:PanoramaItem Header="All Devices">
+            <controls:PanoramaItem Header="Devices" FontSize="36">
                 <!--Double line list with image placeholder and text wrapping-->
                 <ListBox Name="allDevicesListBox" Margin="0,0,-12,0" SelectionChanged="allDevicesListBox_SelectionChanged">
                     <ListBox.ItemTemplate>
@@ -71,7 +54,6 @@
                     <Button Content="Reconnect" Height="72" HorizontalAlignment="Left" Margin="8,389,0,0" Name="button1" VerticalAlignment="Top" Width="424" Click="button1_Click" />
                     <TextBlock Height="30" HorizontalAlignment="Left" Margin="8,269,0,0" Name="textBlock3" Text="Device Name" VerticalAlignment="Top" />
                     <TextBox Height="72" HorizontalAlignment="Left" Margin="4,301,0,0" Name="deviceNameTextBox" Text="WP7 Device" VerticalAlignment="Top" Width="460" />
-                    <TextBox x:Name="txtOutput" Background="Black" BorderBrush="Green" AcceptsReturn="False" Foreground="LightGray" FontFamily="Courier New" IsHitTestVisible="False" FontSize="{StaticResource PhoneFontSizeSmall}" TextWrapping="Wrap" Margin="24,128,68,164" />
                 </Grid>
             </controls:PanoramaItem>
         </controls:Panorama>

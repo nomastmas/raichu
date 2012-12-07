@@ -48,6 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Devices.Sensors" />
     <Reference Include="Microsoft.Phone" />
     <Reference Include="Microsoft.Phone.Controls" />
     <Reference Include="Microsoft.Phone.Interop" />
@@ -63,13 +64,16 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="carControl.xaml.cs">
+      <DependentUpon>carControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SocketClient.cs" />
-    <Compile Include="ViewModels\connectToDevicePage.xaml.cs">
-      <DependentUpon>connectToDevicePage.xaml</DependentUpon>
+    <Compile Include="connectToDevicePage.xaml.cs">
+      <DependentUpon>mp3Controls.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\ItemViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
@@ -79,6 +83,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="carControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -87,7 +95,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </DesignData>
-    <Page Include="ViewModels\connectToDevicePage.xaml">
+    <Page Include="mp3Controls.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -100,13 +108,21 @@
     <Content Include="ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="back.png" />
     <Content Include="Background.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="stop.png" />
+    <Resource Include="up.png" />
     <Resource Include="PanoramaBackground.png" />
+    <Resource Include="down.png" />
+    <Resource Include="forward.png" />
+    <Resource Include="media.png" />
     <Content Include="Newtonsoft.Json.dll" />
     <Content Include="Newtonsoft.Json.pdb" />
     <Content Include="Newtonsoft.Json.xml" />
+    <Resource Include="pause.png" />
+    <Resource Include="play.png" />
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />

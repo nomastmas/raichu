@@ -73,15 +73,15 @@ namespace raichumobile2
                 string result = client.Connect(ServerAddressTextBox.Text, ECHO_PORT);
                 connectionStatusTextBLock.Text = "Connection Status: Online";
 
-                result = client.Send(output);
-                Log(result, false);
+                  result = client.Send(output);
+           
                 result = client.Send("list");
                 result = client.Receive();
                 //Log(result, false); 
-                if (result != null) ;
+                if (result != "0")
                 {
                     DeviceList devices = JsonConvert.DeserializeObject<DeviceList>(result);
-                    Log(devices.deviceListFromServer[0], false);
+
                     while (devices.deviceListFromServer == null)
                     {
                     }
@@ -92,13 +92,13 @@ namespace raichumobile2
 
                     }
                     allDevicesListBox.ItemsSource = DeviceItems;
-                    myDeviceListBox.ItemsSource = connectedDevices;
-                    
+
                 }
+                
 
                 // Receive a response from the echo server
 
-                result = client.Receive();
+               client.Receive();
 
             }
         }
@@ -180,7 +180,7 @@ namespace raichumobile2
         private void Log(string message, bool isOutgoing)
         {
             string direction = (isOutgoing) ? ">> " : "<< ";
-            txtOutput.Text += Environment.NewLine + direction + message;
+           // txtOutput.Text += Environment.NewLine + direction + message;
         }
 
         /// <summary>
@@ -188,7 +188,7 @@ namespace raichumobile2
         /// </summary>
         private void ClearLog()
         {
-            txtOutput.Text = String.Empty;
+           // txtOutput.Text = String.Empty;
         }
         #endregion
 
@@ -221,20 +221,23 @@ namespace raichumobile2
                 Log(result, false);
                 result = client.Send("list");
                 result = client.Receive();
-                //Log(result, false); 
-                DeviceList devices = JsonConvert.DeserializeObject<DeviceList>(result);
-                Log(devices.deviceListFromServer[0] , false);
-                while (devices.deviceListFromServer == null)
+                if (result != "0")
                 {
-                }
-                 DeviceItems = new ObservableCollection<ItemViewModel>();
-                 for (int i = 0; i < devices.deviceListFromServer.Length; i++)
-                 {
-                     DeviceItems.Add(new ItemViewModel() { LineOne = devices.deviceListFromServer[i], LineTwo = "view devices linked to this phone", LineThree = "" });
-                    
-                 }
+                    //Log(result, false); 
+                    DeviceList devices = JsonConvert.DeserializeObject<DeviceList>(result);
+                    Log(devices.deviceListFromServer[0], false);
+                    while (devices.deviceListFromServer == null)
+                    {
+                    }
+                    DeviceItems = new ObservableCollection<ItemViewModel>();
+                    for (int i = 0; i < devices.deviceListFromServer.Length; i++)
+                    {
+                        DeviceItems.Add(new ItemViewModel() { LineOne = devices.deviceListFromServer[i], LineTwo = "view devices linked to this phone", LineThree = "" });
 
-                 myDeviceListBox.ItemsSource = DeviceItems;
+                    }
+                    allDevicesListBox.ItemsSource = DeviceItems;
+
+                }
 
 
                 // Receive a response from the echo server
@@ -251,12 +254,14 @@ namespace raichumobile2
             {
                 deviceId = (allDevicesListBox.SelectedItem as ItemViewModel).LineOne;
             }
-            client.Send("connect " + deviceId);
-            connectedDevices = new ObservableCollection<ItemViewModel>();
-            connectedDevices.Add(new ItemViewModel() { LineOne = deviceId, LineTwo = "connected device", LineThree = "" });
-            myDeviceListBox.ItemsSource = connectedDevices;
-            client.Send("relay hopefully this is working");
-        //    connectedDevices.Add(new ItemViewModel() { LineOne = allDevicesListBox.SelectedValue.ToString(), LineTwo = "Connected Remote Device", LineThree = "" });
+            if (deviceId == "mp3player")
+            {
+                this.NavigationService.Navigate(new Uri("/mp3Controls.xaml?deviceId=" + deviceId, UriKind.Relative));
+            }
+            if (deviceId == "car")
+            {
+                this.NavigationService.Navigate(new Uri("/carControl?deviceId=" + deviceId, UriKind.Relative));
+            }
         }
         
 

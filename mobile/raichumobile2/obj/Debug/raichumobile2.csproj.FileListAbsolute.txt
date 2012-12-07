@@ -17,3 +17,23 @@ c:\users\ben\documents\visual studio 2010\Projects\raichumobile2\raichumobile2\B
 c:\users\ben\documents\visual studio 2010\Projects\raichumobile2\raichumobile2\Bin\Debug\Newtonsoft.Json.pdb
 c:\users\ben\documents\visual studio 2010\Projects\raichumobile2\raichumobile2\Bin\Debug\Newtonsoft.Json.xml
 c:\users\ben\documents\visual studio 2010\Projects\raichumobile2\raichumobile2\obj\Debug\ViewModels\connectToDevicePage.g.i.cs
+Z:\Documents\SJSU\Cmpe 195b\raichu\mobile\raichumobile2\Bin\Debug\ApplicationIcon.png
+Z:\Documents\SJSU\Cmpe 195b\raichu\mobile\raichumobile2\Bin\Debug\Background.png
+Z:\Documents\SJSU\Cmpe 195b\raichu\mobile\raichumobile2\Bin\Debug\raichumobile2.dll
+Z:\Documents\SJSU\Cmpe 195b\raichu\mobile\raichumobile2\Bin\Debug\raichumobile2.pdb
+Z:\Documents\SJSU\Cmpe 195b\raichu\mobile\raichumobile2\Bin\Debug\AppManifest.xaml
+Z:\Documents\SJSU\Cmpe 195b\raichu\mobile\raichumobile2\Bin\Debug\raichumobile2.xap
+Z:\Documents\SJSU\Cmpe 195b\raichu\mobile\raichumobile2\Bin\Debug\Microsoft.Phone.Controls.dll
+Z:\Documents\SJSU\Cmpe 195b\raichu\mobile\raichumobile2\Bin\Debug\Newtonsoft.Json.dll
+Z:\Documents\SJSU\Cmpe 195b\raichu\mobile\raichumobile2\Bin\Debug\Microsoft.Phone.Controls.xml
+Z:\Documents\SJSU\Cmpe 195b\raichu\mobile\raichumobile2\Bin\Debug\Newtonsoft.Json.pdb
+Z:\Documents\SJSU\Cmpe 195b\raichu\mobile\raichumobile2\Bin\Debug\Newtonsoft.Json.xml
+Z:\Documents\SJSU\Cmpe 195b\raichu\mobile\raichumobile2\obj\Debug\raichumobile2.csprojResolveAssemblyReference.cache
+Z:\Documents\SJSU\Cmpe 195b\raichu\mobile\raichumobile2\obj\Debug\App.g.i.cs
+Z:\Documents\SJSU\Cmpe 195b\raichu\mobile\raichumobile2\obj\Debug\MainPage.g.i.cs
+Z:\Documents\SJSU\Cmpe 195b\raichu\mobile\raichumobile2\obj\Debug\raichumobile2.g.resources
+Z:\Documents\SJSU\Cmpe 195b\raichu\mobile\raichumobile2\obj\Debug\raichumobile2.dll
+Z:\Documents\SJSU\Cmpe 195b\raichu\mobile\raichumobile2\obj\Debug\raichumobile2.pdb
+Z:\Documents\SJSU\Cmpe 195b\raichu\mobile\raichumobile2\obj\Debug\XapCacheFile.xml
+Z:\Documents\SJSU\Cmpe 195b\raichu\mobile\raichumobile2\obj\Debug\mp3Controls.g.i.cs
+Z:\Documents\SJSU\Cmpe 195b\raichu\mobile\raichumobile2\obj\Debug\carControl.g.i.cs
