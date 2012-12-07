@@ -78,7 +78,9 @@ namespace raichumobile2
                 result = client.Send("list");
                 result = client.Receive();
                 //Log(result, false); 
-                if (result != "0")
+                if (result == "ConnectionReset")
+                { }
+                else if (result != "0" )
                 {
                     DeviceList devices = JsonConvert.DeserializeObject<DeviceList>(result);
 
@@ -260,8 +262,13 @@ namespace raichumobile2
             }
             if (deviceId == "car")
             {
-                this.NavigationService.Navigate(new Uri("/carControl?deviceId=" + deviceId, UriKind.Relative));
+                this.NavigationService.Navigate(new Uri("/carControl.xaml?deviceId=" + deviceId, UriKind.Relative));
             }
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("/carControl.xaml?deviceId=test", UriKind.Relative));
         }
         
 

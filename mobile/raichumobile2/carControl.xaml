@@ -28,11 +28,11 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <TextBlock Height="30" HorizontalAlignment="Left" Margin="12,6,0,0" Name="textBlock1" Text="Speed: " VerticalAlignment="Top" />
-            <TextBlock Height="30" HorizontalAlignment="Left" Margin="83,6,0,0" Name="speedValue" Text="speedValue" VerticalAlignment="Top" />
-            <TextBlock Height="30" HorizontalAlignment="Left" Margin="6,42,0,0" Name="textBlock3" Text="Turn:" VerticalAlignment="Top" />
-            <TextBlock Height="30" HorizontalAlignment="Left" Margin="83,42,0,0" Name="turnValue" Text="turnValue" VerticalAlignment="Top" />
-            <Button Content="Drive Enable" Height="72" HorizontalAlignment="Left" Margin="-12,248,0,0" Name="DriveEnable" VerticalAlignment="Top" Width="710" />
+            <TextBlock Height="56" HorizontalAlignment="Left" Margin="12,6,0,0" Name="textBlock1" Text="Speed: " VerticalAlignment="Top" FontSize="30" Width="102" />
+            <TextBlock Height="100" HorizontalAlignment="Left" Margin="100,86,0,0" Name="speedValue" Text="{Binding}" VerticalAlignment="Top" Width="598" FontSize="40" />
+            <TextBlock Height="62" HorizontalAlignment="Left" Margin="406,0,0,0" Name="textBlock3" Text="Turn:" VerticalAlignment="Top" FontSize="30" Width="84" />
+            <TextBlock Height="100" HorizontalAlignment="Left" Margin="486,86,0,0" Name="turnValue" VerticalAlignment="Top" DataContext="{Binding}" Width="212" FontSize="40" />
+            <Button Content="Drive Enable" Height="72" HorizontalAlignment="Left" Margin="-12,248,0,0" Name="DriveEnable" VerticalAlignment="Top" Width="710" Click="DriveEnable_Click" />
         </Grid>
     </Grid>
  
