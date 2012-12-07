@@ -4,6 +4,7 @@ import socket
 import sys
 import datetime as dt
 import time as t
+import pprint as pp
 
 import simplejson as json
 
@@ -64,7 +65,7 @@ if __name__ == "__main__":
 		# design randomized algorithm later
 		devices = json.loads(buf)
 		#raichu_send(s, "assign 1")
-		raichu_send(s, "connect " + devices[0])
+		raichu_send(s, "connect " + devices['deviceListFromServer'][0])
 		buf = raichu_recv(s, 1024)
 		print "buffer: " + buf
 

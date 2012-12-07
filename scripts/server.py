@@ -272,12 +272,19 @@ class raichu_server:
 			if len(recv_buffer) > 0:
 				# debug
 				print conn_info['name'] + ">>>raichu_server: " + recv_buffer
+				device_sock.send(recv_buffer)
+				#print ">>>>> " + recv_buffer
 
 		# wait for connection
 		# thread sleep?
 
 	def handle_client(self, client_sock, conn_info):
-		print "client connected"
+		try:
+			out_data = "client connected"
+			#client_sock.send(out_data)
+			print out_data
+		except socket.error, e:
+			print_error(e)
 		device_info 						= client_sock.getpeername()
 		conn_info["address"]				= device_info
 		conn_info["ip"] 					= device_info[0]
@@ -287,6 +294,7 @@ class raichu_server:
 		# set default for server to relay data
 		conn_info["relay"]				= 1
 		conn_info["master"]				= 0
+
 
 		self.client_list[conn_info['name']] = conn_info
 		self.db_insert(conn_info)
@@ -310,10 +318,10 @@ class raichu_server:
 				# cleanup of d/c client from server cache
 				if self.client_list[conn_info['name']]:
 					del self.client_list[conn_info['name']]
-				self.device_list[ self.connection_list[ conn_info['name'] ] ]['slave'] = 0
-				del self.connection_list[conn_info['name']]
+				if conn_info['name'] in self.connection_list:
+					self.device_list[ self.connection_list[ conn_info['name'] ] ]['slave'] = 0
+					del self.connection_list[conn_info['name']]
 				self.db_remove(conn_info)
-
 				sys.exit(1)
 
 			if len(recv_buffer) > 0:
@@ -345,30 +353,34 @@ class raichu_server:
 					pass
 				elif cmd[0] == "connect":
 					# need to redo some logic here
-					if self.device_list[cmd[1]]['slave'] == 0:
-						# assign client to device
-						device_name = cmd[1]
-						self.connection_list[conn_info['name']] = device_name
-						self.device_list[device_name]["slave"] = 1
-						client_sock.send("device " + device_name + " assigned")
-						print "assigned " + conn_info['name'] + " to " + device_name
-					else:
-						raise RuntimeError("device does not exist")
+					try:
+						if self.device_list[cmd[1]]['slave'] == 0:
+							# connect client to device
+							device_name = cmd[1]
+							self.connection_list[conn_info['name']] = device_name
+							self.device_list[device_name]["slave"] = 1
+							client_sock.send("ok")
+							print "connected " + conn_info['name'] + " to " + device_name
+						else:
+							raise RuntimeError("device does not exist")
+					except KeyError:
+						error = "error: " + cmd[1] + " is invalid"
+						print error
+						client_sock.send(error)
+
 				elif cmd[0] == "relay":
 					device_name = self.connection_list[conn_info['name']]
 					out_sock = self.device_list[device_name]["socket"]
 					cmd.pop(0)
 					out_data = ' '.join(cmd)
-					ret = out_sock.send(out_data)
-					if ret != 0:
+					try:
+						ret = out_sock.send(out_data)
 						print "raichu_server(" + conn_info['name'] + ")>>>" + device_name + ": " + out_data
-					else:
-						raise RuntimeError("socket connection broken")
+						client_sock.send("ok")
+					except socket.error,e:
+						print_error(e)
 				elif cmd[0] == "release":
 					pass
-
-
-
 
 		#elif recv_data[0] == "assign":
 		#	device_request = recv_data[1]
