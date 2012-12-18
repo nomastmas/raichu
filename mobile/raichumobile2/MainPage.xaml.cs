@@ -225,7 +225,9 @@ namespace raichumobile2
                 result = client.Send("list");
                 
                 result = client.Receive();
-                if (result != "0")
+                if (result == "ConnectionReset" || result == "Operation Timeout")
+                { }
+                else  if (result != "0")
                 {
                     //Log(result, false); 
                     DeviceList devices = JsonConvert.DeserializeObject<DeviceList>(result);
@@ -263,6 +265,10 @@ namespace raichumobile2
                 this.NavigationService.Navigate(new Uri("/mp3Controls.xaml?deviceId=" + deviceId, UriKind.Relative));
             }
             if (deviceId == "car")
+            {
+                this.NavigationService.Navigate(new Uri("/carControl.xaml?deviceId=" + deviceId, UriKind.Relative));
+            }
+            if (deviceId == "outlet")
             {
                 this.NavigationService.Navigate(new Uri("/carControl.xaml?deviceId=" + deviceId, UriKind.Relative));
             }

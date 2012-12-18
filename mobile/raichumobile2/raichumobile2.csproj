@@ -70,6 +70,9 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="outletControl.xaml.cs">
+      <DependentUpon>outletControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SocketClient.cs" />
     <Compile Include="connectToDevicePage.xaml.cs">
@@ -96,6 +99,10 @@
       <SubType>Designer</SubType>
     </DesignData>
     <Page Include="mp3Controls.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="outletControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

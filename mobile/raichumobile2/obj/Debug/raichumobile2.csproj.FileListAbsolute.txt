@@ -37,3 +37,4 @@ Z:\Documents\SJSU\Cmpe 195b\raichu\mobile\raichumobile2\obj\Debug\raichumobile2.
 Z:\Documents\SJSU\Cmpe 195b\raichu\mobile\raichumobile2\obj\Debug\XapCacheFile.xml
 Z:\Documents\SJSU\Cmpe 195b\raichu\mobile\raichumobile2\obj\Debug\mp3Controls.g.i.cs
 Z:\Documents\SJSU\Cmpe 195b\raichu\mobile\raichumobile2\obj\Debug\carControl.g.i.cs
+Z:\Documents\SJSU\Cmpe 195b\raichu\mobile\raichumobile2\obj\Debug\outletControl.g.i.cs
